@@ -1,0 +1,15 @@
+﻿<Properties StartupConfiguration="{A4893CCE-9AB4-48C4-B823-011D322A44AF}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ScaryMeter/index.html">
+    <Files>
+      <File FileName="ScaryMeter/indexStyle.scss" Line="93" Column="17" />
+      <File FileName="ScaryMeter/index.html" Line="4" Column="16" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.ScaryMeter PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

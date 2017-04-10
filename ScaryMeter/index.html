@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Scary Meter</title>
+
+		<!--Bootstrap shit-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ 	 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+		<!--Google fonts shit-->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
+		<!--Style sheet, named styles.css-->
+		<link rel="stylesheet" href="styles.css">
+
+	</head>
+
+	<body>
+		<div class="container-fluid">
+
+			<!--NAVIGATION BAR-->
+			<div class="row row-no-gutter">
+				<nav class="navbar navbar-inverse" style="margin: 0; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; background-color: #2d2d2d; border: 0;">
+					<div class="container-fluid">
+						<div class="navigationBarContainer">
+							<div class="navbar-header">
+								<a class="navbar-brand" href="#">Scary Meter</a>
+							</div>
+							<ul class="nav navbar-nav">
+								<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Top Lists<span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="#">Top 10 Scariest</a></li>
+										<li><a href="#">Top 10 Least Scary</a></li>
+										<li><a href="#">Most Rated</a></li>
+										<li><a href="#">Least Rated</a></li>
+									</ul>
+								</li>
+								<li><a href="#">About Us</a></li>
+							</ul>
+							<ul class="nav navbar-nav navbar-right">
+								<form class="navbar-form" role="search">
+									<div class="input-group">
+										<input type="text" class="form-control" placeholder="Search movies..." name="q">
+										<div class="input-group-btn">
+											<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+										</div>
+									</div>
+								</form>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+
+			<!--COVER PHOTO-->
+			<div class="row row-no-gutter">
+				<div class="imageCoverPhotoContainer">
+					<img src="Images/SAM_Background_Cropped.png" width="100%" height="100%" alt="Swiss Army Man cover"
+					style="opacity: 0.5; filter: alpha(opacity=50);">
+				</div>
+			</div>
+
+			<!--BELOW COVER PHOTO-->
+			<div class="row row-no-gutter">
+				<div class="belowCoverPhotoContainer">
+					<div class="col-sm-2"></div>
+					<div class="col-sm-8" style="padding: 0; margin: 0;">
+
+						<!--POSTER-->
+						<div class="row row-no-gutter">
+							<div class="col-sm-3">
+								<div class="container-fluid">
+									<div class="row row-no-gutter">
+										<div class="col-sm-12">
+											<img src="Images/SAM_Poster.jpg" width="100%" style="box-shadow: 0px 0px 10px black;" alt="Swiss Army Man">
+										</div>
+									</div>
+
+									<!--IMDB RATING PLUS LENGTH-->
+									<div class="row row-no-gutter">
+										<div class="col-sm-6" style="padding-right: 5px;">
+											<img src="Images/IMDb_Logo.png" width="100%" alt="IMDb Logo" style="margin-top: 10px;">
+										</div>
+										<div class="col-sm-6" style="padding-left: 5px;">
+											<div class="ratingAndLengthLabel" style="margin-top: 10px;">
+												14A<br/>&nbsp;
+											</div>
+										</div>
+									</div>
+									<div class="row row-no-gutter">
+										<div class="col-sm-6" style="padding-right: 5px;">
+											<div style="color: #e6b91e; background-color: #2d2d2d; margin: 0; padding: 0; font-size: 16px; text-align: center; font-family: 'Open Sans', sans-serif;">
+												7.1
+											</div>
+										</div>
+										<div class="col-sm-6" style="padding-left: 5px;">
+											<div class="ratingAndLengthLabel">
+												1h 37min
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!--MOVIE IDENTIFIERS PLUS SCARY METER-->
+							<div class="col-sm-9">
+								<p class="movieYearLabel">2016</p>
+								<p class="movieTitleLabel">Swiss Army Man</p>
+								<p class="scaryMeterRatingTitleLabel"><em>Scary Meter Rating</em></p>
+								<div class="container-fluid">
+									<div class="row row-no-gutter">
+										<div class="col-sm-11" style="padding: 0;">
+											<p style="background-color: #be3e3e; margin-top: 5px;">&nbsp;</p>
+										</div>
+										<div class="col-sm-1" style="padding-left: 10px; padding-right: 10px;">
+											<p class="scaryMeterRatingNumberLabel">9.5</p>
+										</div>
+									</div>
+
+									<!--CREEPY, GORY AND JUMPY METERS-->
+									<div class="row row-no-gutter">
+										<div class="col-sm-2" style="padding-left: 0;">
+											<div class="categoryTitleLabel">
+												CREEPY
+											</div>
+										</div>
+										<div class="col-sm-9" style="padding: 0;">
+											<div style="background-color: #00659c;">
+												&nbsp;
+											</div>
+										</div>
+										<div class="col-sm-1" style="padding-left: 10px; padding-right: 10px;">
+											<div class="categoryNumberLabel">
+												8.3
+											</div>
+										</div>
+									</div>
+									<div class="row row-no-gutter">
+										<div class="col-sm-2" style="padding-left: 0;">
+											<div class="categoryTitleLabel">
+												GORY
+											</div>
+										</div>
+										<div class="col-sm-9" style="padding: 0;">
+											<div style="background-color: #cb6338;">
+												&nbsp;
+											</div>
+										</div>
+										<div class="col-sm-1" style="padding-left: 10px; padding-right: 10px;">
+											<div class="categoryNumberLabel">
+												5.6
+											</div>
+										</div>
+									</div>
+									<div class="row row-no-gutter">
+										<div class="col-sm-2" style="padding-left: 0;">
+											<div class="categoryTitleLabel">
+												JUMPY
+											</div>
+										</div>
+										<div class="col-sm-9" style="padding: 0;">
+											<div style="background-color: #0a7e6d;">
+												&nbsp;
+											</div>
+										</div>
+										<div class="col-sm-1" style="padding-left: 10px; padding-right: 10px;">
+											<div class="categoryNumberLabel">
+												7.2
+											</div>
+										</div>
+									</div>
+
+									<!--DESCRIPTION OF MOVIE-->
+									<div class="row row-no-gutter">
+										<div class="descriptionOfMovieLabel">
+											<p>Directors: Dan Kwan (as Daniel Kwan), Daniel Scheinert</p>
+											<p>Cast: Paul Dano, Daniel Radcliffe, Mary Elizabeth Winstead</p>
+											<p>A hopeless man stranded on a deserted island befriends a dead body and together they go on a surreal journey to get home.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!--SIMILARLY RATED MOVIES-->
+						<div class="row row-no-gutter" style="margin-right: 40px;">
+							<div class="col-sm-12" style="margin-left: 30px; margin-top: 15px; background-color: #2d2d2d; color: #c6c6c6; font-family: 'Open Sans', sans-serif; font-size: 20px;">
+								Similarly Rated Titles
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-2"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
