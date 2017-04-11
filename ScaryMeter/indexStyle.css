@@ -24,6 +24,12 @@ bottom: -34vh;
 position: absolute;
 width: 100%; }
 
+.moviePosterPhoto {
+bottom: -50vh;
+position: absolute;
+width: 100%;
+padding-right: 20%; }
+
 .imageCoverPhotoContainer {
 position: relative; }
 
