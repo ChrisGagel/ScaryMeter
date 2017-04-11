@@ -2,13 +2,12 @@
 /Users/christophergagel/Desktop/ScaryMeter/ScaryMeter/bin/ScaryMeter.dll.mdb
 /Users/christophergagel/Desktop/ScaryMeter/ScaryMeter/obj/Debug/ScaryMeter.dll
 /Users/christophergagel/Desktop/ScaryMeter/ScaryMeter/obj/Debug/ScaryMeter.dll.mdb
-C:/Users/Nick/Documents/Visual Studio 2015/Projects/ScaryMeterGIT/ScaryMeter/bin/ScaryMeter.dll.config
-C:/Users/Nick/Documents/Visual Studio 2015/Projects/ScaryMeterGIT/ScaryMeter/bin/ScaryMeter.dll
-C:/Users/Nick/Documents/Visual Studio 2015/Projects/ScaryMeterGIT/ScaryMeter/bin/ScaryMeter.pdb
-C:/Users/Nick/Documents/Visual Studio 2015/Projects/ScaryMeterGIT/ScaryMeter/obj/Debug/ScaryMeter.csprojResolveAssemblyReference.cache
-C:/Users/Nick/Documents/Visual Studio 2015/Projects/ScaryMeterGIT/ScaryMeter/obj/Debug/ScaryMeter.dll
-C:/Users/Nick/Documents/Visual Studio 2015/Projects/ScaryMeterGIT/ScaryMeter/obj/Debug/ScaryMeter.pdb
 /Users/christophergagel/Projects/ScaryMeter/ScaryMeter/bin/ScaryMeter.dll
 /Users/christophergagel/Projects/ScaryMeter/ScaryMeter/bin/ScaryMeter.dll.mdb
 /Users/christophergagel/Projects/ScaryMeter/ScaryMeter/obj/Debug/ScaryMeter.dll
 /Users/christophergagel/Projects/ScaryMeter/ScaryMeter/obj/Debug/ScaryMeter.dll.mdb
+C:\Users\Nick\Documents\Visual Studio 2015\Projects\ScaryMeterGIT\ScaryMeter\bin\ScaryMeter.dll.config
+C:\Users\Nick\Documents\Visual Studio 2015\Projects\ScaryMeterGIT\ScaryMeter\bin\ScaryMeter.dll
+C:\Users\Nick\Documents\Visual Studio 2015\Projects\ScaryMeterGIT\ScaryMeter\bin\ScaryMeter.pdb
+C:\Users\Nick\Documents\Visual Studio 2015\Projects\ScaryMeterGIT\ScaryMeter\obj\Debug\ScaryMeter.dll
+C:\Users\Nick\Documents\Visual Studio 2015\Projects\ScaryMeterGIT\ScaryMeter\obj\Debug\ScaryMeter.pdb

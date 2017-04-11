@@ -13,6 +13,17 @@ padding: 0;
 color: #c6c6c6;
 font-family: 'Open Sans', sans-serif; }
 
+.imageCoverPhoto {
+background-color: blue;
+width: 100%;
+height: 35vh;
+position: relative; }
+
+.textCoverPhoto {
+bottom: -34vh; 
+position: absolute;
+width: 100%; }
+
 .imageCoverPhotoContainer {
 position: relative; }
 
@@ -27,31 +38,37 @@ color: #545454;
 margin: 0;
 padding-left: 4px;
 padding-right: 4px;
-font-size: 22px;
+font-size: 1.5em;
 font-family: 'Open Sans Light', sans-serif;
 font-weight: 100; }
 
 .movieTitleLabel {
 color: whitesmoke;
-margin: 0;
+margin-top: -0.18em;
 padding: 0;
-font-size: 32px;
+font-size: 3.5em;
+font-weight: 400;
 font-family: 'Oswald', sans-serif; }
 
 .scaryMeterRatingTitleLabel {
 color: whitesmoke;
-margin: 0;
+margin-top: -0.6em;
 padding: 0;
 font-size: 20px;
 font-family: 'Open Sans Light', sans-serif;
 font-weight: 100; }
+
+.overallScaryMeterRatingBar {
+background-color: #be3e3e; 
+height: 2em;
+width: 100%; }
 
 .scaryMeterRatingNumberLabel {
 background-color: #545454;
 color: #c6c6c6;
 margin: 0;
 padding: 0;
-font-size: 16px;
+font-size: 1.5em;
 font-family: 'Open Sans', sans-serif;
 text-align: center;
 font-weight: 800; }
