@@ -1,4 +1,13 @@
 ﻿<!DOCTYPE html>
+
+
+<!-- COMMENTS & CONCERNS:
+			- When I try lowering the vh of the .moviePosterPhoto CSS class to anything lower than -45, the grey
+			background of the body covers the image and IMDb rating and length text below it. This'll need to get
+			fixed
+			- I added a multicolour reference for column widths (2, 2, 6, 2) at the bottom of the webpage to keep track of margin/padding -->
+
+
 <html lang="en">
 	<head>
 		<title>Scary Meter</title>
@@ -15,13 +24,12 @@
 
 		<!--Style sheet, named styles.css-->
 		<link rel="stylesheet" href="indexStyle.css">
-
 	</head>
 
+	
+	<!--NAVIGATION BAR-->
 	<body>
 		<div class="container-fluid">
-
-			<!--NAVIGATION BAR-->
 			<div class="row row-no-gutter">
 				<nav class="navbar navbar-inverse" style="margin: 0; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; background-color: #2d2d2d; border: 0;">
 					<div class="container-fluid">
@@ -59,177 +67,184 @@
             <div class="row row-no-gutter">
                 <div class="col-sm-12" style="margin:0; padding:0;">
                     <div class="imageCoverPhoto">
-                        <img class="imageCoverPhotoBackground" src="https://1.bp.blogspot.com/-aNKR9xFMu6M/V3af8Yr9imI/AAAAAAAAQV0/8JIgAU6G7RQMzOdl8EeEOG26-ZZZjv9XgCLcB/s1600/Swiss%2BArmy%2BMan%2B2.png" alt="Swiss Army Man cover" />
-                        <div class="row row-no-gutter">
-                            <div class="col-sm-2"></div>
-                                <div class="col-sm-2">
-                                    <div class="row row-no-gutter">
-                                        <div class="col-sm-12">
-                                            <div class="moviePosterPhoto">
-                                                <img src="http://static1.tribute.ca/poster/540x800/swiss-army-man-6858.jpg" width="100%" style="box-shadow: 0px 0px 10px black;" alt="Swiss Army Man">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6" style="padding-left:0;">
-                                    <div class="textCoverPhoto">
-                                        <p class="movieYearLabel">2016</p>
-                                        <p class="movieTitleLabel">Swiss Army Man</p>
-                                        <p class="scaryMeterRatingTitleLabel"><em>Scary Meter Rating</em></p>
-                                        <div class="container-fluid">
-                                            <div class="row row-no-gutter" style="margin-top: -0.4em;">
-                                                <div class="col-sm-11" style="padding: 0;">
-                                                    <div class="overallScaryMeterRatingBar"></div>
-                                                </div>
-                                                <div class="col-sm-1" style="padding-left: 10px; padding-right: 10px; padding-top: 0px !important;">
-                                                    <p class="scaryMeterRatingNumberLabel">9.5</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+						<img class="imageCoverPhotoBackground" src="https://1.bp.blogspot.com/-aNKR9xFMu6M/V3af8Yr9imI/AAAAAAAAQV0/8JIgAU6G7RQMzOdl8EeEOG26-ZZZjv9XgCLcB/s1600/Swiss%2BArmy%2BMan%2B2.png" alt="Swiss Army Man cover" />
+						<div class="row row-no-gutter">
+							<div class="col-sm-2"></div>
 
-                            <div class="col-sm-2">
-                            </div>
-                        </div>
+							<!--POSTER PHOTO-->
+							<div class="col-sm-2">
+								<div class="moviePosterPhoto">
+									<div class="row row-no-gutter">
+										<div class="col-sm-12">
+											<img src="http://static1.tribute.ca/poster/540x800/swiss-army-man-6858.jpg" width="100%" style="box-shadow: 0px 0px 10px black;" alt="Swiss Army Man">
+										</div>
+									</div>
+
+									<!--IMDB RATING PLUS LENGTH-->
+									<div class="row row-no-gutter">
+										<div class="col-sm-12">
+											<div class="row row-no-gutter">
+												<div class="col-sm-6" style="padding-right: 5px;">
+													<img src="Images/IMDb_Logo.png" width="100%" alt="IMDb Logo" style="margin-top: 10px;">
+												</div>
+												<div class="col-sm-6" style="padding-left: 5px;">
+													<div class="ratingAndLengthLabel" style="margin-top: 10px;">
+														14A<br />&nbsp;
+													</div>
+												</div>
+											</div>
+											<div class="row row-no-gutter">
+												<div class="col-sm-6" style="padding-right: 5px;">
+													<div style="color: #e6b91e; background-color: #2d2d2d; margin: 0; padding: 0; font-size: 16px; text-align: center; font-family: 'Open Sans', sans-serif;">
+														7.1
+													</div>
+												</div>
+												<div class="col-sm-6" style="padding-left: 5px;">
+													<div class="ratingAndLengthLabel">
+														1h 37min
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!--GENERAL MOVIE INFO-->
+							<div class="col-sm-6" style="margin: 0; padding: 0;">
+								<div class="textCoverPhoto">
+									<p class="movieYearLabel">2016</p>
+									<p class="movieTitleLabel">Swiss Army Man</p>
+									<p class="scaryMeterRatingTitleLabel"><em>Scary Meter Rating</em></p>
+									<div class="row row-no-gutter" style="margin-top: -0.4em;">
+										<div class="col-sm-11" style="padding-right: 0;">
+											<div class="overallScaryMeterRatingBar"></div>
+										</div>
+										<div class="col-sm-1" style="padding-left: 10px; padding-right: 10px;">
+											<p class="scaryMeterRatingNumberLabel">9.5</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-2"></div>
+						</div>
                     </div>
                 </div>
             </div>
-
             <div class="row row-no-gutter">
                 <div class="col-sm-12" style="margin:0; padding:0;">
-                    <div class="imageCoverPhoto">
-                        <div class="row row-no-gutter">
-                            <div class="col-sm-2"></div>
-                            <div class="col-sm-2">
-                                <div class="row row-no-gutter">
-                                    <div class="col-sm-12">
-                                        <!--IMDB RATING PLUS LENGTH-->
-                                        <div class="row row-no-gutter">
-                                            <div class="col-sm-6" style="padding-right: 5px;">
-                                                <img src="Images/IMDb_Logo.png" width="100%" alt="IMDb Logo" style="margin-top: 10px;">
-                                            </div>
-                                            <div class="col-sm-6" style="padding-left: 5px;">
-                                                <div class="ratingAndLengthLabel" style="margin-top: 10px;">
-                                                    14A<br />&nbsp;
-                                                </div>
-                                            </div>
+                    <div class="row row-no-gutter">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-2"></div>
+
+						<!--CREEPY, GORY AND JUMPY METERS-->
+                        <div class="col-sm-6" style="padding-right: 0;">
+							<div class="row row-no-gutter">
+                                <div class="subMeters">
+                                    <div class="col-sm-2" style="padding-left: 0;">
+                                        <div class="categoryTitleLabel">
+                                            CREEPY
                                         </div>
-                                        <div class="row row-no-gutter">
-                                            <div class="col-sm-6" style="padding-right: 5px;">
-                                                <div style="color: #e6b91e; background-color: #2d2d2d; margin: 0; padding: 0; font-size: 16px; text-align: center; font-family: 'Open Sans', sans-serif;">
-                                                    7.1
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6" style="padding-left: 5px;">
-                                                <div class="ratingAndLengthLabel">
-                                                    1h 37min
-                                                </div>
-                                            </div>
+                                    </div>
+                                    <div class="col-sm-9" style="padding: 0;">
+                                        <div style="background-color: #00659c;">
+                                            &nbsp;
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-1" style="padding-left: 10px; padding-right: 10px;">
+                                        <div class="categoryNumberLabel">
+                                            8.3
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6" style="padding-right:0;">
-                                <!--CREEPY, GORY AND JUMPY METERS-->
-                                <div class="row row-no-gutter">
-                                    <div class="subMeters">
-                                        <div class="col-sm-2" style="padding-left: 0;">
-                                            <div class="categoryTitleLabel">
-                                                CREEPY
-                                            </div>
+                            <div class="row row-no-gutter">
+                                <div class="subMeters">
+                                    <div class="col-sm-2" style="padding-left: 0;">
+                                        <div class="categoryTitleLabel">
+                                            GORY
                                         </div>
-                                        <div class="col-sm-9" style="padding: 0;">
-                                            <div style="background-color: #00659c;">
-                                                &nbsp;
-                                            </div>
+                                    </div>
+                                    <div class="col-sm-9" style="padding: 0;">
+                                        <div style="background-color: #cb6338;">
+                                            &nbsp;
                                         </div>
-                                        <div class="col-sm-1" style="padding-left: 10px; padding-right: 10px;">
-                                            <div class="categoryNumberLabel">
-                                                8.3
-                                            </div>
+                                    </div>
+                                    <div class="col-sm-1" style="padding-left: 10px; padding-right: 10px;">
+                                        <div class="categoryNumberLabel">
+                                            5.6
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row row-no-gutter">
-                                    <div class="subMeters">
-                                        <div class="col-sm-2" style="padding-left: 0;">
-                                            <div class="categoryTitleLabel">
-                                                GORY
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-9" style="padding: 0;">
-                                            <div style="background-color: #cb6338;">
-                                                &nbsp;
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-1" style="padding-left: 10px; padding-right: 10px;">
-                                            <div class="categoryNumberLabel">
-                                                5.6
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row row-no-gutter">
-                                    <div class="subMeters">
-                                        <div class="col-sm-2" style="padding-left: 0;">
-                                            <div class="categoryTitleLabel">
-                                                JUMPY
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-9" style="padding: 0;">
-                                            <div style="background-color: #0a7e6d;">
-                                                &nbsp;
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-1" style="padding-left: 10px; padding-right: 10px;">
-                                            <div class="categoryNumberLabel">
-                                                7.2
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--DESCRIPTION OF MOVIE-->
-                                <div class="row row-no-gutter">
-                                    <div class="descriptionOfMovieLabel">
-                                        <p> Hank (Paul Dano) is stranded on a deserted island, having given up all hope of ever making it home again. He hangs a rope around his neck and is about to give up when he spots something on shore that inspires a rejuvenated sense of possibility. <br />
-                                            As Hank approaches this beacon of hope, he discovers it's the corpse of a man named Manny (Daniel Radcliffe). He uses the flatulent corpse to his advantage and takes him back home to the mainland. But they are still lost and Hank tries to search for scraps of food to survive. The two become friends and ultimately go on an epic and surreal adventure, battling violent bears along the way. Hank also tells Manny about his love life and their goal is then to reunite with her.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="row row-no-gutter">
-                                    <div class="descriptionOfMovieLabel">
-                                        <p>Directors: Dan Kwan (as Daniel Kwan), Daniel Scheinert</p>
-                                    </div>
-                                </div>
-                                <div class="row row-no-gutter">
-                                    <div class="descriptionOfMovieLabel">
-                                        <p>Cast: Paul Dano, Daniel Radcliffe, Mary Elizabeth Winstead</p>
-                                    </div>
-                                </div>
-
                             </div>
-                            <div class="col-sm-2"></div>
+                            <div class="row row-no-gutter">
+                                <div class="subMeters">
+                                    <div class="col-sm-2" style="padding-left: 0;">
+                                        <div class="categoryTitleLabel">
+                                            JUMPY
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-9" style="padding: 0;">
+                                        <div style="background-color: #0a7e6d;">
+                                            &nbsp;
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-1" style="padding-left: 10px; padding-right: 10px;">
+                                        <div class="categoryNumberLabel">
+                                            7.2
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--DESCRIPTION OF MOVIE-->
+							<div class="row row-no-gutter">
+								<div class="col-sm-12" style="padding-left: 0; padding-right: 10px;">
+									<div class="descriptionOfMovieLabel">
+										<p>Directors: Dan Kwan (as Daniel Kwan), Daniel Scheinert</p>
+									</div>
+								</div>
+							</div>
+							<div class="row row-no-gutter">
+								<div class="col-sm-12" style="padding-left: 0; padding-right: 10px;">
+									<div class="descriptionOfMovieLabel">
+										<p>Cast: Paul Dano, Daniel Radcliffe, Mary Elizabeth Winstead</p>
+									</div>
+								</div>
+							</div>
+                            <div class="row row-no-gutter">
+								<div class="col-sm-12" style="padding-left: 0; padding-right: 10px;">
+									<div class="descriptionOfMovieLabel">
+										<p>Hank (Paul Dano) is stranded on a deserted island, having given up all hope of ever making it home again. He hangs a rope around his neck and is about to give up when he spots something on shore that inspires a rejuvenated sense of possibility. <br />
+											As Hank approaches this beacon of hope, he discovers it's the corpse of a man named Manny (Daniel Radcliffe). He uses the flatulent corpse to his advantage and takes him back home to the mainland. But they are still lost and Hank tries to search for scraps of food to survive. The two become friends and ultimately go on an epic and surreal adventure, battling violent bears along the way. Hank also tells Manny about his love life and their goal is then to reunite with her.
+										</p>
+									</div>
+								</div>
+                            </div>
                         </div>
-
-                        <!--SIMILARLY RATED MOVIES-->
-                        <div class="row row-no-gutter">
-                            <div class="col-sm-2"></div>
-                            <div class="col-sm-8" style="padding-right:0;">
-                                <div style="padding:5px; margin-top: 15px; background-color: #2d2d2d; color: #c6c6c6; font-family: 'Open Sans', sans-serif; font-size: 20px;">
-                                    Similarly Rated Titles
-                                </div>
-                            </div>
-                            <div class="col-sm-2"></div>
-                        </div>
-
+                        <div class="col-sm-2"></div>
                     </div>
+
+                    <!--SIMILARLY RATED TITLES-->
+                    <div class="row row-no-gutter">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-8" style="padding-right: 0; margin-right: 0;">
+                            <div class="similarlyRatedTitlesLabel">
+                                Similarly Rated Titles
+                            </div>
+                        </div>
+                        <div class="col-sm-2"></div>
+                    </div>
+
+					<!--COLUMN WIDTH REFERENCE COLORS (2, 2, 6, 2)-->
+					<div class="row row-no-gutter">
+						<div class="col-sm-2" style="background-color: red;"></br></div>
+						<div class="col-sm-2" style="background-color: orange;"></br></div>
+						<div class="col-sm-6" style="background-color: green;"></br></div>
+						<div class="col-sm-2" style="background-color: blue;"></br></div>
+					</div>
                 </div>
-                
             </div>
-
-
-		</div>
+        </div>
 	</body>
 </html>

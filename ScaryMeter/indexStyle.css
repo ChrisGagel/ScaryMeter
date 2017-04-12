@@ -25,23 +25,20 @@ height: auto;
 position: absolute;
 top: 50%;
 transform: translateY(-50%);
-opacity: 0.5;
-}
+opacity: 0.5; }
 
 .textCoverPhoto {
 bottom: -44vh; 
 position: absolute;
 width: 100%;
-}
+margin: 0;
+padding: 0; }
 
 .moviePosterPhoto {
 bottom: -45vh;
 position: absolute;
 width: 100%;
 padding-right: 20%; }
-
-.imageCoverPhotoContainer {
-position: relative; }
 
 .movieYearLabel {
 background-color: whitesmoke;
@@ -66,7 +63,7 @@ font-family: 'Oswald', sans-serif; }
 color: whitesmoke;
 margin-top: -0.6em;
 padding: 0;
-font-size: 20px;
+font-size: 1.4em;
 font-family: 'Open Sans Light', sans-serif;
 font-weight: 100; }
 
@@ -91,7 +88,7 @@ background-color: #2d2d2d;
 margin: 0;
 padding-left: 4px;
 padding-right: 4px;
-font-size: 16px;
+font-size: 1.2em;
 font-family: 'Open Sans', sans-serif;
 text-align: center; }
 
@@ -100,7 +97,7 @@ color: #c6c6c6;
 background-color: #2d2d2d;
 margin: 0;
 padding: 0;
-font-size: 16px;
+font-size: 1.2em;
 font-family: 'Open Sans', sans-serif;
 text-align: center; }
 
@@ -109,17 +106,24 @@ color: #c6c6c6;
 background-color: #2d2d2d;
 margin: 0;
 padding: 0;
-font-size: 12px;
+font-size: 1em;
 font-family: 'Open Sans', sans-serif; }
 
 .descriptionOfMovieLabel {
 color: #c6c6c6;
-font-size: 16px;
+font-size: 1.1em;
 font-family: 'Open Sans', sans-serif;
 background-color: #2d2d2d;
 margin-top: 1vh;
 padding: 10px; }
 
 .subMeters {
+margin-top: 1vh; }
+
+.similarlyRatedTitlesLabel {
+padding: 5px;
 margin-top: 1vh;
-}
+background-color: #2d2d2d;
+color: #c6c6c6;
+font-family: 'Open Sans', sans-serif;
+font-size: 1.6em; }
