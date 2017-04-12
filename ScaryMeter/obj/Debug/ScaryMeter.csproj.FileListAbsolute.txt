@@ -11,3 +11,4 @@ C:\Users\Nick\Documents\Visual Studio 2015\Projects\ScaryMeterGIT\ScaryMeter\bin
 C:\Users\Nick\Documents\Visual Studio 2015\Projects\ScaryMeterGIT\ScaryMeter\bin\ScaryMeter.pdb
 C:\Users\Nick\Documents\Visual Studio 2015\Projects\ScaryMeterGIT\ScaryMeter\obj\Debug\ScaryMeter.dll
 C:\Users\Nick\Documents\Visual Studio 2015\Projects\ScaryMeterGIT\ScaryMeter\obj\Debug\ScaryMeter.pdb
+C:\Users\Nick\Documents\Visual Studio 2015\Projects\ScaryMeterGIT\ScaryMeter\obj\Debug\ScaryMeter.csprojResolveAssemblyReference.cache
