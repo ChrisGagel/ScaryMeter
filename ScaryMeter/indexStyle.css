@@ -35,7 +35,7 @@ margin: 0;
 padding: 0; }
 
 .moviePosterPhoto {
-bottom: -45vh;
+top: -23vh;
 position: absolute;
 width: 100%;
 padding-right: 20%; }
@@ -131,7 +131,7 @@ padding: 10px; }
 margin-top: 0.7vh; }
 
 .similarlyRatedTitlesLabel {
-padding: 5px;
+padding: 10px;
 margin-top: 1vh;
 background-color: #2d2d2d;
 color: #c6c6c6;
