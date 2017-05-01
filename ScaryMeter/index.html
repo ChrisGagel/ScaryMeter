@@ -1,13 +1,4 @@
 ﻿<!DOCTYPE html>
-
-
-<!-- COMMENTS & CONCERNS / THINGS TO DO:
-			- I added a multicolour reference for column widths (2, 2, 6, 2) at the bottom of the webpage to keep track of margin/padding
-			- Should we add something between the IMDb rating/length row and the Similarly Rated Titles row?
-			- I added a temporary favicon -- it'll need updating since it looks like a Pride flag
--->
-
-
 <html lang="en">
 	<head>
 		<title>Scary Meter</title>
@@ -104,50 +95,54 @@
                         <div class="col-sm-2"></div>
 
 						<!--POSTER PHOTO-->
-							<div class="col-sm-2" style="margin-left: 0;">
-								<div class="moviePosterPhoto">
-									<div class="row row-no-gutter">
-										<div class="col-sm-12">
-											<img src="http://static1.tribute.ca/poster/540x800/swiss-army-man-6858.jpg" width="100%" style="box-shadow: 0px 0px 10px black;" alt="Swiss Army Man">
+						<div class="col-sm-2" style="margin-left: 0;">
+							<div class="moviePosterPhoto">
+								<div class="row row-no-gutter">
+									<div class="col-sm-12">
+										<img src="http://static1.tribute.ca/poster/540x800/swiss-army-man-6858.jpg" width="100%" style="box-shadow: 0px 0px 10px black;" alt="Swiss Army Man">
+									</div>
+								</div>
+
+								<!--IMDB RATING PLUS LENGTH-->
+								<div class="row row-no-gutter" style="margin: 0; padding: 0;">
+									<div class="col-sm-6"  style="margin-top: 10px; background-color: #2d2d2d;">
+										<div class="row row-no-gutter" style="margin-right: 0;">
+											<img src="Images/IMDb_Logo.png" class="imdbLogo" alt="IMDb Logo">
+											<div class="imdbRating">
+												7.1</br></br>
+											</div>
+										</div>
+										<div class="row row-no-gutter" style="margin-right: 0;">
+											<img src="Images/RT_Logo.png" class="rtLogo" alt="Rotten Tomatoes Logo">
+											<div class="rottenTomatoesRating">
+												69%
+											</div>
 										</div>
 									</div>
-
-									<!--IMDB RATING PLUS LENGTH-->
-									<div class="row row-no-gutter">
-										<div class="col-sm-12">
-											<div class="row row-no-gutter">
-												<div class="col-sm-6" style="padding-left: 0; padding-right: 5px; margin-top: 10px; background-color: #2d2d2d;">
-													<img src="Images/IMDb_Logo.png" class="imdbLogo" alt="IMDb Logo">
-                                                    <div class="imdbRating">
-														7.1
-													</div>
-												</div>
-												<div class="col-sm-6" style="padding-left: 5px;">
-													<div class="ratingAndLengthLabel" style="margin-top: 10px;">
-														14A<br />&nbsp;
-													</div>
-												</div>
+									<div class="col-sm-6"  style="margin-top: 10px;">
+										<div class="row row-no-gutter" style="margin-left: 0;">
+											<div class="ratingAndLengthLabel">
+												R Rated</br></br>
 											</div>
-											<div class="row row-no-gutter">
-												<div class="col-sm-6" style="padding-right: 5px;">
-													<div style="color: #e6b91e; background-color: #2d2d2d; margin: 0; padding: 0; font-size: 16px; text-align: center; font-family: 'Open Sans', sans-serif;">
-														7.1
-													</div>
-												</div>
-												<div class="col-sm-6" style="padding-left: 5px;">
-													<div class="ratingAndLengthLabel">
-														1h 37min
-													</div>
-												</div>
+										</div>
+										<div class="row row-no-gutter" style="margin-left: 0;">
+											<div class="ratingAndLengthLabel">
+												1h 37min</br></br>
+											</div>
+										</div>
+										<div class="row row-no-gutter" style="margin-left: 0;">
+											<div class="ratingAndLengthLabel">
+												6 wins & 20 nominations.
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						
+						</div>
+
 						<!--CREEPY, GORY AND JUMPY METERS-->
                         <div class="col-sm-6" style="padding-right: 0;">
-							<div class="row row-no-gutter">
+							<div class="row row-no-gutter" style="margin-top: 2px;">
                                 <div class="subMeters">
                                     <div class="col-sm-2" style="padding-left: 0; padding-right: 0;">
                                         <div class="categoryTitleLabel">
@@ -214,7 +209,7 @@
 								</div>
 								<div class="col-sm-10" style="padding-left: 0; margin-top: 1.5vh;">
 									<div class="descriptionOfMovieLabel">
-										Dan Kwan (as Daniel Kwan), Daniel Scheinert
+										Dan Kwan, Daniel Scheinert
 									</div>
 								</div>
 							</div>
@@ -226,15 +221,14 @@
 								</div>
 								<div class="col-sm-10" style="padding-left: 0;">
 									<div class="descriptionOfMovieLabel">
-										Paul Dano, Daniel Radcliffe, Mary Elizabeth Winstead
+										Paul Dano, Daniel Radcliffe, Mary Elizabeth Winstead, Antonia Ribero
 									</div>
 								</div>
 							</div>
                             <div class="row row-no-gutter">
 								<div class="col-sm-12" style="padding-left: 0;">
 									<div class="descriptionOfMovieLabel">
-										Hank (Paul Dano) is stranded on a deserted island, having given up all hope of ever making it home again. He hangs a rope around his neck and is about to give up when he spots something on shore that inspires a rejuvenated sense of possibility.<br />
-										As Hank approaches this beacon of hope, he discovers it's the corpse of a man named Manny (Daniel Radcliffe). He uses the flatulent corpse to his advantage and takes him back home to the mainland. But they are still lost and Hank tries to search for scraps of food to survive. The two become friends and ultimately go on an epic and surreal adventure, battling violent bears along the way. Hank also tells Manny about his love life and their goal is then to reunite with her.
+										Hank, stranded on a deserted island and about to kill himself, notices a corpse washed up on the beach. He befriends it, naming it Manny, only to discover that his new friend can talk and has a myriad of supernatural abilities...which may help him get home.
 									</div>
 								</div>
                             </div>
@@ -245,7 +239,7 @@
                     <!--SIMILARLY RATED TITLES-->
                     <div class="row row-no-gutter">
                         <div class="col-sm-2"></div>
-                        <div class="col-sm-8" style="margin-top: 1.5vh;">
+                        <div class="col-sm-8">
                             <div class="row row-no-gutter">
 								<div class="col-sm-12" style="padding-right: 0; padding-left: 0; margin-right: 0;">
 									<div class="similarlyRatedTitlesLabel">

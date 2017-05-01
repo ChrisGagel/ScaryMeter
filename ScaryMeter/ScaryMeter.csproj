@@ -62,6 +62,7 @@
     <Content Include="Images\SAM_Background.png" />
     <Content Include="Images\SAM_Poster.jpg" />
     <Content Include="Images\SMfavicon.png" />
+    <Content Include="Images\RT_Logo.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">

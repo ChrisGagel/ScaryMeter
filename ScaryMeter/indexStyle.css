@@ -1,7 +1,8 @@
 ﻿body {
 background-color: #545454;
 margin: 0;
-padding: 0; }
+padding: 0;
+}
 
 .navigationBarContainer {
 background-color: #2d2d2d;
@@ -11,13 +12,15 @@ margin-left: 20px;
 margin-right: 20px;
 padding: 0;
 color: #c6c6c6;
-font-family: 'Open Sans', sans-serif; }
+font-family: 'Open Sans', sans-serif;
+}
 
 .imageCoverPhoto {
 width: 100%;
 height: 45vh;
 position: relative;
-overflow: hidden; }
+overflow: hidden;
+}
 
 .imageCoverPhotoBackground {
 width: 100%;
@@ -25,20 +28,23 @@ height: auto;
 position: absolute;
 top: 50%;
 transform: translateY(-50%);
-opacity: 0.5; }
+opacity: 0.5;
+}
 
 .textCoverPhoto {
 bottom: -44vh; 
 position: absolute;
 width: 100%;
 margin: 0;
-padding: 0; }
+padding: 0;
+}
 
 .moviePosterPhoto {
 top: -164px;
 position: absolute;
 width: 100%;
-padding-right: 20%; }
+padding-right: 20%;
+}
 
 .movieYearLabel {
 background-color: whitesmoke;
@@ -49,7 +55,8 @@ padding-left: 4px;
 padding-right: 4px;
 font-size: 25px;
 font-family: 'Open Sans Light', sans-serif;
-font-weight: 100; }
+font-weight: 100;
+}
 
 .movieTitleLabel {
 color: whitesmoke;
@@ -57,7 +64,8 @@ margin-top: -8px;
 padding: 0;
 font-size: 50px;
 font-weight: 400;
-font-family: 'Oswald', sans-serif; }
+font-family: 'Oswald', sans-serif;
+}
 
 .scaryMeterRatingTitleLabel {
 color: whitesmoke;
@@ -65,12 +73,14 @@ margin-top: -15px;
 padding: 0;
 font-size: 20px;
 font-family: 'Open Sans Light', sans-serif;
-font-weight: 100; }
+font-weight: 100;
+}
 
 .overallScaryMeterRatingBar {
 background-color: #be3e3e; 
 height: 30px;
-width: 100%; }
+width: 100%;
+}
 
 .scaryMeterRatingNumberLabel {
 background-color: #545454;
@@ -81,7 +91,8 @@ font-size: 20px;
 font-family: 'Open Sans', sans-serif;
 text-align: center;
 font-weight: 800;
-height: 30px; }
+height: 30px;
+}
 
 .categoryTitleLabel {
 color: #c6c6c6;
@@ -92,7 +103,8 @@ padding-right: 4px;
 font-size: 1.2em;
 font-family: 'Open Sans', sans-serif;
 text-align: center;
-text-transform: uppercase; }
+text-transform: uppercase;
+}
 
 .categoryNumberLabel {
 color: #c6c6c6;
@@ -101,60 +113,83 @@ margin: 0;
 padding: 0;
 font-size: 1.2em;
 font-family: 'Open Sans', sans-serif;
-text-align: center; }
+text-align: center;
+}
 
 .imdbLogo {
-    float: left;
-    width: 50%;
+float: left;
+width: 60%;
+margin: 0;
+padding: 0;
 }
 
 .imdbRating {
-    color: #e6b91e;  
-    margin: 0; 
-    padding-left: 10px; 
-    font-size: 20px; 
-    text-align: center; 
-    font-family: 'Open Sans', sans-serif;
-    float: right;
+color: #e6b91e; 
+font-size: 14px; 
+text-align: right; 
+font-family: 'Open Sans', sans-serif;
+margin: 0;
+padding: 0;
+}
+
+.rtLogo {
+float: left;
+width: 60%;
+margin: 0;
+padding: 0;
+}
+
+.rottenTomatoesRating {
+color: #F01F16;  
+font-size: 14px; 
+text-align: right; 
+font-family: 'Open Sans', sans-serif;
+margin: 0;
+padding: 0;
 }
 
 .ratingAndLengthLabel {
 color: #c6c6c6;
 background-color: #2d2d2d;
+font-size: 12px;
+font-family: 'Open Sans', sans-serif;
 margin: 0;
 padding: 0;
-font-size: 1em;
-font-family: 'Open Sans', sans-serif; }
+}
 
 .descriptionOfMovieCategoryLabel {
 color: #2d2d2d;
 font-size: 1.1em;
 font-family: 'Open Sans', sans-serif;
 background-color: #999999;
-margin-top: 0.7vh;
+margin-top: 5px;
 padding: 10px;
-text-transform: uppercase; }
+text-transform: uppercase;
+}
 
 .descriptionOfMovieLabel {
 color: #c6c6c6;
 font-size: 1.1em;
 font-family: 'Open Sans', sans-serif;
 background-color: #2d2d2d;
-margin-top: 0.7vh;
-padding: 10px; }
+margin-top: 5px;
+padding: 10px;
+}
 
 .subMeters {
-margin-top: 0.7vh; }
+margin-top: 3px;
+}
 
 .similarlyRatedTitlesLabel {
 padding: 10px;
-margin-top: 1vh;
+margin-top: 15px;
 background-color: #2d2d2d;
 color: #c6c6c6;
 font-family: 'Open Sans', sans-serif;
-font-size: 1.6em; }
+font-size: 1.6em;
+}
 
 .similarlyRatedPosters {
-    width: 80%;
-    height: auto; 
+width: 80%;
+height: auto; 
 }
