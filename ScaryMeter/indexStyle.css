@@ -32,7 +32,7 @@ opacity: 0.5;
 }
 
 .textCoverPhoto {
-bottom: -44vh; 
+bottom: -43.7vh; 
 position: absolute;
 width: 100%;
 margin: 0;
@@ -42,8 +42,7 @@ padding: 0;
 .moviePosterPhoto {
 top: -164px;
 position: absolute;
-width: 100%;
-padding-right: 20%;
+padding-right: 27%;
 }
 
 .movieYearLabel {
@@ -117,35 +116,27 @@ text-align: center;
 }
 
 .imdbLogo {
-float: left;
-width: 60%;
-margin: 0;
-padding: 0;
+width: 100%;
+height: auto;
 }
 
 .imdbRating {
-color: #e6b91e; 
-font-size: 14px; 
-text-align: right; 
+color: #e6b91e;
+font-size: 14px;
 font-family: 'Open Sans', sans-serif;
-margin: 0;
-padding: 0;
+text-align: right;
 }
 
 .rtLogo {
-float: left;
-width: 60%;
-margin: 0;
-padding: 0;
+width: 100%;
+height: auto;
 }
 
 .rottenTomatoesRating {
-color: #F01F16;  
-font-size: 14px; 
-text-align: right; 
+color: #F01F16;
+font-size: 14px;
 font-family: 'Open Sans', sans-serif;
-margin: 0;
-padding: 0;
+text-align: right;
 }
 
 .ratingAndLengthLabel {
@@ -191,5 +182,32 @@ font-size: 1.6em;
 
 .similarlyRatedPosters {
 width: 80%;
-height: auto; 
+height: auto;
+border: 0.5px solid #999999;
+}
+
+.similarlyRatedPosters_wrap {
+position: relative;
+width: 100%;
+height: auto;
+}
+
+.similarlyRatedPosters_description {
+position: absolute;
+top: 0;
+bottom: 0;
+left: 10%;
+right: 10%;
+color: #FFFFFF;
+background: rgba(46, 46, 46, 0.75);
+visibility: hidden;
+opacity: 0;
+transition: opacity .2s, visibility .2s;
+font-family: 'Oswald', sans-serif;
+font-size: 1em;
+}
+
+.similarlyRatedPosters_wrap:hover .similarlyRatedPosters_description {
+visibility: visible;
+opacity: 1;
 }
