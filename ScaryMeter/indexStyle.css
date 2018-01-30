@@ -81,9 +81,7 @@ font-weight: 100;
     height: 30px;
     position: relative;
     background: #545454;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
+    border-radius: 7px;
     padding: 5px;
     box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
 }
@@ -91,40 +89,44 @@ font-weight: 100;
 .overallScaryMeterRatingBar > span {
     display: block;
     height: 100%;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
     background-color: rgb(43,194,83);
-    background-image: linear-gradient(
-        center bottom,
-        rgb(43,194,83) 37%,
-        rgb(84,249,84) 69%
-        );
-    box-shadow:
-        inset 0 2px 9px rgba(255,255,255,0.3),
-        inset 0 -2px 6px rgba(0,0,0,0.4);
-        position: relative;
-        overflow: hidden;
+    background-image: linear-gradient( center bottom, rgb(43,194,83) 37%, rgb(84,249,84) 69% );
+    box-shadow: inset 0 2px 9px rgba(255,255,255,0.3), inset 0 -2px 6px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+    /*attempts at animating it to fill up (1)
+    animation-name: expandWidth;
+    animation-duration: 2s;
+    */
 }
 
+/*attempts at animating it to fill up (2)
+@keyframes expandWidth {
+    from {width: 0}
+    to {width: auto}
+}
+*/
+
 .subScaryMeterRatingBar {
-    height: 1.7em;
+    height: 1.72em;
     position: relative;
     background: #2d2d2d;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
     padding: 3px;
-    box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3)
-
 }
 
 .subScaryMeterRatingBar > span {
     display: block;
     height: 100%;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-top-right-radius: 1px;
+    border-bottom-right-radius: 1px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     background-color: rgb(43,194,83);
@@ -221,6 +223,7 @@ height: auto;
 
 .rottenTomatoesRating {
 color: #F01F16;
+font-size: 1.15vw;
 font-size: 14px;
 font-family: 'Open Sans', sans-serif;
 text-align: right;
@@ -229,13 +232,14 @@ text-align: right;
 .ratingAndLengthLabel {
 color: #c6c6c6;
 background-color: #2d2d2d;
-font-size: 12px;
+font-size: 0.9vw;
+/*font-size: 12px;*/
 font-family: 'Open Sans', sans-serif;
 }
 
 .descriptionOfMovieCategoryLabel {
 color: #2d2d2d;
-font-size: 1.1em;
+font-size: 1.1vw;
 font-family: 'Open Sans', sans-serif;
 background-color: #999999;
 margin-top: 5px;
@@ -245,7 +249,7 @@ text-transform: uppercase;
 
 .descriptionOfMovieLabel {
 color: #c6c6c6;
-font-size: 1.1em;
+font-size: 1.1vw;
 font-family: 'Open Sans', sans-serif;
 background-color: #2d2d2d;
 margin-top: 5px;
