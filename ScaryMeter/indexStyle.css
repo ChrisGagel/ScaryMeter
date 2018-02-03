@@ -275,14 +275,11 @@ height: auto;
 border: 0.5px solid #999999;
 }
 
-/*This seems not to be necessary
 .similarlyRatedPosters_wrap {
 position: relative;
 width: 100%;
 height: auto;
 }
-*/
-
 
 .similarlyRatedPosters_description {
 position: absolute;
