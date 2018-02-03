@@ -63,6 +63,7 @@
     <Content Include="Images\SAM_Poster.jpg" />
     <Content Include="Images\SMfavicon.png" />
     <Content Include="Images\RT_Logo.png" />
+    <Content Include="indexScript.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">

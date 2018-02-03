@@ -88,7 +88,7 @@ font-weight: 100;
 
 .overallScaryMeterRatingBar > span {
     display: block;
-    height: 90%;
+    height: 95%;
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
     border-top-left-radius: 7px;
@@ -275,16 +275,19 @@ height: auto;
 border: 0.5px solid #999999;
 }
 
+/*This seems not to be necessary
 .similarlyRatedPosters_wrap {
 position: relative;
 width: 100%;
 height: auto;
 }
+*/
+
 
 .similarlyRatedPosters_description {
 position: absolute;
 top: 0;
-bottom: 0;
+bottom: -7%;
 left: 10%;
 right: 10%;
 color: #FFFFFF;
@@ -293,7 +296,7 @@ visibility: hidden;
 opacity: 0;
 transition: opacity .2s, visibility .2s;
 font-family: 'Oswald', sans-serif;
-font-size: 1em;
+font-size: 1.25vw;
 }
 
 .similarlyRatedPosters_wrap:hover .similarlyRatedPosters_description {
