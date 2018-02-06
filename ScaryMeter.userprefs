@@ -1,9 +1,9 @@
 ﻿<Properties StartupConfiguration="{A4893CCE-9AB4-48C4-B823-011D322A44AF}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ScaryMeter/indexStyle.css">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ScaryMeter/index.html">
     <Files>
-      <File FileName="ScaryMeter/index.html" Line="284" Column="22" />
-      <File FileName="ScaryMeter/indexStyle.css" Line="278" Column="1" />
-      <File FileName="ScaryMeter/indexScript.js" Line="3" Column="1" />
+      <File FileName="ScaryMeter/index.html" Line="1" Column="16" />
+      <File FileName="ScaryMeter/indexStyle.css" Line="1" Column="7" />
+      <File FileName="ScaryMeter/indexScript.js" Line="1" Column="8" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

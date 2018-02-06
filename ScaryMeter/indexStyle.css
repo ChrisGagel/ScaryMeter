@@ -22,11 +22,11 @@ position: relative;
 overflow: hidden;
 }
 
-.imageCoverPhotoBackground {
+#imageCoverPhotoBackground {
 width: 100%;
 height: auto;
 position: absolute;
-top: 50%;
+top: 80%;
 transform: translateY(-50%);
 opacity: 0.5;
 }
@@ -46,11 +46,11 @@ padding-right: 27%;
 }
 
 #moviePosterPhotoChild {
-    width:100%;
-    box-shadow: 0px 0px 10px black;
+width:100%;
+box-shadow: 0px 0px 10px black;
 }
 
-.movieYearLabel {
+#movieYearLabel {
 background-color: whitesmoke;
 display: inline-block;
 color: #545454;
@@ -99,25 +99,16 @@ font-weight: 100;
     border-top-left-radius: 7px;
     border-bottom-left-radius: 7px;
     background-color: rgb(43,194,83);
-    background-image: linear-gradient( center bottom, rgb(43,194,83) 37%, rgb(84,249,84) 69% ); 
-    box-shadow: inset 0 2px 9px rgba(255,255,255,0.3), inset 0 -2px 6px rgba(0,0,0,0.4);
+    /* Gradient:
+    background-image: linear-gradient( center bottom, rgb(43,194,83) 37%, rgb(84,249,84) 69% );
+    box-shadow: inset 0 2px 9px rgba(255,255,255,0.3), inset 0 -2px 6px rgba(0,0,0,0.4); */
     position: relative;
     overflow: hidden;
-    /*attempts at animating it to fill up (1)
-    animation-name: expandWidth;
-    animation-duration: 2s;
-    */
 }
-
-/*attempts at animating it to fill up (2)
-@keyframes expandWidth {
-    from {width: 0}
-    to {width: auto}
-}
-*/
 
 .subScaryMeterRatingBar {
-    height: 1.72em;
+    height: 24px;
+    /*height: 1.72em;*/
     position: relative;
     background: #2d2d2d;
     border-top-right-radius: 3px;
@@ -135,6 +126,7 @@ font-weight: 100;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     background-color: rgb(43,194,83);
+    /* Gradient:
     background-image: linear-gradient(
         center bottom,
         rgb(43,194,83) 37%,
@@ -144,7 +136,7 @@ font-weight: 100;
         inset 0 2px 9px rgba(255,255,255,0.3),
         inset 0 -2px 6px rgba(0,0,0,0.4);
         position: relative;
-        overflow: hidden;
+        overflow: hidden; */
 }
 
 .overallRed > span {
@@ -167,14 +159,6 @@ font-weight: 100;
     background-image: linear-gradient(to bottom, #0a7e6d, #0a7e6d);
 }
 
-/*. Old shitty progress bar:
-overallScaryMeterRatingBar {
-background-color: #be3e3e; 
-height: 30px;
-width: 100%;
-}
-*/
-
 .scaryMeterRatingNumberLabel {
 background-color: #545454;
 color: #c6c6c6;
@@ -193,7 +177,8 @@ background-color: #2d2d2d;
 margin: 0;
 padding-left: 4px;
 padding-right: 4px;
-font-size: 1.2em;
+font-size: 17px;
+/*font-size: 1.2em*/
 font-family: 'Open Sans', sans-serif;
 text-align: center;
 text-transform: uppercase;
@@ -204,7 +189,8 @@ color: #c6c6c6;
 background-color: #2d2d2d;
 margin: 0;
 padding: 0;
-font-size: 1.2em;
+font-size: 17px;
+/*font-size: 1.2em*/
 font-family: 'Open Sans', sans-serif;
 text-align: center;
 }
@@ -276,7 +262,7 @@ font-size: 1.6em;
 
 .similarlyRatedPosters {
 width: 80%;
-height: auto;
+height: 165px;
 border: 0.5px solid #999999;
 }
 
