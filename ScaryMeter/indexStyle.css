@@ -1,7 +1,5 @@
 ﻿body {
 background-color: #545454;
-margin: 0;
-padding: 0;
 min-width: 800px; /*Makes the screen not collapse when you shrink the window down*/
 }
 
