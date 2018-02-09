@@ -62,7 +62,6 @@ font-weight: 100;
 #movieTitleLabel {
 color: whitesmoke;
 margin-top: -8px;
-padding: 0;
 font-size: 50px;
 font-weight: 400;
 font-family: 'Oswald', sans-serif;
@@ -71,7 +70,6 @@ font-family: 'Oswald', sans-serif;
 .scaryMeterRatingTitleLabel {
 color: whitesmoke;
 margin-top: -15px;
-padding: 0;
 font-size: 20px;
 font-family: 'Open Sans Light', sans-serif;
 font-weight: 100;
@@ -80,11 +78,12 @@ font-weight: 100;
 /*Progress bar tutorial: https://css-tricks.com/css3-progress-bars/*/
 
 .overallScaryMeterRatingBar {
-    height: 30px;
+    height: 29px;
     position: relative;
     background: #545454;
     border-radius: 7px;
     padding: 5px;
+    margin: 0;
     box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
 }
 
@@ -164,7 +163,6 @@ font-size: 20px;
 font-family: 'Open Sans', sans-serif;
 text-align: center;
 font-weight: 800;
-height: 30px;
 }
 
 .categoryTitleLabel {
@@ -183,7 +181,6 @@ text-transform: uppercase;
 .categoryNumberLabel {
 color: #c6c6c6;
 background-color: #2d2d2d;
-margin: 0;
 padding: 0;
 font-size: 17px;
 /*font-size: 1.2em*/
@@ -258,7 +255,7 @@ font-size: 1.6em;
 
 .similarlyRatedPosters {
 width: 80%;
-height: 165px;
+height: auto;
 border: 0.5px solid #999999;
 }
 
