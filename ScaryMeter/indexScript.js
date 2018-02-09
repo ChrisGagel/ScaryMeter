@@ -1,10 +1,11 @@
 ﻿// TMDB
-var baseURL_tmdb = "https://api.themoviedb.org/3/movie/"
-var movieID_tmdb = 11036; //Change ID to change movie details
-var apiKey_tmdb = "062a89fc4c3fcc6e928a7ba7ca87074e"
+var baseURL_tmdb = "https://api.themoviedb.org/3/movie/";
+var movieID_tmdb = 315635; //Change ID to change movie details;
+var apiKey_tmdb = "062a89fc4c3fcc6e928a7ba7ca87074e";
+var append_tmdb = "&append_to_response=releases";
 
 // Build TMDB query string 
-var movieQueryURL_tmdb = baseURL_tmdb + movieID_tmdb + "?api_key=" + apiKey_tmdb;
+var movieQueryURL_tmdb = baseURL_tmdb + movieID_tmdb + "?api_key=" + apiKey_tmdb + append_tmdb;
 
 // Get response from TMDB
 var xhr_tmdb = new XMLHttpRequest();
@@ -34,10 +35,26 @@ document.getElementById("movieYearLabel").innerHTML = year;
 // Title
 document.getElementById("movieTitleLabel").innerHTML = obj_tmdb.title;
 
+// MPAA Rating
+for(i in obj_tmdb.releases.countries)
+{
+    if (obj_tmdb.releases.countries[i].iso_3166_1 === "US" && obj_tmdb.releases.countries[i].certification != "")
+        document.getElementById("mpaaRating").innerHTML = "Rated " + obj_tmdb.releases.countries[i].certification;
+    else
+        document.getElementById("mpaaRating").innerHTML = "Unrated ";
+}
+
+// Runtime
+document.getElementById("runtime").innerHTML = obj_tmdb.runtime + " min";
+
+// Tagline
+document.getElementById("tagline").innerHTML = obj_tmdb.tagline;
+
 // Plot
 //document.getElementById("descriptionOfMovieLabelPlot").innerHTML = obj_tmdb.overview;
 var plot_tmdb = obj_tmdb.overview;
 var plotLength_tmdb = plot_tmdb.length;
+
 
 
 
@@ -72,6 +89,39 @@ else {
 
 
 
-
-
 // window.alert(xhr.status);
+
+
+
+
+
+
+
+// SHOW SEARCH RESULTS IN INPUT FIELD
+// https://stackoverflow.com/questions/21530063/how-do-we-set-remote-in-typeahead-js
+// Instantiate the Bloodhound suggestion engine
+var movies = new Bloodhound({
+    datumTokenizer: function (datum) {
+        return Bloodhound.tokenizers.whitespace(datum.value);
+    },
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    remote: {
+        wildcard: '%QUERY',
+        url: 'http://api.themoviedb.org/3/search/movie?query=%QUERY&api_key=062a89fc4c3fcc6e928a7ba7ca87074e',
+        transform: function (response) {
+            // Map the remote source JSON array to a JavaScript object array
+            return $.map(response.results, function (movie) {
+                return {
+                    value: movie.title
+                };
+            });
+        }
+    }
+});
+
+// Instantiate the Typeahead UI
+$('.typeahead').typeahead(null, {
+    display: 'value',
+    source: movies
+});
+
