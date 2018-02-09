@@ -61,7 +61,6 @@
 			</div>
 
 			<!--COVER PHOTO-->
-
             <div class="row">
                 <div class="imageCoverPhoto">
 					<img id="imageCoverPhotoBackground" alt="Cover photo"/>
@@ -69,24 +68,26 @@
 						<div class="col-xs-4"></div>
 						
 						<!--GENERAL MOVIE INFO-->
-						<div class="col-xs-6" style="margin-left: 5px; padding: 0;">
+						<div class="col-xs-6" style="padding-left: 5px;">
 							<div class="textCoverPhoto">
 								<p id="movieYearLabel"></p>
 								<p id="movieTitleLabel"></p>
 								<p class="scaryMeterRatingTitleLabel"><em id="tagline">Scary Meter Rating</em></p>
-								<div class="row">
-									<div class="col-xs-11" style="padding-right 12px;">
-                                        <!--Tutorial on the progress bar: https://css-tricks.com/css3-progress-bars/ -->
-                                        <div class="overallScaryMeterRatingBar overallRed">
-                                            <span style="width: 95%"></span>
-                                        </div>
-									</div>
-									<div class="col-xs-1" style="padding: 0; margin: 0;">
-										<p class="scaryMeterRatingNumberLabel">
-											9.5
-										</p>
-									</div>
-								</div>
+                                <div class="container-fluid">
+    								<div class="row">
+    									<div class="col-xs-11" style="padding: 0;">
+                                            <!--Tutorial on the progress bar: https://css-tricks.com/css3-progress-bars/ -->
+                                            <div class="overallScaryMeterRatingBar overallRed">
+                                                <span style="width: 95%"></span>
+                                            </div>
+    									</div>
+    									<div class="col-xs-1" style="padding-left: 5px; padding-right: 10px;">
+    										<p class="scaryMeterRatingNumberLabel">
+    											9.5
+    										</p>
+    									</div>
+    								</div>
+                                </div>
 							</div>
 						</div>
 						<div class="col-xs-2"></div>
@@ -97,30 +98,30 @@
                 <div class="col-xs-2"></div>
 
                 <!--POSTER PHOTO-->
-    			<div class="col-xs-2" style="margin-left: 0;">
+    			<div class="col-xs-2">
     				<div class="moviePosterPhoto">
-    					<div class="row row-no-gutter">
+    					<div class="row">
     						<img id="moviePosterPhotoChild" alt="Poster photo">
     					</div>
 
     					<!--IMDB RATING PLUS LENGTH-->
-    					<div class="row row-no-gutter">
+    					<div class="row">
     						<div class="col-xs-6" style="margin-top: 10px; background-color: #2d2d2d;">
-    							<div class="row row-no-gutter">
-    								<div class="col-xs-6" style="margin: 0; padding: 0;">
+    							<div class="row">
+    								<div class="col-xs-6" style="padding: 0;">
     									<img src="Images/IMDb_Logo.png" class="imdbLogo" alt="IMDb Logo">
     								</div>
-    								<div class="col-xs-6" style="margin: 0; padding: 0;">
+    								<div class="col-xs-6" style="padding: 0;">
     									<div class="imdbRating">
     										7.1
     									</div>
     								</div>
     							</div>
-    							<div class="row row-no-gutter">
-    								<div class="col-xs-6" style="margin: 0; padding: 0;">
+    							<div class="row">
+    								<div class="col-xs-6" style="padding: 0;">
     									<img src="Images/RT_Logo.png" class="rtLogo" alt="Rotten Tomatoes Logo">
     								</div>
-    								<div class="col-xs-6" style="margin: 0; padding: 0;">
+    								<div class="col-xs-6" style="padding: 0;">
     									<div class="rottenTomatoesRating">
     										69%
     									</div>
@@ -129,13 +130,13 @@
     						</div>
     						<div class="col-xs-6" style="margin-top: 10px; padding-left: 10px; padding-right: 0;">
     							<div class="ratingAndLengthLabel">
-    								<div class="row row-no-gutter">
+    								<div class="row">
                                         <span id="mpaaRating" class="label label-danger" style="margin-left: 20px">Rated</span>
     								</div>
-    								<div class="row row-no-gutter">
+    								<div class="row">
                                         <span id="runtime" class="label label-info" style="margin-left: 20px">Runtime</span>
     								</div>
-    								<div class="row row-no-gutter">
+    								<div class="row">
     									<p style="margin-left: 20px">6 wins & 20 nominations.</p>
     								</div>
     							</div>
@@ -146,7 +147,7 @@
 
     			<!--CREEPY, GORY AND JUMPY METERS-->
                 <div class="col-xs-6" style="padding-right: 0;">
-    				<div class="row row-no-gutter" style="margin-top: 2px;">
+    				<div class="row" style="margin-top: 2px;">
                         <div class="subMeters">
                             <div class="col-xs-2" style="padding-left: 0; padding-right: 0;">
                                 <div class="categoryTitleLabel">
@@ -165,7 +166,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row row-no-gutter">
+                    <div class="row">
                         <div class="subMeters">
                             <div class="col-xs-2" style="padding-left: 0; padding-right: 0;">
                                 <div class="categoryTitleLabel">
@@ -184,7 +185,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row row-no-gutter">
+                    <div class="row">
                         <div class="subMeters">
                             <div class="col-xs-2" style="padding-left: 0; padding-right: 0;">
                                 <div class="categoryTitleLabel">
@@ -205,7 +206,7 @@
                     </div>
 
                     <!--DESCRIPTION OF MOVIE-->
-    				<div class="row row-no-gutter">
+    				<div class="row">
     					<div class="col-xs-2" style="padding: 0; margin-top: 1.5vh;">
     						<div class="descriptionOfMovieCategoryLabel">
     							Directed&nbsp;by
@@ -215,7 +216,7 @@
     						<div class="descriptionOfMovieLabel" id="descriptionOfMovieLabelDirector"></div>
     					</div>
     				</div>
-    				<div class="row row-no-gutter">
+    				<div class="row">
     					<div class="col-xs-2" style="padding: 0;">
     						<div class="descriptionOfMovieCategoryLabel">
     							Starring
@@ -235,11 +236,11 @@
             </div>
 
             <!--SIMILARLY RATED TITLES-->
-            <div class="row row-no-gutter">
+            <div class="row">
                 <div class="col-xs-2"></div>
                 <div class="col-xs-8">
-                    <div class="row row-no-gutter">
-    					<div class="col-xs-12" style="padding-right: 0; padding-left: 0; margin-right: 0;">
+                    <div class="row">
+    					<div class="col-xs-12" style="padding-right: 0; padding-left: 0;">
     						<div class="similarlyRatedTitlesLabel">
     							Similarly Rated Titles
     						</div>
@@ -298,7 +299,7 @@
                 </div>
                 <div class="col-xs-2"></div>
             </div>
-    		<div class="row row-no-gutter">
+    		<div class="row">
     			<br>
     		</div>
 
