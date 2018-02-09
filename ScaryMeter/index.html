@@ -97,56 +97,60 @@
                 <div class="col-xs-2"></div>
 
                 <!--POSTER PHOTO-->
-    			<div class="col-xs-2" style="margin-left: 0;">
-    				<div class="moviePosterPhoto">
-    					<div class="row row-no-gutter">
-    						<img id="moviePosterPhotoChild" alt="Poster photo">
-    					</div>
+                <div class="col-xs-2" style="margin-left: 0;">
+                    <div class="moviePosterPhoto">
+                        <div class="row row-no-gutter">
+                            <img id="moviePosterPhotoChild" alt="Poster photo">
+                        </div>
 
-    					<!--IMDB RATING PLUS LENGTH-->
-    					<div class="row row-no-gutter">
-    						<div class="col-xs-6" style="margin-top: 10px; background-color: #2d2d2d;">
-    							<div class="row row-no-gutter">
-    								<div class="col-xs-6" style="margin: 0; padding: 0;">
-    									<img src="Images/IMDb_Logo.png" class="imdbLogo" alt="IMDb Logo">
-    								</div>
-    								<div class="col-xs-6" style="margin: 0; padding: 0;">
-    									<div class="imdbRating">
-    										7.1
-    									</div>
-    								</div>
-    							</div>
-    							<div class="row row-no-gutter">
-    								<div class="col-xs-6" style="margin: 0; padding: 0;">
-    									<img src="Images/RT_Logo.png" class="rtLogo" alt="Rotten Tomatoes Logo">
-    								</div>
-    								<div class="col-xs-6" style="margin: 0; padding: 0;">
-    									<div class="rottenTomatoesRating">
-    										69%
-    									</div>
-    								</div>
-    							</div>
-    						</div>
-    						<div class="col-xs-6" style="margin-top: 10px; padding-left: 10px; padding-right: 0;">
-    							<div class="ratingAndLengthLabel">
-    								<div class="row row-no-gutter">
+                        <!--IMDB RATING PLUS LENGTH-->
+                        <!--
+                        <div class="row row-no-gutter">
+                            <div class="col-xs-6" style="margin-top: 10px; background-color: #2d2d2d;">
+                                <div class="row row-no-gutter">
+                                    <div class="col-xs-6" style="margin: 0; padding: 0;">
+                                        <img src="Images/IMDb_Logo.png" class="imdbLogo" alt="IMDb Logo">
+                                    </div>
+                                    <div class="col-xs-6" style="margin: 0; padding: 0;">
+                                        <div class="imdbRating">
+                                            7.1
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row row-no-gutter">
+                                    <div class="col-xs-6" style="margin: 0; padding: 0;">
+                                        <img src="Images/RT_Logo.png" class="rtLogo" alt="Rotten Tomatoes Logo">
+                                    </div>
+                                    <div class="col-xs-6" style="margin: 0; padding: 0;">
+                                        <div class="rottenTomatoesRating">
+                                            69%
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-6" style="margin-top: 10px; padding-left: 10px; padding-right: 0;">
+                                <div class="ratingAndLengthLabel">
+                                    <div class="row row-no-gutter">
                                         <span id="mpaaRating" class="label label-danger" style="margin-left: 20px">Rated</span>
-    								</div>
-    								<div class="row row-no-gutter">
+                                    </div>
+                                    <div class="row row-no-gutter">
                                         <span id="runtime" class="label label-info" style="margin-left: 20px">Runtime</span>
-    								</div>
-    								<div class="row row-no-gutter">
-    									<p style="margin-left: 20px">6 wins & 20 nominations.</p>
-    								</div>
-    							</div>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
+                                    </div>
+                                    <div class="row row-no-gutter">
+                                        <p style="margin-left: 20px">6 wins & 20 nominations.</p>
+                                    </div>
+                                </div>
+                            </div>
+                               
+                        </div>
+                        -->
+                    </div>
+                </div>
 
-    			<!--CREEPY, GORY AND JUMPY METERS-->
-                <div class="col-xs-6" style="padding-right: 0;">
-    				<div class="row row-no-gutter" style="margin-top: 2px;">
+                <!--CREEPY, GORY AND JUMPY METERS-->
+                <div class="col-xs-5" style="padding-right: 0;">
+                    <div class="row row-no-gutter" style="margin-top: 2px;">
                         <div class="subMeters">
                             <div class="col-xs-2" style="padding-left: 0; padding-right: 0;">
                                 <div class="categoryTitleLabel">
@@ -205,112 +209,142 @@
                     </div>
 
                     <!--DESCRIPTION OF MOVIE-->
-    				<div class="row row-no-gutter">
-    					<div class="col-xs-2" style="padding: 0; margin-top: 1.5vh;">
-    						<div class="descriptionOfMovieCategoryLabel">
-    							Directed&nbsp;by
-    						</div>
-    					</div>
-    					<div class="col-xs-10" style="padding-left: 0; margin-top: 1.5vh;">
-    						<div class="descriptionOfMovieLabel" id="descriptionOfMovieLabelDirector"></div>
-    					</div>
-    				</div>
-    				<div class="row row-no-gutter">
-    					<div class="col-xs-2" style="padding: 0;">
-    						<div class="descriptionOfMovieCategoryLabel">
-    							Starring
-    						</div>
-    					</div>
-    					<div class="col-xs-10" style="padding-left: 0;">
-    						<div class="descriptionOfMovieLabel" id="descriptionOfMovieLabelActors"></div>
-    					</div>
-    				</div>
                     <div class="row row-no-gutter">
-    					<div class="col-xs-12" style="padding-left: 0;">
-    						<div class="descriptionOfMovieLabel" id="descriptionOfMovieLabelPlot"></div>
-    					</div>
+                        <div class="col-xs-2" style="padding: 0; margin-top: 1.5vh;">
+                            <div class="descriptionOfMovieCategoryLabel">
+                                Directed&nbsp;by
+                            </div>
+                        </div>
+                        <div class="col-xs-10" style="padding-left: 0; margin-top: 1.5vh;">
+                            <div class="descriptionOfMovieLabel" id="descriptionOfMovieLabelDirector"></div>
+                        </div>
+                    </div>
+                    <div class="row row-no-gutter">
+                        <div class="col-xs-2" style="padding: 0;">
+                            <div class="descriptionOfMovieCategoryLabel">
+                                Starring
+                            </div>
+                        </div>
+                        <div class="col-xs-10" style="padding-left: 0;">
+                            <div class="descriptionOfMovieLabel" id="descriptionOfMovieLabelActors"></div>
+                        </div>
+                    </div>
+                    <div class="row row-no-gutter">
+                        <div class="col-xs-12" style="padding-left: 0;">
+                            <div class="descriptionOfMovieLabel" id="descriptionOfMovieLabelPlot"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-xs-2"></div>
-            </div>
 
-            <!--SIMILARLY RATED TITLES-->
-            <div class="row row-no-gutter">
-                <div class="col-xs-2"></div>
-                <div class="col-xs-8">
+
+                <!-- SIDE INFO PANEL -->
+
+                <div class="col-xs-1" style="padding-right: 0;">
+                    <!--
+                    <div class="ratingAndLengthLabel">
+                        <div class="row row-no-gutter" style="margin-left:20px">
+                            <span id="mpaaRating" class="label label-danger">Rated</span>
+                        </div>
+                        <div class="row row-no-gutter">
+                            <span id="runtime" class="label label-info" style="margin-left: 20px">Runtime</span>
+                        </div>
+                        <div class="row row-no-gutter">
+                            <p style="margin-left: 20px">6 wins & 20 nominations.</p>
+                        </div>
+                    </div>
+                    -->
+
+                    <div align="right" style="background-color: black;">
+                        <span id="mpaaRating" class="label label-danger">Rated</span>
+                    </div>
+                    <div align="right" style="background-color: black;">
+                        <span id="runtime" class="label label-info">Runtime</span>
+                    </div>
+
+
+                </div>  
+                  
+                    
+                        <div class="col-xs-2"></div>
+                    </div>
+
+                    <!--SIMILARLY RATED TITLES-->
                     <div class="row row-no-gutter">
-    					<div class="col-xs-12" style="padding-right: 0; padding-left: 0; margin-right: 0;">
-    						<div class="similarlyRatedTitlesLabel">
-    							Similarly Rated Titles
-    						</div>
-    					</div>
-    				</div>
-    				<div class="row row-nogutter" style="text-align: center; background-color: #2d2d2d; padding-top: 1vh; padding-bottom: 1vh;">
-    					<div class="col-xs-2" style="padding: 0; margin: 0;">
-    						<a href="#">
-    							<div class="similarlyRatedPosters_wrap">
-    								<img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTg4MTU1MzgwOV5BMl5BanBnXkFtZTcwNjM1MTAwMQ@@._V1_.jpg" class="similarlyRatedPosters" alt="The Room">
-    								<div class="similarlyRatedPosters_description">The Room</div>
-    							</div>
-    						</a>
-    					</div>
-    					<div class="col-xs-2" style="padding: 0; margin: 0;">
-    						<a href="#">
-    							<div class="similarlyRatedPosters_wrap">
-    								<img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjE4OTg3MTU2Ml5BMl5BanBnXkFtZTcwOTM2NDIwNw@@._V1_SY1000_CR0,0,675,1000_AL_.jpg" class="similarlyRatedPosters" alt="Santa Claus Conquers the Martians">
-    								<div class="similarlyRatedPosters_description">Santa Claus Conquers the Martians</div>
-    							</div>
-    						</a>
-    					</div>
-    					<div class="col-xs-2" style="padding: 0; margin: 0;">
-    						<a href="#">
-    							<div class="similarlyRatedPosters_wrap">
-    								<img src="https://upload.wikimedia.org/wikipedia/en/2/21/Battlefield_earth_poster.jpg" class="similarlyRatedPosters" alt="Battlefield Earth">
-    								<div class="similarlyRatedPosters_description">Battlefield Earth</div>
-    							</div>
-    						</a>
-    					</div>
-    					<div class="col-xs-2" style="padding: 0; margin: 0;">
-    						<a href="#">
-    							<div class="similarlyRatedPosters_wrap">
-    								<img src="https://upload.wikimedia.org/wikipedia/en/9/99/Jack_and_jill_film_poster.jpg" class="similarlyRatedPosters" alt="Jack and Jill">
-    								<div class="similarlyRatedPosters_description">Jack and Jill</div>
-    							</div>
-    						</a>
-    					</div>
-    					<div class="col-xs-2" style="padding: 0; margin: 0;">
-    						<a href="#">
-    							<div class="similarlyRatedPosters_wrap">
-    								<img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Troll_2_poster.jpg" class="similarlyRatedPosters" alt="Troll 2">
-    								<div class="similarlyRatedPosters_description">Troll 2</div>
-    							</div>
-    						</a>
-    					</div>
-    					<div class="col-xs-2" style="padding: 0; margin: 0;">
-    						<a href="#">
-    							<div class="similarlyRatedPosters_wrap">
-    								<img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7f/Howard_the_Duck_%281986%29.jpg/220px-Howard_the_Duck_%281986%29.jpg" class="similarlyRatedPosters" alt="Howard the Duck">
-    								<div class="similarlyRatedPosters_description">Howard the Duck</div>
-    							</div>
-    						</a>
-    					</div>
-    				</div>
-                </div>
-                <div class="col-xs-2"></div>
-            </div>
-    		<div class="row row-no-gutter">
-    			<br>
-    		</div>
+                        <div class="col-xs-2"></div>
+                        <div class="col-xs-8">
+                            <div class="row row-no-gutter">
+                                <div class="col-xs-12" style="padding-right: 0; padding-left: 0; margin-right: 0;">
+                                    <div class="similarlyRatedTitlesLabel">
+                                        Similarly Rated Titles
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-nogutter" style="text-align: center; background-color: #2d2d2d; padding-top: 1vh; padding-bottom: 1vh;">
+                                <div class="col-xs-2" style="padding: 0; margin: 0;">
+                                    <a href="#">
+                                        <div class="similarlyRatedPosters_wrap">
+                                            <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTg4MTU1MzgwOV5BMl5BanBnXkFtZTcwNjM1MTAwMQ@@._V1_.jpg" class="similarlyRatedPosters" alt="The Room">
+                                            <div class="similarlyRatedPosters_description">The Room</div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-xs-2" style="padding: 0; margin: 0;">
+                                    <a href="#">
+                                        <div class="similarlyRatedPosters_wrap">
+                                            <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjE4OTg3MTU2Ml5BMl5BanBnXkFtZTcwOTM2NDIwNw@@._V1_SY1000_CR0,0,675,1000_AL_.jpg" class="similarlyRatedPosters" alt="Santa Claus Conquers the Martians">
+                                            <div class="similarlyRatedPosters_description">Santa Claus Conquers the Martians</div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-xs-2" style="padding: 0; margin: 0;">
+                                    <a href="#">
+                                        <div class="similarlyRatedPosters_wrap">
+                                            <img src="https://upload.wikimedia.org/wikipedia/en/2/21/Battlefield_earth_poster.jpg" class="similarlyRatedPosters" alt="Battlefield Earth">
+                                            <div class="similarlyRatedPosters_description">Battlefield Earth</div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-xs-2" style="padding: 0; margin: 0;">
+                                    <a href="#">
+                                        <div class="similarlyRatedPosters_wrap">
+                                            <img src="https://upload.wikimedia.org/wikipedia/en/9/99/Jack_and_jill_film_poster.jpg" class="similarlyRatedPosters" alt="Jack and Jill">
+                                            <div class="similarlyRatedPosters_description">Jack and Jill</div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-xs-2" style="padding: 0; margin: 0;">
+                                    <a href="#">
+                                        <div class="similarlyRatedPosters_wrap">
+                                            <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Troll_2_poster.jpg" class="similarlyRatedPosters" alt="Troll 2">
+                                            <div class="similarlyRatedPosters_description">Troll 2</div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-xs-2" style="padding: 0; margin: 0;">
+                                    <a href="#">
+                                        <div class="similarlyRatedPosters_wrap">
+                                            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7f/Howard_the_Duck_%281986%29.jpg/220px-Howard_the_Duck_%281986%29.jpg" class="similarlyRatedPosters" alt="Howard the Duck">
+                                            <div class="similarlyRatedPosters_description">Howard the Duck</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-2"></div>
+                    </div>
+                    <div class="row row-no-gutter">
+                        <br>
+                    </div>
 
-    		<!--COLUMN WIDTH REFERENCE COLORS (2, 2, 6, 2)-->
-    		<div class="row">
-    			<div class="col-xs-2" style="background-color: red;"><br></div>
-    			<div class="col-xs-2" style="background-color: orange;"><br></div>
-    			<div class="col-xs-6" style="background-color: green;"><br></div>
-    			<div class="col-xs-2" style="background-color: blue;"><br></div>
-    		</div>
-        </div>
-	</body>
+                    <!--COLUMN WIDTH REFERENCE COLORS (2, 2, 6, 2)-->
+                    <div class="row">
+                        <div class="col-xs-2" style="background-color: red;"><br></div>
+                        <div class="col-xs-2" style="background-color: orange;"><br></div>
+                        <div class="col-xs-6" style="background-color: green;"><br></div>
+                        <div class="col-xs-2" style="background-color: blue;"><br></div>
+                    </div>
+                </div>
+</body>
 </html>
 
 

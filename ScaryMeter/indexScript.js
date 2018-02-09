@@ -1,8 +1,8 @@
 ﻿// TMDB
 var baseURL_tmdb = "https://api.themoviedb.org/3/movie/";
-var movieID_tmdb = 17473; //Change ID to change movie details;
+var movieID_tmdb = 630; //Change ID to change movie details;
 var apiKey_tmdb = "062a89fc4c3fcc6e928a7ba7ca87074e";
-var append_tmdb = "&append_to_response=releases";
+var append_tmdb = "&append_to_response=releases,credits";
 
 // Build TMDB query string 
 var movieQueryURL_tmdb = baseURL_tmdb + movieID_tmdb + "?api_key=" + apiKey_tmdb + append_tmdb;
@@ -35,6 +35,26 @@ document.getElementById("movieYearLabel").innerHTML = year;
 // Title
 document.getElementById("movieTitleLabel").innerHTML = obj_tmdb.title;
 
+// Directors
+var directors = [];
+for (i in obj_tmdb.credits.crew) {
+    if (obj_tmdb.credits.crew[i].department === "Directing" &&
+        obj_tmdb.credits.crew[i].job === "Director") {
+        directors.push(obj_tmdb.credits.crew[i].name)
+    }
+}
+document.getElementById("descriptionOfMovieLabelDirector").innerHTML = directors;
+
+
+// Actors
+var actors = [];
+for(i in obj_tmdb.credits.cast)
+{
+    actors.push(obj_tmdb.credits.cast[i].name);
+}
+document.getElementById("descriptionOfMovieLabelActors").innerHTML = actors;
+
+
 // MPAA Rating
 for(i in obj_tmdb.releases.countries)
 {
@@ -51,13 +71,19 @@ document.getElementById("runtime").innerHTML = obj_tmdb.runtime + " min";
 document.getElementById("tagline").innerHTML = obj_tmdb.tagline;
 
 // Plot
-//document.getElementById("descriptionOfMovieLabelPlot").innerHTML = obj_tmdb.overview;
-var plot_tmdb = obj_tmdb.overview;
-var plotLength_tmdb = plot_tmdb.length;
+document.getElementById("descriptionOfMovieLabelPlot").innerHTML = obj_tmdb.overview;
+//var plot_tmdb = obj_tmdb.overview;
+//var plotLength_tmdb = plot_tmdb.length;
 
 
 
 
+
+
+
+
+// Search for PRIDE & PREJUDICE and you'll see why we need to use only TMDB...
+/*
 // OMDB
 var baseURL_omdb = "http://www.omdbapi.com/?t=";
 var searchStr = obj_tmdb.title.replace(/\s+/g, '+').toLowerCase();
@@ -71,8 +97,9 @@ xhr_omdb.send();
 
 var obj_omdb = JSON.parse(xhr_omdb.responseText);
 
-document.getElementById("descriptionOfMovieLabelDirector").innerHTML = obj_omdb.Director;
-document.getElementById("descriptionOfMovieLabelActors").innerHTML = obj_omdb.Actors;
+// SWITCH OVER ENTIRELY TO TMDB!!!
+//document.getElementById("descriptionOfMovieLabelDirector").innerHTML = obj_omdb.Director;
+//document.getElementById("descriptionOfMovieLabelActors").innerHTML = obj_omdb.Actors;
 //document.getElementById("descriptionOfMovieLabelPlot").innerHTML = obj_omdb.Plot;
 var plot_omdb = obj_omdb.Plot;
 var plotLength_omdb = plot_omdb.length;
@@ -86,10 +113,12 @@ if (plotLength_omdb >= plotLength_tmdb) {
 else {
     document.getElementById("descriptionOfMovieLabelPlot").innerHTML = obj_tmdb.overview;
 }
+document.getElementById("descriptionOfMovieLabelPlot").innerHTML = obj_tmdb.overview;
+*/
 
 
 
-// window.alert(xhr.status);
+
 
 
 
