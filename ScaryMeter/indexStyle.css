@@ -34,8 +34,6 @@ opacity: 0.5;
 bottom: -43.78vh;
 position: absolute;
 width: 100%;
-margin: 0;
-padding: 0;
 }
 
 .moviePosterPhoto {
@@ -162,7 +160,6 @@ font-weight: 100;
 background-color: #545454;
 color: #c6c6c6;
 margin: 0;
-padding-top: 1px;
 font-size: 20px;
 font-family: 'Open Sans', sans-serif;
 text-align: center;
