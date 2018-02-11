@@ -154,3 +154,36 @@ $('.typeahead').typeahead(null, {
     source: movies
 });
 
+
+
+
+
+
+
+
+
+
+
+
+// Animate meters
+$(function() {
+    $(".overallScaryMeterRatingBar > span").each(function() {
+        $(this)
+            .data("origWidth", $(this).width())
+            .width(0)
+            .animate({
+                width: $(this).data("origWidth")
+            }, 1200);
+    });
+});
+
+$(function() {
+    $(".subScaryMeterRatingBar > span").each(function() {
+        $(this)
+            .data("origWidth", $(this).width())
+            .width(0)
+            .animate({
+                width: $(this).data("origWidth")
+            }, 1200);
+    });
+});

@@ -1,81 +1,82 @@
 ﻿body {
-background-color: #545454;
-min-width: 800px; /*Makes the screen not collapse when you shrink the window down*/
+    background-color: #545454;
+    min-width: 800px; /*Makes the screen not collapse when you shrink the window down*/
 }
 
 .navigationBarContainer {
-background-color: #2d2d2d;
-margin-top: 0;
-margin-bottom: 0;
-margin-left: 20px;
-margin-right: 20px;
-padding: 0;
-color: #c6c6c6;
-font-family: 'Open Sans', sans-serif;
+    background-color: #2d2d2d;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 0;
+    color: #c6c6c6;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .imageCoverPhoto {
-width: 100%;
-height: 45vh;
-position: relative;
-overflow: hidden;
+    width: 100%;
+    height: 45vh;
+    position: relative;
+    overflow: hidden;
 }
 
 #imageCoverPhotoBackground {
-width: 100%;
-height: auto;
-position: absolute;
-top: 80%;
-transform: translateY(-50%);
-opacity: 0.5;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 80%;
+    transform: translateY(-50%);
+    opacity: 0.5;
 }
 
 .textCoverPhoto {
-bottom: -43.78vh;
-position: absolute;
-width: 100%;
+    bottom: -43.78vh;
+    position: absolute;
+    width: 100%;
 }
 
 .moviePosterPhoto {
-top: -164px;
-position: absolute;
-padding-right: 27%;
+    top: -164px;
+    position: absolute;
+    padding-right: 27%;
 }
 
 #moviePosterPhotoChild {
-width:100%;
-box-shadow: 0px 0px 10px black;
+    width:100%;
+    box-shadow: 0px 0px 10px black;
 }
 
 #movieYearLabel {
-background-color: whitesmoke;
-display: inline-block;
-color: #545454;
-margin: 0;
-padding-left: 4px;
-padding-right: 4px;
-font-size: 25px;
-font-family: 'Open Sans Light', sans-serif;
-font-weight: 100;
+    background-color: whitesmoke;
+    display: inline-block;
+    color: #545454;
+    margin: 0;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 25px;
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: 100;
 }
 
 #movieTitleLabel {
-color: whitesmoke;
-margin-top: -8px;
-padding: 0;
-font-size: 50px;
-font-weight: 400;
-font-family: 'Oswald', sans-serif;
+    color: whitesmoke;
+    margin-top: -8px;
+    padding: 0;
+    font-size: 50px;
+    font-weight: 400;
+    font-family: 'Oswald', sans-serif;
 }
 
 .scaryMeterRatingTitleLabel {
-color: whitesmoke;
-margin-top: -15px;
-padding: 0;
-font-size: 20px;
-font-family: 'Open Sans Light', sans-serif;
-font-weight: 100;
+    color: whitesmoke;
+    margin-top: -15px;
+    padding: 0;
+    font-size: 20px;
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: 100;
 }
+
 
 /*Progress bar tutorial: https://css-tricks.com/css3-progress-bars/*/
 
@@ -102,6 +103,47 @@ font-weight: 100;
     position: relative;
     overflow: hidden;
 }
+
+.overallScaryMeterRatingBar > span:after, .animate > span > span {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+     z-index: 1;
+    -webkit-background-size: 50px 50px;
+    -moz-background-size: 50px 50px;
+    -webkit-animation: move 2s linear infinite;
+    -webkit-border-top-right-radius: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+    -moz-border-radius-topright: 8px;
+    -moz-border-radius-bottomright: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    -webkit-border-top-left-radius: 20px;
+    -webkit-border-bottom-left-radius: 20px;
+    -moz-border-radius-topleft: 20px;
+    -moz-border-radius-bottomleft: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    overflow: hidden
+}
+
+.animate > span:after {
+    display: none
+}
+
+@-webkit-keyframes move {
+    0% {
+        background-position: 0 0
+    }
+
+    100% {
+        background-position: 50px 50px
+    }
+}
+
 
 .subScaryMeterRatingBar {
     height: 24px;
@@ -136,6 +178,47 @@ font-weight: 100;
         overflow: hidden; */
 }
 
+    .subScaryMeterRatingBar > span:after, .animate > span > span {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+        -webkit-background-size: 50px 50px;
+        -moz-background-size: 50px 50px;
+        -webkit-animation: move 2s linear infinite;
+        -webkit-border-top-right-radius: 8px;
+        -webkit-border-bottom-right-radius: 8px;
+        -moz-border-radius-topright: 8px;
+        -moz-border-radius-bottomright: 8px;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        -webkit-border-top-left-radius: 20px;
+        -webkit-border-bottom-left-radius: 20px;
+        -moz-border-radius-topleft: 20px;
+        -moz-border-radius-bottomleft: 20px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        overflow: hidden
+    }
+
+.animate > span:after {
+    display: none
+}
+
+@-webkit-keyframes move {
+    0% {
+        background-position: 0 0
+    }
+
+    100% {
+        background-position: 50px 50px
+    }
+}
+
+
 .overallRed > span {
     background-color: #be3e3e;
     background-image: linear-gradient(to bottom, #be3e3e, #be3e3e);
@@ -157,134 +240,134 @@ font-weight: 100;
 }
 
 .scaryMeterRatingNumberLabel {
-background-color: #545454;
-color: #c6c6c6;
-margin: 0;
-font-size: 20px;
-font-family: 'Open Sans', sans-serif;
-text-align: center;
-font-weight: 800;
-height: 30px;
+    background-color: #545454;
+    color: #c6c6c6;
+    margin: 0;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    font-weight: 800;
+    height: 30px;
 }
 
 .categoryTitleLabel {
-color: #c6c6c6;
-background-color: #2d2d2d;
-margin: 0;
-padding-left: 4px;
-padding-right: 4px;
-font-size: 17px;
-/*font-size: 1.2em*/
-font-family: 'Open Sans', sans-serif;
-text-align: center;
-text-transform: uppercase;
+    color: #c6c6c6;
+    background-color: #2d2d2d;
+    margin: 0;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 17px;
+    /*font-size: 1.2em*/
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .categoryNumberLabel {
-color: #c6c6c6;
-background-color: #2d2d2d;
-margin: 0;
-padding: 0;
-font-size: 17px;
-/*font-size: 1.2em*/
-font-family: 'Open Sans', sans-serif;
-text-align: center;
+    color: #c6c6c6;
+    background-color: #2d2d2d;
+    margin: 0;
+    padding: 0;
+    font-size: 17px;
+    /*font-size: 1.2em*/
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
 }
 
 .imdbLogo {
-width: 100%;
-height: auto;
+    width: 100%;
+    height: auto;
 }
 
 .imdbRating {
-color: #e6b91e;
-font-size: 14px;
-font-family: 'Open Sans', sans-serif;
-text-align: right;
+    color: #e6b91e;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: right;
 }
 
 .rtLogo {
-width: 100%;
-height: auto;
+    width: 100%;
+    height: auto;
 }
 
 .rottenTomatoesRating {
-color: #F01F16;
-font-size: 1.15vw;
-font-size: 14px;
-font-family: 'Open Sans', sans-serif;
-text-align: right;
+    color: #F01F16;
+    font-size: 1.15vw;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: right;
 }
 
 .ratingAndLengthLabel {
-color: #c6c6c6;
-background-color: #2d2d2d;
-font-size: 0.9vw;
-/*font-size: 12px;*/
-font-family: 'Open Sans', sans-serif;
+    color: #c6c6c6;
+    background-color: #2d2d2d;
+    font-size: 0.9vw;
+    /*font-size: 12px;*/
+    font-family: 'Open Sans', sans-serif;
 }
 
 .descriptionOfMovieCategoryLabel {
-color: #2d2d2d;
-font-size: 1.1vw;
-font-family: 'Open Sans', sans-serif;
-background-color: #999999;
-margin-top: 5px;
-padding: 10px;
-text-transform: uppercase;
+    color: #2d2d2d;
+    font-size: 1.1vw;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #999999;
+    margin-top: 5px;
+    padding: 10px;
+    text-transform: uppercase;
 }
 
 .descriptionOfMovieLabel {
-color: #c6c6c6;
-font-size: 1.1vw;
-font-family: 'Open Sans', sans-serif;
-background-color: #2d2d2d;
-margin-top: 5px;
-padding: 10px;
+    color: #c6c6c6;
+    font-size: 1.1vw;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #2d2d2d;
+    margin-top: 5px;
+    padding: 10px;
 }
 
 .subMeters {
-margin-top: 3px;
+    margin-top: 3px;
 }
 
 .similarlyRatedTitlesLabel {
-padding: 10px;
-margin-top: 15px;
-background-color: #2d2d2d;
-color: #c6c6c6;
-font-family: 'Open Sans', sans-serif;
-font-size: 1.6em;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: #2d2d2d;
+    color: #c6c6c6;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6em;
 }
 
 .similarlyRatedPosters {
-width: 80%;
-height: 165px;
-border: 0.5px solid #999999;
+    width: 80%;
+    height: 165px;
+    border: 0.5px solid #999999;
 }
 
 .similarlyRatedPosters_wrap {
-position: relative;
-width: 100%;
-height: auto;
+    position: relative;
+    width: 100%;
+    height: auto;
 }
 
 .similarlyRatedPosters_description {
-position: absolute;
-padding-top: 33%;
-top: 0;
-bottom: 0;
-left: 10%;
-right: 10%;
-color: #FFFFFF;
-background: rgba(46, 46, 46, 0.75);
-visibility: hidden;
-opacity: 0;
-transition: opacity .2s, visibility .2s;
-font-family: 'Oswald', sans-serif;
-font-size: 1.25vw;
+    position: absolute;
+    padding-top: 33%;
+    top: 0;
+    bottom: 0;
+    left: 10%;
+    right: 10%;
+    color: #FFFFFF;
+    background: rgba(46, 46, 46, 0.75);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .2s, visibility .2s;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.25vw;
 }
 
 .similarlyRatedPosters_wrap:hover .similarlyRatedPosters_description {
-visibility: visible;
-opacity: 1;
+    visibility: visible;
+    opacity: 1;
 }
