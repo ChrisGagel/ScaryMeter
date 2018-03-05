@@ -341,7 +341,8 @@
 
 .similarlyRatedPosters {
     width: 80%;
-    height: 165px;
+    /*height: 165px;*/
+    height: 13vw;
     border: 0.5px solid #999999;
 }
 
@@ -355,7 +356,7 @@
     position: absolute;
     padding-top: 33%;
     top: 0;
-    bottom: 0;
+    bottom: -1%;
     left: 10%;
     right: 10%;
     color: #FFFFFF;
