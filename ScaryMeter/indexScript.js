@@ -1,10 +1,55 @@
-﻿// TMDB
+﻿// SHOW SEARCH RESULTS IN INPUT FIELD
+// https://stackoverflow.com/questions/21530063/how-do-we-set-remote-in-typeahead-js
+// Instantiate the Bloodhound suggestion engine
+var movies = new Bloodhound({
+    datumTokenizer: function (datum) {
+        return Bloodhound.tokenizers.whitespace(datum.value);
+    },
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    remote: {
+        wildcard: '%QUERY',
+        url: 'http://api.themoviedb.org/3/search/movie?query=%QUERY&api_key=062a89fc4c3fcc6e928a7ba7ca87074e',
+        transform: function (response) {
+            // Map the remote source JSON array to a JavaScript object array
+            return $.map(response.results, function (movie) {
+                return {
+                    value: movie.id
+                };
+            });
+        }
+    }
+});
+
+
+// Instantiate the Typeahead UI
+$('.typeahead').typeahead(null, {
+    display: 'value',
+    source: movies
+})
+
+
+
+
+
+
+
+// TMDB 49026 694
+
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+//Build query URL
 var baseURL_tmdb = "https://api.themoviedb.org/3/movie/";
-var movieID_tmdb = 49026; //Change ID to change movie details;
+var movieID_tmdb = getParameterByName('movieid'); //Change ID to change movie details;
 var apiKey_tmdb = "062a89fc4c3fcc6e928a7ba7ca87074e";
 var append_tmdb = "&append_to_response=releases,credits";
-
-// Build TMDB query string 
 var movieQueryURL_tmdb = baseURL_tmdb + movieID_tmdb + "?api_key=" + apiKey_tmdb + append_tmdb;
 
 // Get response from TMDB
@@ -20,17 +65,15 @@ var backdropBaseURL_tmdb = "https://image.tmdb.org/t/p/";
 var backdropPathImgSize_tmdb = "original"; //Use CONFIG command to find appropriate size
 var backdropPath_tmdb = obj_tmdb.backdrop_path;
 var backdrop_tmdb = backdropBaseURL_tmdb + backdropPathImgSize_tmdb + "/" + backdropPath_tmdb; //Add &append_to_response=credits
-
 // Write backdrop path
 document.getElementById("imageCoverPhotoBackground").src = backdrop_tmdb;
 
-// Build poster path
+// Build and write poster path
 var poster_tmdb = backdropBaseURL_tmdb + backdropPathImgSize_tmdb + "/" + obj_tmdb.poster_path;
 document.getElementById("moviePosterPhotoChild").src = poster_tmdb;
 
 // Date
-var year = parseInt(obj_tmdb.release_date);
-document.getElementById("movieYearLabel").innerHTML = year;
+document.getElementById("movieYearLabel").innerHTML = parseInt(obj_tmdb.release_date);
 
 // Title
 document.getElementById("movieTitleLabel").innerHTML = obj_tmdb.title;
@@ -43,25 +86,28 @@ for (i in obj_tmdb.credits.crew) {
         directors.push(obj_tmdb.credits.crew[i].name)
     }
 }
-document.getElementById("descriptionOfMovieLabelDirector").innerHTML = directors;
+document.getElementById("descriptionOfMovieLabelDirector").innerHTML = directors.join(', ');
 
 
 // Actors
 var actors = [];
-for(i in obj_tmdb.credits.cast)
+//for(i in obj_tmdb.credits.cast)
+for (i = 0; i < 3; i++) 
 {
     actors.push(obj_tmdb.credits.cast[i].name);
 }
-document.getElementById("descriptionOfMovieLabelActors").innerHTML = actors;
+document.getElementById("descriptionOfMovieLabelActors").innerHTML = actors.join(', ');
 
 
 // MPAA Rating
 for(i in obj_tmdb.releases.countries)
 {
-    if (obj_tmdb.releases.countries[i].iso_3166_1 === "US" && obj_tmdb.releases.countries[i].certification != "")
+    if (obj_tmdb.releases.countries[i].iso_3166_1 === "US" && obj_tmdb.releases.countries[i].certification != '') {
         document.getElementById("mpaaRating").innerHTML = "Rated " + obj_tmdb.releases.countries[i].certification;
-    else
-        document.getElementById("mpaaRating").innerHTML = "Unrated ";
+        break; 
+    } else {
+        document.getElementById("mpaaRating").innerHTML = "Unrated";
+    }
 }
 
 // Runtime
@@ -74,10 +120,6 @@ document.getElementById("tagline").innerHTML = obj_tmdb.tagline;
 document.getElementById("descriptionOfMovieLabelPlot").innerHTML = obj_tmdb.overview;
 //var plot_tmdb = obj_tmdb.overview;
 //var plotLength_tmdb = plot_tmdb.length;
-
-
-
-
 
 
 
@@ -104,8 +146,7 @@ var obj_omdb = JSON.parse(xhr_omdb.responseText);
 var plot_omdb = obj_omdb.Plot;
 var plotLength_omdb = plot_omdb.length;
 
-
-
+DO NOT TOUCH!!! (CHRIS' PICASSO MASTERPIECE)
 // Plot selector based on character count
 if (plotLength_omdb >= plotLength_tmdb) {
     document.getElementById("descriptionOfMovieLabelPlot").innerHTML = obj_omdb.Plot;
@@ -124,48 +165,8 @@ document.getElementById("descriptionOfMovieLabelPlot").innerHTML = obj_tmdb.over
 
 
 
-
-
-// SHOW SEARCH RESULTS IN INPUT FIELD
-// https://stackoverflow.com/questions/21530063/how-do-we-set-remote-in-typeahead-js
-// Instantiate the Bloodhound suggestion engine
-var movies = new Bloodhound({
-    datumTokenizer: function (datum) {
-        return Bloodhound.tokenizers.whitespace(datum.value);
-    },
-    queryTokenizer: Bloodhound.tokenizers.whitespace,
-    remote: {
-        wildcard: '%QUERY',
-        url: 'http://api.themoviedb.org/3/search/movie?query=%QUERY&api_key=062a89fc4c3fcc6e928a7ba7ca87074e',
-        transform: function (response) {
-            // Map the remote source JSON array to a JavaScript object array
-            return $.map(response.results, function (movie) {
-                return {
-                    value: movie.title
-                };
-            });
-        }
-    }
-});
-
-// Instantiate the Typeahead UI
-$('.typeahead').typeahead(null, {
-    display: 'value',
-    source: movies
-});
-
-
-
-
-
-
-
-
-
-
-
-
 // Animate meters
+// Resize on pagesize https://thepixel.ninja/jquery/how-to-run-a-function-after-window-resize-using-jquery/
 $(function() {
     $(".overallScaryMeterRatingBar > span").each(function() {
         $(this)

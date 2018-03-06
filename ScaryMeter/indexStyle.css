@@ -274,37 +274,12 @@
     text-align: center;
 }
 
-.imdbLogo {
-    width: 100%;
-    height: auto;
-}
-
-.imdbRating {
-    color: #e6b91e;
-    font-size: 14px;
-    font-family: 'Open Sans', sans-serif;
-    text-align: right;
-}
-
-.rtLogo {
-    width: 100%;
-    height: auto;
-}
-
-.rottenTomatoesRating {
-    color: #F01F16;
-    font-size: 1.15vw;
-    font-size: 14px;
-    font-family: 'Open Sans', sans-serif;
-    text-align: right;
-}
-
 .ratingAndLengthLabel {
     color: #c6c6c6;
-    background-color: #2d2d2d;
     font-size: 0.9vw;
     /*font-size: 12px;*/
     font-family: 'Open Sans', sans-serif;
+    text-align: center;
 }
 
 .descriptionOfMovieCategoryLabel {

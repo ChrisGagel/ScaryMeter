@@ -13,9 +13,3 @@ C:/Users/Nick/Documents/Visual Studio 2015/Projects/ScaryMeterGIT/ScaryMeter/obj
 /Users/christophergagel/Projects/ScaryMeter/ScaryMeter/bin/ScaryMeter.pdb
 /Users/christophergagel/Projects/ScaryMeter/ScaryMeter/obj/Debug/ScaryMeter.csproj.CoreCompileInputs.cache
 /Users/christophergagel/Projects/ScaryMeter/ScaryMeter/obj/Debug/ScaryMeter.pdb
-C:\Users\Nick\Documents\Git\ScaryMeter\ScaryMeter\bin\ScaryMeter.dll.config
-C:\Users\Nick\Documents\Git\ScaryMeter\ScaryMeter\bin\ScaryMeter.dll
-C:\Users\Nick\Documents\Git\ScaryMeter\ScaryMeter\bin\ScaryMeter.pdb
-C:\Users\Nick\Documents\Git\ScaryMeter\ScaryMeter\obj\Debug\ScaryMeter.csprojResolveAssemblyReference.cache
-C:\Users\Nick\Documents\Git\ScaryMeter\ScaryMeter\obj\Debug\ScaryMeter.dll
-C:\Users\Nick\Documents\Git\ScaryMeter\ScaryMeter\obj\Debug\ScaryMeter.pdb
