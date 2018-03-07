@@ -1,6 +1,6 @@
 ﻿body {
     background-color: #545454;
-    min-width: 800px; /*Makes the screen not collapse when you shrink the window down*/
+    window-size: 800px;
 }
 
 .navigationBarContainer {
