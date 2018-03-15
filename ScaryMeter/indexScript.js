@@ -195,7 +195,7 @@ $(function() {
 
 
 
-
+/*
 // Resize on pagesize https://thepixel.ninja/jquery/how-to-run-a-function-after-window-resize-using-jquery/
 
 
@@ -223,3 +223,4 @@ $(window).resize(function(){
                 }, 1200);
     });  },pause);
 });
+*/

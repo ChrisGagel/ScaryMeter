@@ -104,13 +104,14 @@
     overflow: hidden;
 }
 
+/*
 .overallScaryMeterRatingBar > span:after, .animate > span > span {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
-    right: 0;
+    right: 0; */
      z-index: 1;
     -webkit-background-size: 50px 50px;
     -moz-background-size: 50px 50px;
@@ -127,13 +128,13 @@
     -moz-border-radius-bottomleft: 20px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
-    overflow: hidden
+    overflow: hidden 
 }
 
 .animate > span:after {
     display: none
-}
-
+}*/
+ 
 @-webkit-keyframes move {
     0% {
         background-position: 0 0
