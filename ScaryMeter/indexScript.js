@@ -164,67 +164,26 @@ document.getElementById("descriptionOfMovieLabelPlot").innerHTML = obj_tmdb.over
 
 
 
-
 // Animate meters
 $(function() {
     $(".overallScaryMeterRatingBar > span").each(function() {
+        var w = this.style.width; 
         $(this)
-            .data("origWidth", $(this).width())
+            .data("origWidth", w)
             .width(0)
             .animate({
                 width: $(this).data("origWidth")
             }, 1200);
     });
 });
-
 $(function() {
     $(".subScaryMeterRatingBar > span").each(function() {
+        var w = this.style.width; 
         $(this)
-            .data("origWidth", $(this).width())
+            .data("origWidth", w)
             .width(0)
             .animate({
                 width: $(this).data("origWidth")
             }, 1200);
     });
 });
-
-
-
-
-
-
-
-
-
-
-
- 
-/*
-// Resize on pagesize https://thepixel.ninja/jquery/how-to-run-a-function-after-window-resize-using-jquery/
-
-
-var resizeListener;
-var pause = 300;
- 
-$(window).resize(function(){
-    clearTimeout(resizeListener); 
-    resizeListener = setTimeout(function(){
-        $(".overallScaryMeterRatingBar > span").each(function() {
-            $(this)
-                .data("origWidth", $(this).width())
-                .width(0)
-                .animate({
-                    width: $(this).data("origWidth")
-                }, 1200);
-        });
-
-        $(".subScaryMeterRatingBar > span").each(function() {
-            $(this)
-                .data("origWidth", $(this).width())
-                .width(0)
-                .animate({
-                    width: $(this).data("origWidth")
-                }, 1200);
-    });  },pause);
-});
-*/
