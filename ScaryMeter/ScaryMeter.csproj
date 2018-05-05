@@ -64,6 +64,7 @@
     <Content Include="Images\RT_Logo.png" />
     <Content Include="indexScript.js" />
     <Content Include="index.html" />
+    <Content Include="index_old.html" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">

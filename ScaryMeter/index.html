@@ -1,8 +1,9 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Scary Meter</title>
 
+<head>
+    <meta charset="utf-8" />
+    <title>Scary Meter</title>
     <!--Bootstrap shit-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -10,25 +11,20 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.2.1/typeahead.bundle.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js-bootstrap-css/1.2.1/typeaheadjs.min.css" />
-
     <!--Google fonts shit-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-
     <!--Style sheet, named indexStyle.css-->
     <link rel="stylesheet" href="indexStyle.css">
-
     <!--Favicon-->
     <link href="images\SMfavicon.png" rel="icon" type="image/x-icon">
 </head>
 
 
-<!--NAVIGATION BAR-->
 <body>
-
-    <!--Prevent navbar from stacking tutorial: https://stackoverflow.com/questions/44171261/how-can-i-prevent-bootstrap-navbar-from-stacking-the-brand-on-top-of-the-menu?rq=1-->
-
-    <div class="container-fluid" style="min-width: 1000px; margin: 0 auto;"> <!--min-dwidth: 960px;-->
+    
+    <!--NAVIGATION BAR-->
+    <div class="container-fluid">
         <div class="row">
             <nav class="navbar navbar-inverse" style="margin: 0; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; background-color: #2d2d2d; border: 0;">
                 <div class="navigationBarContainer">
@@ -62,248 +58,11 @@
                     </ul>
                 </div>
             </nav>
-        </div>
 
-        <!--COVER PHOTO-->
-        <div class="row">
-            <div class="imageCoverPhoto">
-                <img id="imageCoverPhotoBackground" alt="Cover photo" />
-                <div class="row">
-                    <div class="col-xs-4"></div>
-
-                    <!--GENERAL MOVIE INFO-->
-                    <div class="col-xs-6" style="padding-left: 5px;">
-                        <div class="textCoverPhoto">
-                            <p id="movieYearLabel"></p>
-                            <p id="movieTitleLabel"></p>
-                            <p class="scaryMeterRatingTitleLabel"><em id="tagline">Scary Meter Rating</em></p>
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-xs-11" style="padding: 0;">
-                                        <!--Tutorial on the progress bar: https://css-tricks.com/css3-progress-bars/ -->
-                                        <div class="overallScaryMeterRatingBar overallRed">
-                                            <span style="width: 95%"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-1" style="padding-left: 5px; padding-right: 10px;">
-                                        <p class="scaryMeterRatingNumberLabel">
-                                            9.5
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-2"></div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-2"></div>
-
-            <!--POSTER PHOTO-->
-            <div class="col-xs-2">
-                <div class="moviePosterPhoto">
-                    <div class="row">
-                        <img id="moviePosterPhotoChild" alt="Poster photo">
-                    </div>
-
-                    <!--IMDB RATING PLUS LENGTH-->
-                    <div class="row">
-                        <div class="col-xs-6" style="margin-top: 20px; padding-left: 0;">
-                            <div class="ratingAndLengthLabel">
-                                <div class="row">
-                                    <span id="mpaaRating" class="label label-danger" style="margin-left: 20px">Rated</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-6" style="margin-top: 20px;">
-                            <div class="ratingAndLengthLabel">
-                                <div class="row">
-                                    <span id="runtime" class="label label-info" style="margin-left: 20px">Runtime</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!--CREEPY, GORY AND JUMPY METERS-->
-            <div class="col-xs-6" style="padding-right: 0;">
-                <div class="row" style="margin-top: 2px;">
-                    <div class="subMeters">
-                        <div class="col-xs-2" style="padding-left: 0; padding-right: 0;">
-                            <div class="categoryTitleLabel">
-                                Creepy
-                            </div>
-                        </div>
-                        <div class="col-xs-9" style="padding: 0;">
-                            <div class="subScaryMeterRatingBar creepyBlue">
-                                <span style="width: 83%"></span>
-                            </div>
-                        </div>
-                        <div class="col-xs-1" style="padding-left: 10px;">
-                            <div class="categoryNumberLabel">
-                                8.3
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="subMeters">
-                        <div class="col-xs-2" style="padding-left: 0; padding-right: 0;">
-                            <div class="categoryTitleLabel">
-                                Gory
-                            </div>
-                        </div>
-                        <div class="col-xs-9" style="padding: 0;">
-                            <div class="subScaryMeterRatingBar goryOrange">
-                                <span style="width: 56%"></span>
-                            </div>
-                        </div>
-                        <div class="col-xs-1" style="padding-left: 10px;">
-                            <div class="categoryNumberLabel">
-                                5.6
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="subMeters">
-                        <div class="col-xs-2" style="padding-left: 0; padding-right: 0;">
-                            <div class="categoryTitleLabel">
-                                Jumpy
-                            </div>
-                        </div>
-                        <div class="col-xs-9" style="padding: 0;">
-                            <div class="subScaryMeterRatingBar jumpyGreen">
-                                <span style="width: 72%"></span>
-                            </div>
-                        </div>
-                        <div class="col-xs-1" style="padding-left: 10px;">
-                            <div class="categoryNumberLabel">
-                                7.2
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--DESCRIPTION OF MOVIE-->
-                <div class="row">
-                    <div class="col-xs-2" style="padding: 0; margin-top: 1.5vh;">
-                        <div class="descriptionOfMovieCategoryLabel">
-                            Directed&nbsp;by
-
-                            <!--INCLUDE PHP-->
-                            <?php
-                            echo "hello world!";
-                            ?>
-
-                        </div>
-                    </div>
-                    <div class="col-xs-10" style="padding-left: 0; margin-top: 1.5vh;">
-                        <div class="descriptionOfMovieLabel" id="descriptionOfMovieLabelDirector"></div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-2" style="padding: 0;">
-                        <div class="descriptionOfMovieCategoryLabel">
-                            Starring
-                        </div>
-                    </div>
-                    <div class="col-xs-10" style="padding-left: 0;">
-                        <div class="descriptionOfMovieLabel" id="descriptionOfMovieLabelActors"></div>
-                    </div>
-                </div>
-                <div class="row row-no-gutter">
-                    <div class="col-xs-12" style="padding-left: 0;">
-                        <div class="descriptionOfMovieLabel" id="descriptionOfMovieLabelPlot"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-2"></div>
-        </div>
-
-        <!--SIMILARLY RATED TITLES-->
-        <div class="row">
-            <div class="col-xs-2"></div>
-            <div class="col-xs-8">
-                <div class="row">
-                    <div class="col-xs-12" style="padding-right: 0; padding-left: 0;">
-                        <div class="similarlyRatedTitlesLabel">
-                            Similarly Rated Titles
-                        </div>
-                    </div>
-                </div>
-                <div class="row row-nogutter" style="text-align: center; background-color: #2d2d2d; padding-top: 1vh; padding-bottom: 1vh;">
-                    <div class="col-xs-2" style="padding: 0; margin: 0;">
-                        <a href="#">
-                            <div class="similarlyRatedPosters_wrap">
-                                <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTg4MTU1MzgwOV5BMl5BanBnXkFtZTcwNjM1MTAwMQ@@._V1_.jpg" class="similarlyRatedPosters" alt="The Room">
-                                <div class="similarlyRatedPosters_description">The Room</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xs-2" style="padding: 0; margin: 0;">
-                        <a href="#">
-                            <div class="similarlyRatedPosters_wrap">
-                                <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjE4OTg3MTU2Ml5BMl5BanBnXkFtZTcwOTM2NDIwNw@@._V1_SY1000_CR0,0,675,1000_AL_.jpg" class="similarlyRatedPosters" alt="Santa Claus Conquers the Martians">
-                                <div class="similarlyRatedPosters_description">Santa Claus Conquers the Martians</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xs-2" style="padding: 0; margin: 0;">
-                        <a href="#">
-                            <div class="similarlyRatedPosters_wrap">
-                                <img src="https://upload.wikimedia.org/wikipedia/en/2/21/Battlefield_earth_poster.jpg" class="similarlyRatedPosters" alt="Battlefield Earth">
-                                <div class="similarlyRatedPosters_description">Battlefield Earth</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xs-2" style="padding: 0; margin: 0;">
-                        <a href="#">
-                            <div class="similarlyRatedPosters_wrap">
-                                <img src="https://upload.wikimedia.org/wikipedia/en/9/99/Jack_and_jill_film_poster.jpg" class="similarlyRatedPosters" alt="Jack and Jill">
-                                <div class="similarlyRatedPosters_description">Jack and Jill</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xs-2" style="padding: 0; margin: 0;">
-                        <a href="#">
-                            <div class="similarlyRatedPosters_wrap">
-                                <img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Troll_2_poster.jpg" class="similarlyRatedPosters" alt="Troll 2">
-                                <div class="similarlyRatedPosters_description">Troll 2</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xs-2" style="padding: 0; margin: 0;">
-                        <a href="#">
-                            <div class="similarlyRatedPosters_wrap">
-                                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7f/Howard_the_Duck_%281986%29.jpg/220px-Howard_the_Duck_%281986%29.jpg" class="similarlyRatedPosters" alt="Howard the Duck">
-                                <div class="similarlyRatedPosters_description">Howard the Duck</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-2"></div>
-        </div>
-        <div class="row">
-            <br>
-        </div>
-
-        <!--COLUMN WIDTH REFERENCE COLORS (2, 2, 6, 2)-->
-        <div class="row">
-            <div class="col-xs-2" style="background-color: red;"><br></div>
-            <div class="col-xs-2" style="background-color: orange;"><br></div>
-            <div class="col-xs-6" style="background-color: green;"><br></div>
-            <div class="col-xs-2" style="background-color: blue;"><br></div>
         </div>
     </div>
 </body>
 </html>
-
-
 
 <!--Script, named indexScript.js-->
 <script src="indexScript.js"></script>
