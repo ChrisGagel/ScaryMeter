@@ -55,7 +55,7 @@
   <ItemGroup>
     <Content Include="Web.config" />
     <Content Include="Global.asax" />
-    <Content Include="indexStyle.css" />
+    <Content Include="indexStyle_old.css" />
     <Content Include="Images\IMDb_Logo.png" />
     <Content Include="Images\SAM_Background_Cropped.png" />
     <Content Include="Images\SAM_Background.png" />
@@ -65,6 +65,7 @@
     <Content Include="indexScript.js" />
     <Content Include="index.html" />
     <Content Include="index_old.html" />
+    <Content Include="indexStyle.css" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">

@@ -1,11 +1,12 @@
 ﻿<Properties StartupConfiguration="{A4893CCE-9AB4-48C4-B823-011D322A44AF}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="ScaryMeter/index.html">
     <Files>
-      <File FileName="ScaryMeter/indexStyle.css" Line="280" Column="20" />
-      <File FileName="ScaryMeter/indexScript.js" Line="190" Column="1" />
       <File FileName="ScaryMeter/ratings.php" Line="1" Column="1" />
-      <File FileName="ScaryMeter/index.html" Line="25" Column="5" />
-      <File FileName="ScaryMeter/index_old.html" Line="17" Column="19" />
+      <File FileName="ScaryMeter/indexScript.js" Line="71" Column="31" />
+      <File FileName="ScaryMeter/index.html" Line="83" Column="39" />
+      <File FileName="ScaryMeter/indexStyle.css" Line="30" Column="2" />
+      <File FileName="ScaryMeter/indexStyle_old.css" Line="51" Column="32" />
+      <File FileName="ScaryMeter/index_old.html" Line="92" Column="15" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
