@@ -3,10 +3,10 @@
     <Files>
       <File FileName="ScaryMeter/ratings.php" Line="1" Column="1" />
       <File FileName="ScaryMeter/indexScript.js" Line="117" Column="65" />
-      <File FileName="ScaryMeter/index.html" Line="72" Column="111" />
-      <File FileName="ScaryMeter/indexStyle.css" Line="49" Column="25" />
-      <File FileName="ScaryMeter/index_old.html" Line="71" Column="63" />
-      <File FileName="ScaryMeter/indexStyle_old.css" Line="54" Column="15" />
+      <File FileName="ScaryMeter/index.html" Line="105" Column="57" />
+      <File FileName="ScaryMeter/indexStyle.css" Line="112" Column="17" />
+      <File FileName="ScaryMeter/index_old.html" Line="74" Column="73" />
+      <File FileName="ScaryMeter/indexStyle_old.css" Line="88" Column="32" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

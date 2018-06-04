@@ -2,6 +2,7 @@
 
     WHITESMOKE COLOUR = #F5F5F5
     DARK GREY COLOUR = #555555
+    MEDIUM GREY COLOUR = #9D9D9D
     LIGHT GREY COLOUR = #DEDEDE
     BACKGROUND OF COVER PHOTO = #B2B2B2
 
@@ -10,6 +11,10 @@
 
 body {
     background-color: #DEDEDE;
+}
+
+p {
+    margin: -3px;
 }
 
 .navigationBarContainer {
@@ -38,7 +43,7 @@ body {
 }
 
 .textCoverPhoto {
-    top: 20vh;
+    top: 15vh;
     position: absolute;
 }
 
@@ -54,21 +59,228 @@ body {
     background-color: #555555;
     display: inline-block;
     color: #F5F5F5;
-    font-size: 25px;
+    font-size: 1.3em;
     font-family: 'Open Sans Light', sans-serif;
-    font-weight: 100
+    font-weight: 100;
 }
 
 #movieTitleLabel {
     color: #555555;
-    font-size: 50px;
+    font-size: 2.5em;
     font-weight: 400;
-    font-family: 'Oswald', sans-serif
+    font-family: 'Oswald', sans-serif;
 }
 
-.scaryMeterRatingTitleLabel {
-    color: #555555;
-    font-size: 20px;
+#tagline {
+    color: #9D9D9D;
+    font-size: 1.3em;
     font-family: 'Open Sans Light', sans-serif;
-    font-weight: 100
+    font-weight: 100;
+    font-style: italic;
+}
+
+#descriptionOfMovieLabelPlot {
+    color: #9D9D9D;
+    font-size: 1em;
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: 100;
+}
+
+#descriptionOfMovieLabelDirector {
+    color: #9D9D9D;
+    font-size: 1em;
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: 100;
+}
+
+#descriptionOfMovieLabelActors {
+    color: #9D9D9D;
+    font-size: 1em;
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: 100;
+}
+
+#mpaaRating {
+    color: #9D9D9D;
+    font-size: 1em;
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: 100;
+}
+
+#runtime {
+    color: #9D9D9D;
+    font-size: 1em;
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: 100;
+}
+
+.overallMeterCoverPhoto {
+    top: 15vh;
+    position: absolute;
+}
+
+/*Progress bar tutorial: https://css-tricks.com/css3-progress-bars/*/
+
+.overallScaryMeterRatingBar {
+    height: 30px;
+    position: relative;
+    background: #545454;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+    padding: 5px;
+    box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3)
+}
+
+    .overallScaryMeterRatingBar > span {
+        display: block;
+        height: 95%;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        border-top-left-radius: 7px;
+        border-bottom-left-radius: 7px;
+        background-color: rgb(43,194,83);
+        /* Gradient:
+    background-image: linear-gradient( center bottom, rgb(43,194,83) 37%, rgb(84,249,84) 69% );
+    box-shadow: inset 0 2px 9px rgba(255,255,255,0.3), inset 0 -2px 6px rgba(0,0,0,0.4); */
+        position: relative;
+        overflow: hidden
+    }
+
+        .overallScaryMeterRatingBar > span:after, .animate > span > span {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            */ z-index: 1;
+            -webkit-background-size: 50px 50px;
+            -moz-background-size: 50px 50px;
+            -webkit-animation: move 2s linear infinite;
+            -webkit-border-top-right-radius: 8px;
+            -webkit-border-bottom-right-radius: 8px;
+            -moz-border-radius-topright: 8px;
+            -moz-border-radius-bottomright: 8px;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+            -webkit-border-top-left-radius: 20px;
+            -webkit-border-bottom-left-radius: 20px;
+            -moz-border-radius-topleft: 20px;
+            -moz-border-radius-bottomleft: 20px;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            overflow: hidden
+        }
+
+.animate > span:after {
+    display: none
+}
+
+*/ @-webkit-keyframes move {
+    0%
+
+{
+    background-position: 0 0
+}
+
+100% {
+    background-position: 50px 50px
+}
+
+}
+
+
+.subScaryMeterRatingBar {
+    height: 24px;
+    /*height: 1.72em;*/
+    position: relative;
+    background: #2d2d2d;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 3px
+}
+
+    .subScaryMeterRatingBar > span {
+        display: block;
+        height: 100%;
+        border-top-right-radius: 1px;
+        border-bottom-right-radius: 1px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        background-color: rgb(43,194,83)
+        /* Gradient:
+    background-image: linear-gradient(
+        center bottom,
+        rgb(43,194,83) 37%,
+        rgb(84,249,84) 69%
+        );
+    box-shadow:
+        inset 0 2px 9px rgba(255,255,255,0.3),
+        inset 0 -2px 6px rgba(0,0,0,0.4);
+        position: relative;
+        overflow: hidden; */
+    }
+
+        .subScaryMeterRatingBar > span:after, .animate > span > span {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+            -webkit-background-size: 50px 50px;
+            -moz-background-size: 50px 50px;
+            -webkit-animation: move 2s linear infinite;
+            -webkit-border-top-right-radius: 8px;
+            -webkit-border-bottom-right-radius: 8px;
+            -moz-border-radius-topright: 8px;
+            -moz-border-radius-bottomright: 8px;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+            -webkit-border-top-left-radius: 20px;
+            -webkit-border-bottom-left-radius: 20px;
+            -moz-border-radius-topleft: 20px;
+            -moz-border-radius-bottomleft: 20px;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            overflow: hidden
+        }
+
+.animate > span:after {
+    display: none
+}
+
+@-webkit-keyframes move {
+    0% {
+        background-position: 0 0
+    }
+
+    100% {
+        background-position: 50px 50px
+    }
+}
+
+
+.overallRed > span {
+    background-color: #be3e3e;
+    background-image: linear-gradient(to bottom, #be3e3e, #be3e3e)
+}
+
+.creepyBlue > span {
+    background-color: #00659c;
+    background-image: linear-gradient(to bottom, #00659c, #00659c)
+}
+
+.goryOrange > span {
+    background-color: #be3e3e;
+    background-image: linear-gradient(to bottom, #cb6338, #cb6338)
+}
+
+.jumpyGreen > span {
+    background-color: #be3e3e;
+    background-image: linear-gradient(to bottom, #0a7e6d, #0a7e6d)
 }
