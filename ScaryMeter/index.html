@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Scary Meter</title>
+
     <!--Bootstrap shit-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -11,25 +12,28 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.2.1/typeahead.bundle.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js-bootstrap-css/1.2.1/typeaheadjs.min.css" />
+
     <!--Google fonts shit-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
     <!--Style sheet, named indexStyle.css-->
     <link rel="stylesheet" href="indexStyle.css">
+
     <!--Favicon-->
     <link href="images\SMfavicon.png" rel="icon" type="image/x-icon">
 </head>
 
 
 <body>
-    
-    <!--NAVIGATION BAR-->
     <div class="container-fluid">
+
+        <!--NAVIGATION BAR-->
         <div class="row">
             <nav class="navbar navbar-inverse" style="margin: 0; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; background-color: #2D2D2D; border: 0;">
                 <div class="navigationBarContainer">
                     <div class="navbar-header" style="font-family: 'Oswald', sans-serif;">
-                        <a class="navbar-brand" href="#">Scary Meter</a>
+                        <a class="navbar-brand" href="index.html">Scary Meter</a>
                     </div>
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
@@ -41,7 +45,7 @@
                                 <li><a href="#">Least Rated</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">About Us</a></li>
+                        <li><a href="aboutUs.html">About Us</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <form class="navbar-form" role="search">
@@ -84,15 +88,30 @@
                                     <br />
                                     <p class="descriptionOfLabel"> Directed by <span id="descriptionOfMovieLabelDirector">Directors</span></p>
                                     <br />
-                                    <p> Cast <span id="descriptionOfMovieLabelActors">Actors</span></p>
+                                    <p class="descriptionOfLabel"> Cast <span id="descriptionOfMovieLabelActors">Actors</span></p>
                                     <br />
                                     <div class="row">
                                         <div class="col-xs-6">
-                                            <p> Rating <span id="mpaaRating">Rating</span></p>
+                                            <p class="descriptionOfLabel"> Rating <span id="mpaaRating">Rating</span></p>
                                         </div>
                                         <div class="col-xs-6">
-                                            <p> Runtime <span id="runtime">Runtime</span></p>
+                                            <p class="descriptionOfLabel"> Runtime <span id="runtime">Runtime</span></p>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--OVERALL SCARY METER RATING BAR-->
+                            <div class="row" style="margin-top: 15px;">
+                                <div class="col-xs-11" style="padding: 0;">
+                                    <!--Tutorial on the progress bar: https://css-tricks.com/css3-progress-bars/ -->
+                                    <div class="overallScaryMeterRatingBar overallRed">
+                                        <span style="width: 95%"></span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-1">
+                                    <div class="overallScaryMeterRatingNumber">
+                                        9.5
                                     </div>
                                 </div>
                             </div>
@@ -102,17 +121,71 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-xs-11" style="padding: 0;">
-                <!--Tutorial on the progress bar: https://css-tricks.com/css3-progress-bars/ -->
-                <div class="overallScaryMeterRatingBar overallRed">
-                    <span style="width: 95%"></span>
+        <!--SUB SCARY METER RATING BARS-->
+        <div class="row" style="background-color: #F5F5F5; box-shadow: 0px 0px 2px #555555;">
+            <div class="subScaryMeterRatingBarSection">
+                <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                    <br />
+
+                    <!--CREEPY METER BAR-->
+                    <div class="row">
+                        <div class="col-md-1">
+                            <div class="subScaryMeterRatingBarLabel" style="margin-top: 5px;">
+                                CREEPY
+                            </div>
+                        </div>
+                        <div class="col-md-10" style="padding: 0; margin: 0;">
+                            <div class="subScaryMeterRatingBar creepyBlue">
+                                <span style="width: 92%"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-1" style="padding: 0; margin-top: 5px; color: #3366cc;">
+                            9.2
+                        </div>
+                    </div>
+
+                    <!--GORY METER BAR-->
+                    <div class="row">
+                        <div class="col-md-1">
+                            <div class="subScaryMeterRatingBarLabel" style="margin-top: 5px;">
+                                GORY
+                            </div>
+                        </div>
+                        <div class="col-md-10" style="padding: 0; margin: 0;">
+                            <div class="subScaryMeterRatingBar goryGreen">
+                                <span style="width: 16%"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-1" style="padding: 0; margin-top: 5px; color: #009966;">
+                            1.6
+                        </div>
+                    </div>
+
+                    <!--JUMPY METER BAR-->
+                    <div class="row">
+                        <div class="col-md-1" style="margin-top: 5px;">
+                            <div class="subScaryMeterRatingBarLabel">
+                                JUMPY
+                            </div>
+                        </div>
+                        <div class="col-md-10" style="padding: 0; margin: 0;">
+                            <div class="subScaryMeterRatingBar jumpyYellow">
+                                <span style="width: 21%"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-1" style="padding: 0; margin-top: 5px; color: #ffcc66;">
+                            2.1
+                        </div>
+                    </div>
+                    <br />
                 </div>
             </div>
-            <div class="col-xs-1" style="padding-left: 5px; padding-right: 10px;">
-                <p class="scaryMeterRatingNumberLabel">
-                    9.5
-                </p>
+        </div>
+
+        <!--SIMILARLY RATED MOVIES-->
+        <div class="row" style="background-color: #E0E0E0;">
+            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                <div class="similarlyRatedMoviesLabel">Similarly Rated Movies</div>
             </div>
         </div>
     </div>
