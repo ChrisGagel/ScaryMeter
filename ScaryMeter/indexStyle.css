@@ -124,7 +124,7 @@ p {
 .overallScaryMeterRatingNumber {
     padding-left: 10px;
     padding-right: 10px;
-    color: #F5F5F5;
+    color: white;
     margin-top: 4px;
     font-size: 1.3em;
     text-align: center;
@@ -138,6 +138,8 @@ p {
 .subScaryMeterRatingBarLabel {
     float: right;
     color: #555555;
+    margin-top: 5px;
+    font-size: 1em;
 }
 
 .subScaryMeterRatingBarSection {
@@ -249,7 +251,12 @@ p {
     }
 
         .subScaryMeterRatingBar > span:after, .animate > span > span {
-            content: "";
+            content: "9.2";
+            text-align: right;
+            margin-top: 5px;
+            margin-right: 10px;
+            color: white;
+            /*The above text controlls what number goes inside the animated progress bar*/
             position: absolute;
             top: 0;
             left: 0;
@@ -290,22 +297,18 @@ p {
 
 
 .overallRed > span {
-    background-color: #cc3333;
     background-image: linear-gradient(to bottom, #cc3333, #cc3333);
 }
 
 .creepyBlue > span {
-    background-color: #3366cc;
     background-image: linear-gradient(to bottom, #3366cc, #3366cc);
 }
 
 .goryGreen > span {
-    background-color: #009966;
     background-image: linear-gradient(to bottom, #009966, #009966);
 }
 
 .jumpyYellow > span {
-    background-color: #ffcc66;
     background-image: linear-gradient(to bottom, #ffcc66, #ffcc66);
 }
 
