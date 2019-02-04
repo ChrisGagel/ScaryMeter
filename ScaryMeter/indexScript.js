@@ -191,11 +191,14 @@ $(function() {
 
 
 
+//SCARY METER NUMBER RANDOMIZER
+
+var x = Math.floor((Math.random() * 10) + 1);
+document.getElementById("overallRandomNumber").innerHTML = x;
 
 
 
-
-// TEST SLIDER FOR RATING MOVIES - https://www.w3schools.com/howto/howto_js_rangeslider.asp
+// TEST SLIDER FOR RATING MOVIES - https://www.w3schools.com/howto/howto_js_rangeslider.asp - DOESN'T WORK AND PREVENTS ALL CODING AFTER IT
 
 var slider = document.getElementById("myRange");
 var output = document.getElementById("demo");
@@ -205,3 +208,10 @@ output.innerHTML = slider.value; // Display the default slider value
 slider.oninput = function() {
   output.innerHTML = this.value;
 }
+
+
+
+
+
+
+
