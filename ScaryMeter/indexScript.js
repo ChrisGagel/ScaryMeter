@@ -164,7 +164,7 @@ document.getElementById("descriptionOfMovieLabelPlot").innerHTML = obj_tmdb.over
 
 
 
-// Animate meters
+// Animate meters -- soon to be obsolete after new meters come into place
 $(function() {
     $(".overallScaryMeterRatingBar > span").each(function() {
         var w = this.style.width; 
@@ -191,18 +191,38 @@ $(function() {
 
 
 
+
+
 //SCARY METER NUMBER RANDOMIZER
 
-var x = Math.floor((Math.random() * 100) + 1);
-document.getElementById("overallRandomNumber").innerHTML = x;
+var overallRandomNumber = Math.round(Math.random() * 100) / 10;
+document.getElementById("overallScaryMeterRatingNumber").innerHTML = overallRandomNumber;
+
+var creepyRandomNumber = Math.round(Math.random() * 100) / 10;
+
+var goryRandomNumber = Math.round(Math.random() * 100) / 10;
+
+var jumpyRandomNumber = Math.round(Math.random() * 100) / 10;
+
+
+var fillOverallScaryMeterBar = document.querySelector(".overallProgressBar");
+fillOverallScaryMeterBar.style.width = overallRandomNumber * 10 + "%";
+
+var fillCreepyMeterBar = document.querySelector(".creepyProgressBar");
+fillCreepyMeterBar.style.width = creepyRandomNumber * 10 + "%";
+
+var fillGoryMeterBar = document.querySelector(".goryProgressBar");
+fillGoryMeterBar.style.width = goryRandomNumber * 10 + "%";
+
+var fillJumpyMeterBar = document.querySelector(".jumpyProgressBar");
+fillJumpyMeterBar.style.width = jumpyRandomNumber * 10 + "%";
 
 
 
 
 
-var myElement = document.querySelector(".progress-bar");
-myElement.style.backgroundColor = "#D93600";
-myElement.style.width = x + "%";
+
+
 
 
 
