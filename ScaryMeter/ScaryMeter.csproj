@@ -67,6 +67,7 @@
     <Content Include="index_old.html" />
     <Content Include="indexStyle.css" />
     <Content Include="aboutUs.html" />
+    <Content Include="frontPage.html" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">

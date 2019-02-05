@@ -103,7 +103,7 @@ document.getElementById("descriptionOfMovieLabelActors").innerHTML = actors.join
 for(i in obj_tmdb.releases.countries)
 {
     if (obj_tmdb.releases.countries[i].iso_3166_1 === "US" && obj_tmdb.releases.countries[i].certification != '') {
-        document.getElementById("mpaaRating").innerHTML = "Rated " + obj_tmdb.releases.countries[i].certification;
+        document.getElementById("mpaaRating").innerHTML = obj_tmdb.releases.countries[i].certification;
         break; 
     } else {
         document.getElementById("mpaaRating").innerHTML = "Unrated";
@@ -171,28 +171,45 @@ document.getElementById("descriptionOfMovieLabelPlot").innerHTML = obj_tmdb.over
 
 
 
-//SCARY METER NUMBER RANDOMIZER
+//SCARY METER NUMBER RANDOMIZER AND DISPLAYS NUMBERS (aka Chris' Da Vinci Masterpiece)
 
 var overallRandomNumber = Math.round(Math.random() * 100) / 10;
-document.getElementById("overallScaryMeterRatingNumber").innerHTML = overallRandomNumber;
-
-/*
-if (overallRandomNumber.includes(".") = true) {
+var overallRandomNumberString = overallRandomNumber.toString();
+if (overallRandomNumberString.includes(".")) {
 document.getElementById("overallScaryMeterRatingNumber").innerHTML = overallRandomNumber;
 }
 else {
 document.getElementById("overallScaryMeterRatingNumber").innerHTML = overallRandomNumber + ".0";
 }
-*/
+
 
 var creepyRandomNumber = Math.round(Math.random() * 100) / 10;
+var creepyRandomNumberString = creepyRandomNumber.toString();
+if (creepyRandomNumberString.includes(".")) {
 document.getElementById("creepyMeterRatingNumber").innerHTML = creepyRandomNumber;
+}
+else {
+document.getElementById("creepyMeterRatingNumber").innerHTML = creepyRandomNumber + ".0";
+}
 
 var goryRandomNumber = Math.round(Math.random() * 100) / 10;
+var goryRandomNumberString = goryRandomNumber.toString();
+if (goryRandomNumberString.includes(".")) {
 document.getElementById("goryMeterRatingNumber").innerHTML = goryRandomNumber;
+}
+else {
+document.getElementById("goryMeterRatingNumber").innerHTML = goryRandomNumber + ".0";
+}
 
 var jumpyRandomNumber = Math.round(Math.random() * 100) / 10;
+var jumpyRandomNumberString = jumpyRandomNumber.toString();
+if (jumpyRandomNumberString.includes(".")) {
 document.getElementById("jumpyMeterRatingNumber").innerHTML = jumpyRandomNumber;
+}
+else {
+document.getElementById("jumpyMeterRatingNumber").innerHTML = jumpyRandomNumber + ".0";
+}
+
 
 
 var fillOverallScaryMeterBar = document.querySelector(".overallProgressBar");
@@ -231,10 +248,3 @@ output.innerHTML = slider.value; // Display the default slider value
 slider.oninput = function() {
   output.innerHTML = this.value;
 }
-
-
-
-
-
-
-

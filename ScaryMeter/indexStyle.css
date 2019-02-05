@@ -17,15 +17,6 @@ p {
     margin: -3px;
 }
 
-/*Makes it so that the menu items in the navbar dropdown on hover - https://stackoverflow.com/questions/8878033/how-to-make-twitter-bootstrap-menu-dropdown-on-hover-rather-than-click*/
-.dropdown-menu li:hover {
-    visibility: visible;
-}
-
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-/*End dropdown on hover*/
 
 .navigationBarContainer {
     background-color: #555555;
@@ -37,6 +28,18 @@ p {
     color: #F5F5F5;
     font-family: 'Open Sans', sans-serif
 }
+
+
+/*Makes it so that the menu items in the navbar dropdown on hover - https://stackoverflow.com/questions/8878033/how-to-make-twitter-bootstrap-menu-dropdown-on-hover-rather-than-click*/
+.dropdown-menu li:hover {
+    visibility: visible;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+/*End dropdown on hover*/
+
 
 .imageCoverPhoto {
     width: 100%;
