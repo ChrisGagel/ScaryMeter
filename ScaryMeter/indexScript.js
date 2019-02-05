@@ -164,29 +164,7 @@ document.getElementById("descriptionOfMovieLabelPlot").innerHTML = obj_tmdb.over
 
 
 
-// Animate meters -- soon to be obsolete after new meters come into place
-$(function() {
-    $(".overallScaryMeterRatingBar > span").each(function() {
-        var w = this.style.width; 
-        $(this)
-            .data("origWidth", w)
-            .width(0)
-            .animate({
-                width: $(this).data("origWidth")
-            }, 1200);
-    });
-});
-$(function() {
-    $(".subScaryMeterRatingBar > span").each(function() {
-        var w = this.style.width; 
-        $(this)
-            .data("origWidth", w)
-            .width(0)
-            .animate({
-                width: $(this).data("origWidth")
-            }, 1200);
-    });
-});
+
 
 
 
@@ -198,11 +176,23 @@ $(function() {
 var overallRandomNumber = Math.round(Math.random() * 100) / 10;
 document.getElementById("overallScaryMeterRatingNumber").innerHTML = overallRandomNumber;
 
+/*
+if (overallRandomNumber.includes(".") = true) {
+document.getElementById("overallScaryMeterRatingNumber").innerHTML = overallRandomNumber;
+}
+else {
+document.getElementById("overallScaryMeterRatingNumber").innerHTML = overallRandomNumber + ".0";
+}
+*/
+
 var creepyRandomNumber = Math.round(Math.random() * 100) / 10;
+document.getElementById("creepyMeterRatingNumber").innerHTML = creepyRandomNumber;
 
 var goryRandomNumber = Math.round(Math.random() * 100) / 10;
+document.getElementById("goryMeterRatingNumber").innerHTML = goryRandomNumber;
 
 var jumpyRandomNumber = Math.round(Math.random() * 100) / 10;
+document.getElementById("jumpyMeterRatingNumber").innerHTML = jumpyRandomNumber;
 
 
 var fillOverallScaryMeterBar = document.querySelector(".overallProgressBar");
