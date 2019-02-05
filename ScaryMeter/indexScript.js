@@ -193,12 +193,25 @@ $(function() {
 
 //SCARY METER NUMBER RANDOMIZER
 
-var x = Math.floor((Math.random() * 10) + 1);
+var x = Math.floor((Math.random() * 100) + 1);
 document.getElementById("overallRandomNumber").innerHTML = x;
 
 
 
-// TEST SLIDER FOR RATING MOVIES - https://www.w3schools.com/howto/howto_js_rangeslider.asp - DOESN'T WORK AND PREVENTS ALL CODING AFTER IT
+
+
+var myElement = document.querySelector(".progress-bar");
+myElement.style.backgroundColor = "#D93600";
+myElement.style.width = x + "%";
+
+
+
+
+
+
+
+//THIS NEXT CODE IS BROKEN ********** PLACE ALL NEW CODE BEFORE IT
+// TEST SLIDER FOR RATING MOVIES - https://www.w3schools.com/howto/howto_js_rangeslider.asp
 
 var slider = document.getElementById("myRange");
 var output = document.getElementById("demo");
