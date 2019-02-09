@@ -18,11 +18,11 @@ p {
 }
 
 
-.navigationBarStyle {
+/*.navigationBarStyle {
     background-color: #555555;
     color: #F5F5F5;
     font-family: 'Open Sans', sans-serif
-}
+}*/
 
 
 /*Makes it so that the menu items in the navbar dropdown on hover - https://stackoverflow.com/questions/8878033/how-to-make-twitter-bootstrap-menu-dropdown-on-hover-rather-than-click*/
@@ -38,7 +38,7 @@ p {
 
 .imageCoverPhoto {
     width: 100%;
-    height: 42vw; /*Originally it was 80vh*/
+    height: 80vh;
     overflow: hidden;
     background-color: #B2B2B2;
 }
@@ -228,7 +228,7 @@ p {
 
 }
 
-/*The following makes the text change size when window is reduced in size - for responsive purposes*/
+/*End of responsive CSS*/
 
 
 .overallScaryMeterRatingNumberStyle {
