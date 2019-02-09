@@ -46,8 +46,10 @@ p {
 #imageCoverPhotoBackground {
     width: 100%;
     height: auto;
-    opacity: 0.5;
+    opacity: 0.75;
     top: -5%;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
 }
 
 .movieBox {
@@ -137,7 +139,7 @@ p {
 
 /*The following makes the text change size when window is reduced in size - for responsive purposes*/
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767px) /*This is the exact size of when the navbar collapses*/{
 
     .navbar-form {
         margin: 0;
@@ -147,6 +149,13 @@ p {
 
     .form-control {
         font-size: 12px;
+    }
+
+    .imageCoverPhoto {
+        width: 100%;
+        height: 60vh;
+        overflow: hidden;
+        background-color: #B2B2B2;
     }
 
     .movieBox {
@@ -186,35 +195,35 @@ p {
 
     #descriptionOfMovieLabelPlot {
         color: #9D9D9D;
-        font-size: 0.5em;
+        font-size: 0.6em;
         font-family: 'Open Sans Light', sans-serif;
         font-weight: 100;
     }
 
     #descriptionOfMovieLabelDirector {
         color: #9D9D9D;
-        font-size: 0.5em;
+        font-size: 1em;
         font-family: 'Open Sans Light', sans-serif;
         font-weight: 100;
     }
 
     #descriptionOfMovieLabelActors {
         color: #9D9D9D;
-        font-size: 0.5em;
+        font-size: 1em;
         font-family: 'Open Sans Light', sans-serif;
         font-weight: 100;
     }
 
     #mpaaRating {
         color: #9D9D9D;
-        font-size: 0.5em;
+        font-size: 1em;
         font-family: 'Open Sans Light', sans-serif;
         font-weight: 100;
     }
 
     #runtime {
         color: #9D9D9D;
-        font-size: 0.5em;
+        font-size: 1em;
         font-family: 'Open Sans Light', sans-serif;
         font-weight: 100;
     }
@@ -228,114 +237,126 @@ p {
 
 }
 
-/*End of responsive CSS*/
 
+@media screen and (max-width: 600px) {
 
-.overallScaryMeterRatingNumberStyle {
-    padding-left: 10px;
-    padding-right: 10px;
-    color: white;
-    margin-top: 4px;
-    font-size: 1.3em;
-    text-align: center;
-}
-
-.overallMeterCoverPhoto {
-    top: 15vh;
-    position: absolute;
-}
-
-.subScaryMeterRatingBarLabel {
-    float: right;
-    color: #555555;
-    margin-top: 5px;
-    margin-right: 8px;
-    font-size: 1em;
-}
-
-.subScaryMeterRatingBarSection {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-}
-
-.progress {
-    margin: 0;
-    padding: 0;
-    height: 30px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
-    box-shadow: none;
-}
-
-.progress-bar {
-    box-shadow: none;
-    font-size: 15px;
-    padding-top: 6px;
-}
-
-.similarlyRatedMoviesLabel {
-    font-style: italic;
-    font-size: 2em;
-    color: #555555;
-    margin-top: 30px;
-}
-
-
-
-
-
-
-
-
-
-
-
-/*TEST SLIDER FOR RATING MOVIES - https://www.w3schools.com/howto/howto_js_rangeslider.asp*/
-
-.slidecontainer {
-    width: 100%; /* Width of the outside container */
-    opacity: 0;
-    transition: .15s ease;
-}
-
-.overallScaryMeterRatingBar:hover .slidecontainer {
-    opacity: 1;
-}
-
-/* The slider itself */
-.slider {
-    -webkit-appearance: none; /* Override default CSS styles */
-    appearance: none;
-    width: 100%; /* Full-width */
-    height: 8px; /* Specified height */
-    background: #d3d3d3; /* Grey background */
-    outline: none; /* Remove outline */
-    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-    transition: opacity .2s;
-}
-
-    /* Mouse-over effects */
-    .slider:hover {
-        opacity: 1; /* Fully shown on mouse-over */
+    .imageCoverPhoto {
+        width: 100%;
+        height: 50vh;
+        overflow: hidden;
+        background-color: #B2B2B2;
     }
 
-    /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
-    .slider::-webkit-slider-thumb {
-        -webkit-appearance: none; /* Override default look */
+}
+
+    /*End of responsive CSS*/
+
+
+    .overallScaryMeterRatingNumberStyle {
+        padding-left: 10px;
+        padding-right: 10px;
+        color: white;
+        margin-top: 4px;
+        font-size: 1.3em;
+        text-align: center;
+    }
+
+    .overallMeterCoverPhoto {
+        top: 15vh;
+        position: absolute;
+    }
+
+    .subScaryMeterRatingBarLabel {
+        float: right;
+        color: #555555;
+        margin-top: 5px;
+        margin-right: 8px;
+        font-size: 1em;
+    }
+
+    .subScaryMeterRatingBarSection {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .progress {
+        margin: 0;
+        padding: 0;
+        height: 30px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        box-shadow: none;
+    }
+
+    .progress-bar {
+        box-shadow: none;
+        font-size: 15px;
+        padding-top: 6px;
+    }
+
+    .similarlyRatedMoviesLabel {
+        font-style: italic;
+        font-size: 2em;
+        color: #555555;
+        margin-top: 30px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+    /*TEST SLIDER FOR RATING MOVIES - https://www.w3schools.com/howto/howto_js_rangeslider.asp*/
+
+    .slidecontainer {
+        width: 100%; /* Width of the outside container */
+        opacity: 0;
+        transition: .15s ease;
+    }
+
+    .overallScaryMeterRatingBar:hover .slidecontainer {
+        opacity: 1;
+    }
+
+    /* The slider itself */
+    .slider {
+        -webkit-appearance: none; /* Override default CSS styles */
         appearance: none;
-        width: 10px; /* Set a specific slider handle width */
-        height: 25px; /* Slider handle height */
-        background: #4CAF50; /* Green background */
-        cursor: pointer; /* Cursor on hover */
+        width: 100%; /* Full-width */
+        height: 8px; /* Specified height */
+        background: #d3d3d3; /* Grey background */
+        outline: none; /* Remove outline */
+        opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+        -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+        transition: opacity .2s;
     }
 
-    .slider::-moz-range-thumb {
-        width: 10px; /* Set a specific slider handle width */
-        height: 25px; /* Slider handle height */
-        background: #4CAF50; /* Green background */
-        cursor: pointer; /* Cursor on hover */
-    }
+        /* Mouse-over effects */
+        .slider:hover {
+            opacity: 1; /* Fully shown on mouse-over */
+        }
+
+        /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none; /* Override default look */
+            appearance: none;
+            width: 10px; /* Set a specific slider handle width */
+            height: 25px; /* Slider handle height */
+            background: #4CAF50; /* Green background */
+            cursor: pointer; /* Cursor on hover */
+        }
+
+        .slider::-moz-range-thumb {
+            width: 10px; /* Set a specific slider handle width */
+            height: 25px; /* Slider handle height */
+            background: #4CAF50; /* Green background */
+            cursor: pointer; /* Cursor on hover */
+        }
