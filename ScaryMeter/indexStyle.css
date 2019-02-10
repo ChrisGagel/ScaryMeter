@@ -249,60 +249,60 @@ p {
 
 }
 
-    /*End of responsive CSS*/
+/*End of responsive CSS*/
 
 
-    .overallScaryMeterRatingNumberStyle {
-        padding-left: 10px;
-        padding-right: 10px;
-        color: white;
-        margin-top: 4px;
-        font-size: 1.3em;
-        text-align: center;
-    }
+.overallScaryMeterRatingNumberStyle {
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    margin-top: 4px;
+    font-size: 1.3em;
+    text-align: center;
+}
 
-    .overallMeterCoverPhoto {
-        top: 15vh;
-        position: absolute;
-    }
+.overallMeterCoverPhoto {
+    top: 15vh;
+    position: absolute;
+}
 
-    .subScaryMeterRatingBarLabel {
-        float: right;
-        color: #555555;
-        margin-top: 5px;
-        margin-right: 8px;
-        font-size: 1em;
-    }
+.subScaryMeterRatingBarLabel {
+    float: right;
+    color: #555555;
+    margin-top: 5px;
+    margin-right: 8px;
+    font-size: 1em;
+}
 
-    .subScaryMeterRatingBarSection {
-        padding: 0;
-        margin: 0;
-        width: 100%;
-    }
+.subScaryMeterRatingBarSection {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
 
-    .progress {
-        margin: 0;
-        padding: 0;
-        height: 30px;
-        border-top-right-radius: 0px;
-        border-bottom-right-radius: 0px;
-        border-top-left-radius: 0px;
-        border-bottom-left-radius: 0px;
-        box-shadow: none;
-    }
+.progress {
+    margin: 0;
+    padding: 0;
+    height: 30px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    box-shadow: none;
+}
 
-    .progress-bar {
-        box-shadow: none;
-        font-size: 15px;
-        padding-top: 6px;
-    }
+.progress-bar {
+    box-shadow: none;
+    font-size: 15px;
+    padding-top: 6px;
+}
 
-    .similarlyRatedMoviesLabel {
-        font-style: italic;
-        font-size: 2em;
-        color: #555555;
-        margin-top: 30px;
-    }
+.similarlyRatedMoviesLabel {
+    font-style: italic;
+    font-size: 2em;
+    color: #555555;
+    margin-top: 30px;
+}
 
 
 
@@ -322,7 +322,7 @@ p {
         transition: .15s ease;
     }
 
-    .overallScaryMeterRatingBar:hover .slidecontainer {
+    .overallScaryMeterRatingBarContainer:hover .slidecontainer {
         opacity: 1;
     }
 
@@ -330,11 +330,11 @@ p {
     .slider {
         -webkit-appearance: none; /* Override default CSS styles */
         appearance: none;
-        width: 100%; /* Full-width */
-        height: 8px; /* Specified height */
-        background: #d3d3d3; /* Grey background */
-        outline: none; /* Remove outline */
-        opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+        width: 100%;
+        height: 8px;
+        background: #F5F5F5;
+        outline: none;
+        opacity: 0.7;
         -webkit-transition: .2s; /* 0.2 seconds transition on hover */
         transition: opacity .2s;
     }
@@ -348,15 +348,15 @@ p {
         .slider::-webkit-slider-thumb {
             -webkit-appearance: none; /* Override default look */
             appearance: none;
-            width: 10px; /* Set a specific slider handle width */
-            height: 25px; /* Slider handle height */
-            background: #4CAF50; /* Green background */
+            width: 10px;
+            height: 25px;
+            background: #e54b4b; /* Green background */
             cursor: pointer; /* Cursor on hover */
         }
 
         .slider::-moz-range-thumb {
             width: 10px; /* Set a specific slider handle width */
             height: 25px; /* Slider handle height */
-            background: #4CAF50; /* Green background */
+            background: #e54b4b; /* Green background */
             cursor: pointer; /* Cursor on hover */
         }

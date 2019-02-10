@@ -173,13 +173,13 @@ document.getElementById("descriptionOfMovieLabelPlot").innerHTML = obj_tmdb.over
 
 //SCARY METER NUMBER RANDOMIZER AND DISPLAYS NUMBERS (aka Chris' Da Vinci Masterpiece)
 
-var overallRandomNumber = Math.round(Math.random() * 100) / 10;
-var overallRandomNumberString = overallRandomNumber.toString();
-if (overallRandomNumberString.includes(".")) {
-document.getElementById("overallScaryMeterRatingNumber").innerHTML = overallRandomNumber;
+var overallRandomNumber = Math.round(Math.random() * 100) / 10; //Creates random number between 0.0 and 10.0, inclusive
+var overallRandomNumberString = overallRandomNumber.toString(); //Converts random number to string
+if (overallRandomNumberString.includes(".")) { //If random number has a decimal in it...
+document.getElementById("overallScaryMeterRatingNumber").innerHTML = overallRandomNumber; //...then display it...
 }
 else {
-document.getElementById("overallScaryMeterRatingNumber").innerHTML = overallRandomNumber + ".0";
+document.getElementById("overallScaryMeterRatingNumber").innerHTML = overallRandomNumber + ".0"; //...otherwise add a .0 at end
 }
 
 
@@ -212,8 +212,8 @@ document.getElementById("jumpyMeterRatingNumber").innerHTML = jumpyRandomNumber 
 
 
 
-var fillOverallScaryMeterBar = document.querySelector(".overallProgressBar");
-fillOverallScaryMeterBar.style.width = overallRandomNumber * 10 + "%";
+var fillOverallScaryMeterBar = document.querySelector(".overallProgressBar"); //Create variable to show how full the progress bar is based on progress bar class style
+fillOverallScaryMeterBar.style.width = overallRandomNumber * 10 + "%"; //Set width of variable (how full bar is) to the random number converted to a 0-100% scale
 
 var fillCreepyMeterBar = document.querySelector(".creepyProgressBar");
 fillCreepyMeterBar.style.width = creepyRandomNumber * 10 + "%";
@@ -227,24 +227,16 @@ fillJumpyMeterBar.style.width = jumpyRandomNumber * 10 + "%";
 
 
 
+//SLIDER FOR RATING MOVIES - https://www.w3schools.com/howto/howto_js_rangeslider.asp
 
+var overallScaryMeterBarSlider = document.getElementById ("overallSliderRange"); //Create variable to display slider handle at same position as progress bar is full
+overallScaryMeterBarSlider.value = overallRandomNumber * 10; //Set slider value to the random number converted to 0-100 scale
 
+var overallSliderRangeNumberOutput = document.getElementById ("overallSliderRangeNumber"); //Create variable to display number (from 0-100) that slider handle is at
+//overallSliderRangeNumberOutput.innerHTML = overallScaryMeterBarSlider.value; //Display slider handle number upon load - NOT NECESSARY
 
-
-
-
-
-
-
-
-//THIS NEXT CODE IS BROKEN ********** PLACE ALL NEW CODE BEFORE IT
-// TEST SLIDER FOR RATING MOVIES - https://www.w3schools.com/howto/howto_js_rangeslider.asp
-
-var slider = document.getElementById("myRange");
-var output = document.getElementById("demo");
-output.innerHTML = slider.value; // Display the default slider value
-
-// Update the current slider value (each time you drag the slider handle)
-slider.oninput = function() {
-  output.innerHTML = this.value;
+overallScaryMeterBarSlider.oninput = function() {
+    overallSliderRangeNumberOutput.innerHTML = this.value; //Change slider handle number to display numerically wherever the handle is at and have it change
+    //CHANGE THIS CODE SO THAT IT ONLY SWITCHES TO THIS AFTER USER HAS LET GO OF HANDLE! -- overallSliderRangeNumberOutput.innerHTML = "accepted";
 }
+
