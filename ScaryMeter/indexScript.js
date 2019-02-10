@@ -237,6 +237,9 @@ var overallSliderRangeNumberOutput = document.getElementById ("overallSliderRang
 
 overallScaryMeterBarSlider.oninput = function() {
     overallSliderRangeNumberOutput.innerHTML = this.value; //Change slider handle number to display numerically wherever the handle is at and have it change
-    //CHANGE THIS CODE SO THAT IT ONLY SWITCHES TO THIS AFTER USER HAS LET GO OF HANDLE! -- overallSliderRangeNumberOutput.innerHTML = "accepted";
 }
 
+function overallMouseUp() {
+    overallSliderRangeNumberOutput.innerHTML = "Submitted"; //When user lifts click, rating is submitted
+    //THIS DOESNT WORK, IT'S SUPPOSED TO PREVENT THE USER FROM SLIDING THE SLIDER https://stackoverflow.com/questions/7588725/freeze-the-slider - overallScaryMeterBarSlider.enabled = NO;
+}
