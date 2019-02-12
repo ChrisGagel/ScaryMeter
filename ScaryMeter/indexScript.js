@@ -241,5 +241,4 @@ overallScaryMeterBarSlider.oninput = function() {
 
 function overallMouseUp() {
     overallSliderRangeNumberOutput.innerHTML = "Submitted"; //When user lifts click, rating is submitted
-    //THIS DOESNT WORK, IT'S SUPPOSED TO PREVENT THE USER FROM SLIDING THE SLIDER https://stackoverflow.com/questions/7588725/freeze-the-slider - overallScaryMeterBarSlider.enabled = NO;
 }
