@@ -73,7 +73,7 @@ p {
     transform: perspective(1px) translateY(-50%);
     top: 50%;
     background-color: #F5F5F5; 
-    box-shadow: 0px 0px 10px black;
+    box-shadow: 0px 0px 10px #555555;
     display: flex;
 }
 
@@ -86,6 +86,15 @@ p {
 .movieDescription {
     float: left;
     padding: 3%;
+    overflow: auto;
+}
+
+.movieDescBottom {
+    /*background-color: yellow;*/
+}
+
+.movieDescTop {
+    /*background-color: red;*/
 }
 
 
@@ -282,12 +291,11 @@ p {
 
 .scaryMeterRating {
     height: auto;
-    width: 67.7%;
+    width: 100%;
     max-width: 900px;
     margin: auto;
-    position: relative;
-    transform: perspective(1px) translateY(-50%);
-    top: 20%;
+    position: absolute;
+    bottom: -15%;
 }
 
 .overallScaryMeterRatingNumberStyle {
@@ -350,6 +358,7 @@ p {
     width: 69.3%;
     max-width: 900px;
     margin: auto;
+    box-shadow: 0px 0px 10px #555555;
 }
 
 
@@ -403,3 +412,28 @@ p {
         background: #e54b4b; /* Green background */
         cursor: pointer; /* Cursor on hover */
     }
+
+
+
+
+
+    /* CUSTOM SCROLLBAR */
+    /* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
