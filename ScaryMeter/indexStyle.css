@@ -9,20 +9,15 @@
 */
 
 
-body {
-    background-color: #DEDEDE;
+body, html {
+  background-color: #DEDEDE;
+  height: 100%;
+  margin: 0;
 }
 
 p {
     margin: -3px;
 }
-
-
-/*.navigationBarStyle {
-    background-color: #555555;
-    color: #F5F5F5;
-    font-family: 'Open Sans', sans-serif
-}*/
 
 
 /*Makes it so that the menu items in the navbar dropdown on hover - https://stackoverflow.com/questions/8878033/how-to-make-twitter-bootstrap-menu-dropdown-on-hover-rather-than-click*/
@@ -40,44 +35,66 @@ p {
 /*End dropdown on hover*/
 
 
-.imageCoverPhoto {
-    width: 100%;
-    height: 80vh;
-    overflow: hidden;
-    background-color: #B2B2B2;
-}
+
 
 #imageCoverPhotoBackground {
+  /* The image used */
+  /*background-image: url("https://image.tmdb.org/t/p/original//3CCfgSvtvN3HwVs5hbcC1NhOAzw.jpg");*/
+  position: relative;
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* Set transparency*/
+  opacity: 0.75;
+  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+
+
+
+.movieSummarySection {
+    height: 80vh;
     width: 100%;
-    height: auto;
-    opacity: 0.75;
-    top: -5%;
-    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
-    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
 }
 
-.movieBox {
-    top: 15vh;
-    position: absolute;
+.movieDetails {
+    height: 75%;
+    max-height: 400px;
+    width: 70%;
+    max-width: 900px;
+    margin: auto;
+    position: relative;
+    transform: perspective(1px) translateY(-50%);
+    top: 50%;
+    background-color: #F5F5F5; 
+    box-shadow: 0px 0px 20px black;
+    display: flex;
 }
 
-.moviePosterPhoto {
+#moviePoster {
+    height: 100%;
+    width: auto;
+    float: left;
 }
 
-#moviePosterPhotoChild {
-    width: 100%;
+.movieDescription {
+    float: left;
+    padding: 3%;
 }
 
-.movieBoxDescriptionContainer {
-    margin-top: 35px;
-    padding-left: 20px;
-}
+
 
 #movieYearLabel {
     background-color: #555555;
     display: inline-block;
     color: #F5F5F5;
-    font-size: 1.3em;
+    font-size: 1.5em;
     font-family: 'Open Sans Light', sans-serif;
     font-weight: 100;
     padding: 2px;
@@ -92,7 +109,7 @@ p {
 
 #tagline {
     color: #9D9D9D;
-    font-size: 1.3em;
+    font-size: 1.8em;
     font-family: 'Open Sans Light', sans-serif;
     font-weight: 100;
     font-style: italic;
@@ -100,7 +117,7 @@ p {
 
 #descriptionOfMovieLabelPlot {
     color: #9D9D9D;
-    font-size: 1em;
+    font-size: 1.2em;
     font-family: 'Open Sans Light', sans-serif;
     font-weight: 100;
 }
@@ -135,10 +152,14 @@ p {
 
 .descriptionOfLabel {
     color: #555555;
-    font-size: 1em;
+    font-size: 1.2em;
     font-family: 'Open Sans Light', sans-serif;
     font-weight: bold;
 }
+
+
+
+
 
 
 /*The following makes the text change size when window is reduced in size - for responsive purposes*/
@@ -256,6 +277,19 @@ p {
 /*End of responsive CSS*/
 
 
+
+
+
+.scaryMeterRating {
+    height: auto;
+    width: 70%;
+    max-width: 900px;
+    margin: auto;
+    position: relative;
+    transform: perspective(1px) translateY(-50%);
+    top: 30%;
+}
+
 .overallScaryMeterRatingNumberStyle {
     padding-left: 10px;
     padding-right: 10px;
@@ -312,6 +346,11 @@ p {
 
 
 
+.pageBottom {
+    width: 70%;
+    max-width: 900px;
+    margin: auto;
+}
 
 
 

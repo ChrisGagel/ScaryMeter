@@ -13,17 +13,18 @@ var movies = new Bloodhound({
             // Map the remote source JSON array to a JavaScript object array
             return $.map(response.results, function (movie) {
                 return {
-                    value: movie.id
+                    value: movie.id + "-" + movie.title
                 };
             });
         }
     }
 });
 
+// HTML submit button sends same-value displayed to URL
 
 // Instantiate the Typeahead UI
 $('.typeahead').typeahead(null, {
-    display: 'value',
+    display: "value",
     source: movies
 })
 
@@ -65,12 +66,14 @@ var backdropBaseURL_tmdb = "https://image.tmdb.org/t/p/";
 var backdropPathImgSize_tmdb = "original"; //Use CONFIG command to find appropriate size
 var backdropPath_tmdb = obj_tmdb.backdrop_path;
 var backdrop_tmdb = backdropBaseURL_tmdb + backdropPathImgSize_tmdb + "/" + backdropPath_tmdb; //Add &append_to_response=credits
+
 // Write backdrop path
-document.getElementById("imageCoverPhotoBackground").src = backdrop_tmdb;
+//document.getElementById("imageCoverPhotoBackground").src = backdrop_tmdb;
+document.getElementById("imageCoverPhotoBackground").style.backgroundImage = "url("+backdrop_tmdb+")";
 
 // Build and write poster path
 var poster_tmdb = backdropBaseURL_tmdb + backdropPathImgSize_tmdb + "/" + obj_tmdb.poster_path;
-document.getElementById("moviePosterPhotoChild").src = poster_tmdb;
+document.getElementById("moviePoster").src = poster_tmdb;
 
 // Date
 document.getElementById("movieYearLabel").innerHTML = parseInt(obj_tmdb.release_date);
@@ -124,38 +127,6 @@ document.getElementById("descriptionOfMovieLabelPlot").innerHTML = obj_tmdb.over
 
 
 
-// Search for PRIDE & PREJUDICE and you'll see why we need to use only TMDB...
-/*
-// OMDB
-var baseURL_omdb = "http://www.omdbapi.com/?t=";
-var searchStr = obj_tmdb.title.replace(/\s+/g, '+').toLowerCase();
-var apiKey_omdb = "&plot=full&apikey=2ce77814";
-var query_omdb = baseURL_omdb + searchStr + apiKey_omdb;
-
-var xhr_omdb = new XMLHttpRequest();
-//xhr_omdb.open("GET", "http://www.omdbapi.com/?t=spider+man+homecoming&plot=full&apikey=2ce77814", false);
-xhr_omdb.open("GET", query_omdb, false);
-xhr_omdb.send();
-
-var obj_omdb = JSON.parse(xhr_omdb.responseText);
-
-// SWITCH OVER ENTIRELY TO TMDB!!!
-//document.getElementById("descriptionOfMovieLabelDirector").innerHTML = obj_omdb.Director;
-//document.getElementById("descriptionOfMovieLabelActors").innerHTML = obj_omdb.Actors;
-//document.getElementById("descriptionOfMovieLabelPlot").innerHTML = obj_omdb.Plot;
-var plot_omdb = obj_omdb.Plot;
-var plotLength_omdb = plot_omdb.length;
-
-DO NOT TOUCH!!! (CHRIS' PICASSO MASTERPIECE)
-// Plot selector based on character count
-if (plotLength_omdb >= plotLength_tmdb) {
-    document.getElementById("descriptionOfMovieLabelPlot").innerHTML = obj_omdb.Plot;
-}
-else {
-    document.getElementById("descriptionOfMovieLabelPlot").innerHTML = obj_tmdb.overview;
-}
-document.getElementById("descriptionOfMovieLabelPlot").innerHTML = obj_tmdb.overview;
-*/
 
 
 
@@ -165,13 +136,7 @@ document.getElementById("descriptionOfMovieLabelPlot").innerHTML = obj_tmdb.over
 
 
 
-
-
-
-
-
-
-//SCARY METER NUMBER RANDOMIZER AND DISPLAYS NUMBERS (aka Chris' Da Vinci Masterpiece)
+//SCARY METER NUMBER RANDOMIZER AND DISPLAYS NUMBERS (aka Chris' Da Vinci Masterpiece) (!!!)
 
 var overallRandomNumber = Math.round(Math.random() * 100) / 10; //Creates random number between 0.0 and 10.0, inclusive
 var overallRandomNumberString = overallRandomNumber.toString(); //Converts random number to string
