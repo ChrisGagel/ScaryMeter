@@ -198,7 +198,6 @@ var overallScaryMeterBarSlider = document.getElementById ("overallSliderRange");
 overallScaryMeterBarSlider.value = overallRandomNumber * 10; //Set slider value to the random number converted to 0-100 scale
 
 var overallSliderRangeNumberOutput = document.getElementById ("overallSliderRangeNumber"); //Create variable to display number (from 0-100) that slider handle is at
-//overallSliderRangeNumberOutput.innerHTML = overallScaryMeterBarSlider.value; //Display slider handle number upon load - NOT NECESSARY
 
 overallScaryMeterBarSlider.oninput = function() {
     overallSliderRangeNumberOutput.innerHTML = this.value; //Change slider handle number to display numerically wherever the handle is at and have it change
