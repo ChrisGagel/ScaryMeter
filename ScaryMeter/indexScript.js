@@ -194,13 +194,20 @@ fillJumpyMeterBar.style.width = jumpyRandomNumber * 10 + "%";
 
 //SLIDER FOR RATING MOVIES - https://www.w3schools.com/howto/howto_js_rangeslider.asp
 
+//This jQuery script makes it so the user ratings appear upon hover
+$(".scaryMeterRating").hover(function(){
+  $(".slidecontainer").css("opacity", "1");
+  }, function(){
+  $(".slidecontainer").css("opacity", "0");
+});
+
 var overallScaryMeterBarSlider = document.getElementById ("overallSliderRange"); //Create variable to display slider handle at same position as progress bar is full
 overallScaryMeterBarSlider.value = overallRandomNumber * 10; //Set slider value to the random number converted to 0-100 scale
 
 var overallSliderRangeNumberOutput = document.getElementById ("overallSliderRangeNumber"); //Create variable to display number (from 0-100) that slider handle is at
 
 overallScaryMeterBarSlider.oninput = function() {
-    overallSliderRangeNumberOutput.innerHTML = this.value; //Change slider handle number to display numerically wherever the handle is at and have it change
+    overallSliderRangeNumberOutput.innerHTML = this.value / 10; //Change slider handle number to display numerically wherever the handle is at and have it change
 }
 
 function overallMouseUp() {

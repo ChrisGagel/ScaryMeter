@@ -20,21 +20,6 @@ p {
 }
 
 
-/*Makes it so that the menu items in the navbar dropdown on hover - https://stackoverflow.com/questions/8878033/how-to-make-twitter-bootstrap-menu-dropdown-on-hover-rather-than-click*/
-.dropdown-menu li:hover {
-    visibility: visible;
-}
-
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-.dropdown:hover {
-    background-color: #0a0a0a;
-}
-/*End dropdown on hover*/
-
-
 
 
 #imageCoverPhotoBackground {
@@ -42,8 +27,7 @@ p {
   /*background-image: url("https://image.tmdb.org/t/p/original//3CCfgSvtvN3HwVs5hbcC1NhOAzw.jpg");*/
   position: relative;
 
-  /* Full height */
-  height: 100%; 
+  height: 700px; /*Changed from 100% because the image would adjust weirdly when the browser height was reduced*/
 
   /* Center and scale the image nicely */
   background-position: center;
@@ -59,8 +43,9 @@ p {
 
 
 .movieSummarySection {
-    height: 80vh;
+    height: 500px; /*changed from 80vh*/
     width: 100%;
+    margin-top: 10px;
 }
 
 .movieDetails {
@@ -86,7 +71,8 @@ p {
 .movieDescription {
     float: left;
     padding: 3%;
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .movieDescBottom {
@@ -243,7 +229,9 @@ p {
 
 
 
-/*Makes the navbar responsive when window is shrunk*/
+
+
+/*Makes certain elements responsive when window is shrunk*/
 
 @media screen and (max-width: 767px) /*This is the exact size of when the navbar collapses*/ {
 
@@ -256,10 +244,36 @@ p {
     .form-control {
         font-size: 12px;
     }
+
+    .movieSummarySection {
+        height: 500px; /*changed from 80vh*/
+        width: 100%;
+        margin-top: 30px;
+    }
     
 }
 
+@media screen and (min-width: 767px) /*This is the exact size of when the navbar collapses*/ {
+
+    /*Makes it so that the menu items in the navbar dropdown on hover only when the navbar isn't collapsed - https://stackoverflow.com/questions/8878033/how-to-make-twitter-bootstrap-menu-dropdown-on-hover-rather-than-click*/
+    .dropdown-menu li:hover {
+        visibility: visible;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown:hover {
+        background-color: #0a0a0a;
+    }
+    /*End dropdown on hover*/
+
+}
+
 /*End of responsive CSS*/
+
+
 
 
 
@@ -273,10 +287,6 @@ p {
     width: 100%; /* Width of the outside container */
     opacity: 0;
     transition: .15s ease;
-}
-
-.scaryMeterRating:hover .slidecontainer {
-    opacity: 1;
 }
 
 /* The slider itself */
@@ -321,8 +331,10 @@ p {
 
 
 
-    /* CUSTOM SCROLLBAR */
-    /* width */
+
+
+/* CUSTOM SCROLLBAR */
+/* Width */
 ::-webkit-scrollbar {
   width: 10px;
 }
