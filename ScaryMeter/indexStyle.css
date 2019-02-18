@@ -28,6 +28,8 @@ p {
   position: relative;
 
   height: 700px; /*Changed from 100% because the image would adjust weirdly when the browser height was reduced*/
+  min-width: 600px;
+
 
   /* Center and scale the image nicely */
   background-position: center;
@@ -53,6 +55,7 @@ p {
     max-height: 600px;
     width: 70%;
     max-width: 1200px;
+    min-width: 600px;
     margin: auto;
     position: relative;
     transform: perspective(1px) translateY(-50%);
@@ -158,14 +161,13 @@ p {
     width: 70%;
     margin: auto;
     max-width: 1200px;
+    min-width: 600px;
     position: static;
     margin-top: -50px;
     margin-bottom: 15px;
 }
 
 .overallScaryMeterRatingNumberStyle {
-    padding-left: 10px;
-    padding-right: 10px;
     color: white;
     margin-top: 4px;
     font-size: 1.3em;
@@ -181,19 +183,12 @@ p {
     float: right;
     color: #555555;
     margin-top: 5px;
-    margin-right: 8px;
     font-size: 1em;
 }
 
-.subScaryMeterRatingBarSection {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-}
 
 .progress {
     margin: 0;
-    padding: 0;
     height: 30px;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
@@ -217,10 +212,13 @@ p {
 
 
 .pageBottom {
-    width: 71.5%;
+    width: 70%;
     max-width: 1200px;
+    min-width: 600px;
     margin: auto;
     box-shadow: 0px 0px 10px #555555;
+    background-color: #F5F5F5;
+    padding-top: 15px;
 }
 
 
@@ -250,10 +248,48 @@ p {
         width: 100%;
         margin-top: 30px;
     }
+
+
+    #movieYearLabel {
+        font-size: 0.75em;
+    }
+
+    #movieTitleLabel {
+        font-size: 1.25em;
+    }
+
+    #tagline {
+        font-size: 0.7em;
+    }
+
+    #descriptionOfMovieLabelPlot {
+        font-size: 0.5em;
+    }
+
+    #descriptionOfMovieLabelDirector {
+        font-size: 1em;
+    }
+
+    #descriptionOfMovieLabelActors {
+        font-size: 1em;
+    }
+
+    #mpaaRating {
+        font-size: 1em;
+    }
+
+    #runtime {
+        font-size: 1em;
+    }
+
+    .descriptionOfLabel {
+        font-size: 0.5em;
+    }
     
 }
 
-@media screen and (min-width: 767px) /*This is the exact size of when the navbar collapses*/ {
+
+@media screen and (min-width: 768px) /*This is the exact size of when the navbar collapses*/ {
 
     /*Makes it so that the menu items in the navbar dropdown on hover only when the navbar isn't collapsed - https://stackoverflow.com/questions/8878033/how-to-make-twitter-bootstrap-menu-dropdown-on-hover-rather-than-click*/
     .dropdown-menu li:hover {
