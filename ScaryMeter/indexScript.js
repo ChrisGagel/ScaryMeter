@@ -14,6 +14,8 @@ var movies = new Bloodhound({
             return $.map(response.results, function (movie) {
                 return {
                     value: movie.id + "-" + movie.title
+                    //value1: movie.id,
+                    //value2: movie.title
                 };
             });
         }
@@ -36,6 +38,7 @@ $('.typeahead').typeahead(null, {
 
 // TMDB 49026 694
 
+//https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
         name = name.replace(/[\[\]]/g, "\\$&");
@@ -68,8 +71,15 @@ var backdropPath_tmdb = obj_tmdb.backdrop_path;
 var backdrop_tmdb = backdropBaseURL_tmdb + backdropPathImgSize_tmdb + "/" + backdropPath_tmdb; //Add &append_to_response=credits
 
 // Write backdrop path
-//document.getElementById("imageCoverPhotoBackground").src = backdrop_tmdb;
 document.getElementById("imageCoverPhotoBackground").style.backgroundImage = "url("+backdrop_tmdb+")";
+
+// Path for similarly rated movies cover photos
+document.getElementById("similarlyRatedMoviesCoverPhoto1").src = backdrop_tmdb;
+document.getElementById("similarlyRatedMoviesCoverPhoto2").src = backdrop_tmdb;
+document.getElementById("similarlyRatedMoviesCoverPhoto3").src = backdrop_tmdb;
+document.getElementById("similarlyRatedMoviesCoverPhoto4").src = backdrop_tmdb;
+document.getElementById("similarlyRatedMoviesCoverPhoto5").src = backdrop_tmdb;
+document.getElementById("similarlyRatedMoviesCoverPhoto6").src = backdrop_tmdb;
 
 // Build and write poster path
 var poster_tmdb = backdropBaseURL_tmdb + backdropPathImgSize_tmdb + "/" + obj_tmdb.poster_path;

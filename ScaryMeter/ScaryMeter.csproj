@@ -68,6 +68,8 @@
     <Content Include="indexStyle.css" />
     <Content Include="aboutUs.html" />
     <Content Include="frontPage.html" />
+    <Content Include="frontPageStyle.css" />
+    <Content Include="aboutUsStyle.css" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">

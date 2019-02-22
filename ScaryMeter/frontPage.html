@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 
     <!--Style sheet, named indexStyle.css-->
-    <link rel="stylesheet" href="indexStyle.css">
+    <link rel="stylesheet" href="frontPageStyle.css">
 
     <!--Favicon-->
     <link href="images\SMfavicon.png" rel="icon" type="image/x-icon">
@@ -26,7 +26,10 @@
 
 
 <body>
-    <div class="container-fluid">
+
+    <img id="imageCoverPhotoBackground" src="https://digitaldesigns1.net/wp-content/uploads/2017/01/web-background.jpg" />
+
+    <div class="container-fluid" style="position:absolute; top:0; width:100%;">
 
         <!--NAVIGATION BAR-->
         <div class="row">
@@ -69,27 +72,211 @@
                     </div>
                 </div>
             </nav>
+        </div> <!-- navigation bar row -->
+
+
+
+        <!--INTRODUCTION MESSAGE-->
+        <div class="row" style="margin-top: 30px;">
+            <div class="introductionMessage">
+                <h1>
+                    Welcome to Scary Meter!
+                </h1>
+                <br />
+                <p>
+                    Have you ever wondered just how scary a movie is? If so, you've come to the right place! Movies here are ranked based on how Scary, Creepy, Gory and Jumpy they are instead of on quality. These scores are compiled from user ratings. Please feel free to vote in as many categories for as many movies as you'd like. For more information, you may reference our <a href="aboutUs.html" style="color: #F5F5F5;">About Us</a> page.
+                </p>
+            </div>
+        </div>
+
+
+
+        <!-- FEATURED MOVIES-->
+        <div class="row">
+            <div class="featuredMoviesSection">
+
+
+                <!--MOVIE OF THE DAY-->
+                <div class="col-xs-6">
+                    <div class="movieBox">
+                        <div class="featuredMovieLabel">Movie of the Day</div>
+                        <div class="row" style="margin: 0;">
+                            <div class="movieSummarySection">
+                                <div class="movieDetails">
+                                    <img id="moviePoster" alt="Movie Poster" src="https://image.tmdb.org/t/p/w1280/9BdJz7b4WdJul0KVu42YFEgqzyp.jpg" />
+                                    <div class="movieDescription">
+                                        <div class="row" style="margin: 0;">
+                                            <p id="movieYearLabel">2016</p>
+                                            <p id="movieTitleLabel">Swiss Army Man</p>
+                                            <p id="descriptionOfMovieLabelPlot">Alone on a tiny deserted island, Hank has given up all hope of ever making it home again. But one day everything changes when a dead body washes ashore, and he soon realizes it may be his last opportunity to escape certain death. Armed with his new “friend” and an unusual bag of tricks, the duo go on an epic adventure to bring Hank back to the woman of his dreams.</p>
+                                            <br />
+                                        </div>
+                                    </div><!--movieDescription-->
+                                </div> <!-- movieDetails -->
+                            </div> <!-- movieSummarySection -->
+                        </div>
+
+                        <div class="row" style="margin: 0;">
+                            <div class="col-xs-2">
+                                <div class="subScaryMeterRatingBarLabel" style="font-size: 1.2em;">
+                                    SCARY
+                                </div>
+                            </div>
+                            <div class="col-xs-10" style="padding: 0;">
+                                <div class="progress" style="height: 45px;">
+                                    <div class="progress-bar overallProgressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="background-color: #CC3333; text-align: right; padding-right: 7px;">
+                                        <span id="overallMeterRatingNumber">##</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin: 0; margin-top: 10px;">
+                            <div class="col-xs-2">
+                                <div class="subScaryMeterRatingBarLabel">
+                                    CREEPY
+                                </div>
+                            </div>
+                            <div class="col-xs-10" style="padding: 0;">
+                                <div class="progress">
+                                    <div class="progress-bar creepyProgressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="background-color: #3366CC; text-align: right; padding-right: 7px;">
+                                        <span id="creepyMeterRatingNumber">##</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin: 0;">
+                            <div class="col-xs-2">
+                                <div class="subScaryMeterRatingBarLabel">
+                                    GORY
+                                </div>
+                            </div>
+                            <div class="col-xs-10" style="padding: 0;">
+                                <div class="progress">
+                                    <div class="progress-bar goryProgressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="background-color: #009966; text-align: right; padding-right: 7px;">
+                                        <span id="goryMeterRatingNumber">##</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin: 0;">
+                            <div class="col-xs-2">
+                                <div class="subScaryMeterRatingBarLabel">
+                                    JUMPY
+                                </div>
+                            </div>
+                            <div class="col-xs-10" style="padding: 0;">
+                                <div class="progress">
+                                    <div class="progress-bar jumpyProgressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="background-color: #FFCC66; text-align: right; padding-right: 7px;">
+                                        <span id="jumpyMeterRatingNumber">##</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--RECENTLY RATED-->
+                <div class="col-xs-6">
+                    <div class="movieBox">
+                        <div class="featuredMovieLabel">Recently Rated</div>
+                        <div class="row" style="margin: 0;">
+                            <div class="movieSummarySection">
+                                <div class="movieDetails">
+                                    <img id="moviePoster" alt="Movie Poster" src="https://image.tmdb.org/t/p/w1280/9BdJz7b4WdJul0KVu42YFEgqzyp.jpg" />
+                                    <div class="movieDescription">
+                                        <div class="row" style="margin: 0;">
+                                            <p id="movieYearLabel">2016</p>
+                                            <p id="movieTitleLabel">Swiss Army Man</p>
+                                            <p id="descriptionOfMovieLabelPlot">Alone on a tiny deserted island, Hank has given up all hope of ever making it home again. But one day everything changes when a dead body washes ashore, and he soon realizes it may be his last opportunity to escape certain death. Armed with his new “friend” and an unusual bag of tricks, the duo go on an epic adventure to bring Hank back to the woman of his dreams.</p>
+                                            <br />
+                                        </div>
+                                    </div><!--movieDescription-->
+                                </div> <!-- movieDetails -->
+                            </div> <!-- movieSummarySection -->
+                        </div>
+
+                        <div class="row" style="margin: 0;">
+                            <div class="col-xs-2">
+                                <div class="subScaryMeterRatingBarLabel" style="font-size: 1.2em;">
+                                    SCARY
+                                </div>
+                            </div>
+                            <div class="col-xs-10" style="padding: 0;">
+                                <div class="progress" style="height: 45px;">
+                                    <div class="progress-bar overallProgressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="background-color: #CC3333; text-align: right; padding-right: 7px;">
+                                        <span id="overallMeterRatingNumber">##</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin: 0; margin-top: 10px;">
+                            <div class="col-xs-2">
+                                <div class="subScaryMeterRatingBarLabel">
+                                    CREEPY
+                                </div>
+                            </div>
+                            <div class="col-xs-10" style="padding: 0;">
+                                <div class="progress">
+                                    <div class="progress-bar creepyProgressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="background-color: #3366CC; text-align: right; padding-right: 7px;">
+                                        <span id="creepyMeterRatingNumber">##</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin: 0;">
+                            <div class="col-xs-2">
+                                <div class="subScaryMeterRatingBarLabel">
+                                    GORY
+                                </div>
+                            </div>
+                            <div class="col-xs-10" style="padding: 0;">
+                                <div class="progress">
+                                    <div class="progress-bar goryProgressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="background-color: #009966; text-align: right; padding-right: 7px;">
+                                        <span id="goryMeterRatingNumber">##</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin: 0;">
+                            <div class="col-xs-2">
+                                <div class="subScaryMeterRatingBarLabel">
+                                    JUMPY
+                                </div>
+                            </div>
+                            <div class="col-xs-10" style="padding: 0;">
+                                <div class="progress">
+                                    <div class="progress-bar jumpyProgressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="background-color: #FFCC66; text-align: right; padding-right: 7px;">
+                                        <span id="jumpyMeterRatingNumber">##</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div><!--featuredMoviesSection-->
         </div>
 
 
 
 
 
-        <p style="margin: 150px;">
-            Welcome to Scary Meter! Movies here are ranked by how Scary, Creepy, Gory and Jumpy they are, compiled by user ratings.
-            </br>
-            TODAY'S MOVIE
-        </p>
 
 
+        <!--FOOTER-->
+        <div class="row">
+            <div class="footer">
+                © Scary Meter 2019 | Created by Christopher Gagel and Nicolas Lelièvre | Contact: <a href="mailto:scarymeter@gmail.com" style="color: #9C9C9C;">scarymeter@gmail.com</a>
+            </div>
+        </div>
 
 
-
-
-
-    </div>
+    </div> <!-- container-fluid -->
 </body>
 </html>
+
 
 <!--Script, named indexScript.js-->
 <script src="indexScript.js"></script>

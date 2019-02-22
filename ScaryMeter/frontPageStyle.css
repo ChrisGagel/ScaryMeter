@@ -1,0 +1,287 @@
+﻿/*STYLE GUIDE - FRONT PAGE
+
+    WHITESMOKE COLOUR = #F5F5F5
+    DARK GREY COLOUR = #555555
+    MEDIUM GREY COLOUR = #9D9D9D
+    LIGHT GREY COLOUR = #DEDEDE
+    BACKGROUND OF WEBSITE = #BABABA
+
+    NAVBAR BACKGROUND COLOUR = #2D2D2D
+    NAVBAR TEXT COLOUR = #9C9C9C
+
+    SCARY RED = #CC3333
+    CREEPY BLUE = #3366CC
+    GORY GREEN = #009966
+    JUMPY YELLOW = #FFCC66
+
+*/
+
+
+body, html {
+    background-color: #BABABA;
+    height: 100%;
+    margin: 0;
+}
+
+p {
+    margin: -3px;
+}
+
+.footer {
+    width: 100%;
+    background-color: #2D2D2D;
+    text-align: center;
+    color: #9C9C9C;
+    padding: 10px;
+    margin-top: 20px;
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+    min-width: 950px;
+}
+
+/* CUSTOM SCROLLBAR */
+/* Width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+
+
+
+
+
+
+
+
+
+#imageCoverPhotoBackground {
+    /* The image used */
+    position: relative;
+    min-width: 950px;
+    width: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Set transparency*/
+    opacity: 1;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+
+.introductionMessage {
+    width: 100%;
+    background-color: #CC3333;
+    text-align: center;
+    color: #F5F5F5;
+    padding: 30px;
+    margin-top: 20px;
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: 300;
+    min-width: 950px;
+    font-size: 1em;
+    box-shadow: 0px 0px 5px #555555;
+}
+
+h1 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.featuredMoviesSection {
+    min-width: 950px;
+}
+
+.featuredMovieLabel {
+    font-size: 2em;
+    font-family: 'Oswald', sans-serif;
+    margin: auto;
+    color: #9C9C9C;
+    background-color: #2D2D2D;
+    padding: 10px;
+    font-weight: 600;
+    margin-top: 15px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.movieBox {
+    background-color: #DEDEDE;
+    box-shadow: 0px 0px 5px #555555;
+    margin-top: 30px;
+    padding-bottom: 10px;
+}
+
+.movieSummarySection {
+    height: 200px;
+    /*width: 100%;*/
+    margin-bottom: 20px;
+    margin-right: 0;
+}
+
+.movieDetails {
+    height: 100%;
+    max-height: 200px;
+    width: 100%;
+    /*max-width: 1200px;
+    min-width: 500px;*/
+    /*position: relative;
+    transform: perspective(1px) translateY(-50%);
+    top: 40%;*/
+    display: flex;
+    background-color: #F5F5F5;
+    /*box-shadow: 0px 0px 5px #888, 0px 0px 5px #888; Top and bottom only - https://stackoverflow.com/questions/6671375/css-box-shadow-top-and-bottom-only*/
+}
+
+#moviePoster {
+    height: 100%;
+    width: auto;
+    float: left;
+}
+
+.movieDescription {
+    float: left;
+    padding-top: 15px;
+    padding-left: 15px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+#movieYearLabel {
+    background-color: #555555;
+    display: inline-block;
+    color: #F5F5F5;
+    font-size: 1.3em;
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: 100;
+    padding: 2px;
+}
+
+#movieTitleLabel {
+    color: #555555;
+    font-size: 2.5em;
+    font-weight: 400;
+    font-family: 'Oswald', sans-serif;
+}
+
+#descriptionOfMovieLabelPlot {
+    color: #9D9D9D;
+    font-size: 0.9em;
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: 100;
+    margin-right: 15px;
+}
+
+
+
+
+
+
+
+.subScaryMeterRatingBarLabel {
+    float: right;
+    color: #555555;
+    margin-top: 5px;
+    font-size: 1em;
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: 400;
+}
+
+
+.progress {
+    margin: 0;
+    margin-right: 15px;
+    height: 30px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    box-shadow: none;
+    background-color: #DEDEDE;
+}
+
+.progress-bar {
+    box-shadow: none;
+    font-size: 15px;
+    padding-top: 6px;
+    width: 75%; /*Value to be changed*/
+}
+
+
+
+
+
+
+
+
+
+
+
+/*Makes certain elements responsive when window is shrunk*/
+
+@media screen and (max-width: 767px) /*This is the exact size of when the navbar collapses*/ {
+
+    .navbar-form {
+        margin: 0;
+        border: 0;
+        box-shadow: none;
+    }
+
+    .form-control {
+        font-size: 12px;
+    }
+
+    .introductionMessage {
+        margin-top: 40px;
+    }
+}
+
+
+@media screen and (min-width: 768px) /*This is the exact size of when the navbar collapses*/ {
+
+    /*Makes it so that the menu items in the navbar dropdown on hover only when the navbar isn't collapsed - https://stackoverflow.com/questions/8878033/how-to-make-twitter-bootstrap-menu-dropdown-on-hover-rather-than-click*/
+    .dropdown-menu li:hover {
+        visibility: visible;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown:hover {
+        background-color: #0a0a0a;
+    }
+    /*End dropdown on hover*/
+
+}
+
+/*End of responsive CSS*/

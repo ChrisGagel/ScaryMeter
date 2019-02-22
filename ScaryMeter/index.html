@@ -77,240 +77,253 @@
 
         
 
-    <!-- MOVIE BOX -->
-    <div class="row">
-            
-        <div class="movieSummarySection">
-
-            <div class="movieDetails">
+        <!-- MOVIE BOX -->
+        <div class="row">
                 
-                <img id="moviePoster" alt="Movie Poster" />
-                <div class="movieDescription">
+            <div class="movieSummarySection">
 
-                    <div class="movieDescTop">
-                        <p id="movieYearLabel">Year</p>
-                        <p id="movieTitleLabel">Title</p>
-                        <p id="tagline">Tagline</p>
-                        <br />
-                        <p id="descriptionOfMovieLabelPlot">Plot</p>
-                        <br />
-                    </div> <!-- movieDescTop -->
+                <div class="movieDetails">
+                    
+                    <img id="moviePoster" alt="Movie Poster" />
+                    <div class="movieDescription">
 
-                    <div class="movieDescBottom">
-                        <p class="descriptionOfLabel"> Directed by <span id="descriptionOfMovieLabelDirector">Directors</span></p>
-                        <br />
-                        <p class="descriptionOfLabel"> Cast <span id="descriptionOfMovieLabelActors">Actors</span></p>
-                        <br />
+                        <div class="movieDescTop">
+                            <p id="movieYearLabel">Year</p>
+                            <p id="movieTitleLabel">Title</p>
+                            <p id="tagline">Tagline</p>
+                            <br />
+                            <p id="descriptionOfMovieLabelPlot">Plot</p>
+                            <br />
+                        </div> <!-- movieDescTop -->
+
+                        <div class="movieDescBottom">
+                            <p class="descriptionOfLabel"> Directed by <span id="descriptionOfMovieLabelDirector">Directors</span></p>
+                            <br />
+                            <p class="descriptionOfLabel"> Cast <span id="descriptionOfMovieLabelActors">Actors</span></p>
+                            <br />
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <p class="descriptionOfLabel"> Rating <span id="mpaaRating">Rating</span></p>
+                                </div>
+                                <div class="col-xs-6">
+                                    <p class="descriptionOfLabel"> Runtime <span id="runtime">Runtime</span></p>
+                                </div>
+                            </div>
+                        </div> <!-- movieDescBottom -->
+                    </div> <!-- movieDescription -->
+
+                </div> <!-- movieDetails -->
+
+            </div> <!-- movieSummarySection -->
+
+        </div> <!-- moviebox row -->
+
+
+
+
+        <!-- SCARY METER RATING -->
+        <div class="row">
+            <div class="scaryMeterRating">
+                <div class="row" style="margin:0;">
+                    <div class="col-xs-11">
                         <div class="row">
-                            <div class="col-xs-6">
-                                <p class="descriptionOfLabel"> Rating <span id="mpaaRating">Rating</span></p>
-                            </div>
-                            <div class="col-xs-6">
-                                <p class="descriptionOfLabel"> Runtime <span id="runtime">Runtime</span></p>
+                            <div class="progress" style="background-color: #545454; opacity: 0.95;">
+                                <div class="progress-bar overallProgressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="background-color: #CC3333;">
+                                    <span></span>
+                                </div>
                             </div>
                         </div>
-                    </div> <!-- movieDescBottom -->
-                </div> <!-- movieDescription -->
+                    </div>
+                    <div class="col-xs-1">
+                        <div class="overallScaryMeterRatingNumberStyle">
+                            <span id="overallScaryMeterRatingNumber">##</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 10px; margin-left:0; margin-right:0;">
 
-            </div> <!-- movieDetails -->
+                    <!--SLIDER - https://www.w3schools.com/howto/howto_js_rangeslider.asp-->
 
-        </div> <!-- movieSummarySection -->
-
-    </div> <!-- moviebox row -->
-
-
-
-
-    <!-- SCARY METER RATING -->
-    <div class="row">
-        <div class="scaryMeterRating">
-            <div class="row" style="margin:0;">
-                <div class="col-xs-11">
-                    <div class="row">
-                        <div class="progress" style="background-color: #545454; opacity: 0.95;">
-                            <div class="progress-bar overallProgressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="background-color: #CC3333;">
-                                <span></span>
+                    <div class="slidecontainer">
+                        <div class="col-xs-11" style="padding: 0;">
+                            <input type="range" min="0" max="100" value="50" class="slider" id="overallSliderRange" onmouseup="overallMouseUp()">
+                        </div>
+                        <div class="col-xs-1" style="color: #F5F5F5; font-size: 10px; padding: 0; text-align: center;">
+                            <div id="overallSliderRangeNumber">
+                                Slide to rate
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-1">
-                    <div class="overallScaryMeterRatingNumberStyle">
-                        <span id="overallScaryMeterRatingNumber">##</span>
-                    </div>
-                </div>
-            </div>
-            <div class="row" style="margin-top: 10px; margin-left:0; margin-right:0;">
-
-                <!--SLIDER - https://www.w3schools.com/howto/howto_js_rangeslider.asp-->
-
-                <div class="slidecontainer">
-                    <div class="col-xs-11" style="padding: 0;">
-                        <input type="range" min="0" max="100" value="50" class="slider" id="overallSliderRange" onmouseup="overallMouseUp()">
-                    </div>
-                    <div class="col-xs-1" style="color: #F5F5F5; font-size: 10px; padding: 0; text-align: center;">
-                        <div id="overallSliderRangeNumber">
-                            Slide to rate
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- scaryMeterRating -->
-    </div>
+            </div> <!-- scaryMeterRating -->
+        </div>
 
 
 
 
-    <!--SUB SCARY METER RATING BARS-->
-    <div class="row">
-        <div class="pageBottom">
-            <div class="subMeterSection">
+        <!--SUB SCARY METER RATING BARS-->
+        <div class="row">
+            <div class="pageBottom">
+                <div class="subMeterSection">
 
-                <!--CREEPY METER BAR-->
-                <div class="row">
-                    <div class="col-xs-2">
-                        <div class="subScaryMeterRatingBarLabel">
-                            CREEPY
-                        </div>
-                    </div>
-                    <div class="col-xs-10">
-                        <div class="progress">
-                            <div class="progress-bar creepyProgressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="background-color: #3366CC; text-align: right; padding-right: 7px;">
-                                <span id="creepyMeterRatingNumber">##</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--GORY METER BAR-->
-                <div class="row">
-                    <div class="col-xs-2">
-                        <div class="subScaryMeterRatingBarLabel">
-                            GORY
-                        </div>
-                    </div>
-                    <div class="col-xs-10">
-                        <div class="progress">
-                            <div class="progress-bar goryProgressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="background-color: #009966; text-align: right; padding-right: 7px;">
-                                <span id="goryMeterRatingNumber">##</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--JUMPY METER BAR-->
-                <div class="row">
-                    <div class="col-xs-2">
-                        <div class="subScaryMeterRatingBarLabel">
-                            JUMPY
-                        </div>
-                    </div>
-                    <div class="col-xs-10">
-                        <div class="progress">
-                            <div class="progress-bar jumpyProgressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="background-color: #FFCC66; text-align: right; padding-right: 7px;">
-                                <span id="jumpyMeterRatingNumber">##</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <!--SIMILARLY RATED MOVIES-->
-            <div class="row" style="margin: 0;">
-                <div class="similarlyRatedMoviesSection">
-                    <div class="similarlyRatedMoviesLabel">Similarly Rated Movies</div>
-
+                    <!--CREEPY METER BAR-->
                     <div class="row" style="margin: 0;">
-                        <div class="col-xs-4">
-                            <div class="similarlyRatedBox">
-                                <div class="row" style="margin: 0;">
-                                    Movie Cover Photo
-                                </div>
-                                <div class="row" style="margin: 0;">
-                                    <div class="similarlyRatedTitle">
-                                        A Ghost Story
-                                    </div>
-                                </div>
+                        <div class="col-xs-2">
+                            <div class="subScaryMeterRatingBarLabel">
+                                CREEPY
                             </div>
                         </div>
-                        <div class="col-xs-4">
-                            <div class="similarlyRatedBox">
-                                <div class="row" style="margin: 0;">
-                                    Movie Cover Photo
-                                </div>
-                                <div class="row" style="margin: 0;">
-                                    <div class="similarlyRatedTitle">
-                                        The Void
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-4">
-                            <div class="similarlyRatedBox">
-                                <div class="row" style="margin: 0;">
-                                    Movie Cover Photo
-                                </div>
-                                <div class="row" style="margin: 0;">
-                                    <div class="similarlyRatedTitle">
-                                        Green Room
-                                    </div>
+                        <div class="col-xs-10" style="padding: 0;">
+                            <div class="progress">
+                                <div class="progress-bar creepyProgressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="background-color: #3366CC; text-align: right; padding-right: 7px;">
+                                    <span id="creepyMeterRatingNumber">##</span>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!--GORY METER BAR-->
                     <div class="row" style="margin: 0;">
-                        <div class="col-xs-4">
-                            <div class="similarlyRatedBox">
-                                <div class="row" style="margin: 0;">
-                                    Movie Cover Photo
-                                </div>
-                                <div class="row" style="margin: 0;">
-                                    <div class="similarlyRatedTitle">
-                                        Wind River
-                                    </div>
+                        <div class="col-xs-2">
+                            <div class="subScaryMeterRatingBarLabel">
+                                GORY
+                            </div>
+                        </div>
+                        <div class="col-xs-10" style="padding: 0;">
+                            <div class="progress">
+                                <div class="progress-bar goryProgressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="background-color: #009966; text-align: right; padding-right: 7px;">
+                                    <span id="goryMeterRatingNumber">##</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-4">
-                            <div class="similarlyRatedBox">
-                                <div class="row" style="margin: 0;">
-                                    Movie Cover Photo
-                                </div>
-                                <div class="row" style="margin: 0;">
-                                    <div class="similarlyRatedTitle">
-                                        Raw
-                                    </div>
-                                </div>
+                    </div>
+
+                    <!--JUMPY METER BAR-->
+                    <div class="row" style="margin: 0;">
+                        <div class="col-xs-2">
+                            <div class="subScaryMeterRatingBarLabel">
+                                JUMPY
                             </div>
                         </div>
-                        <div class="col-xs-4">
-                            <div class="similarlyRatedBox">
-                                <div class="row" style="margin: 0;">
-                                    Movie Cover Photo
-                                </div>
-                                <div class="row" style="margin: 0;">
-                                    <div class="similarlyRatedTitle">
-                                        The VVitch
-                                    </div>
+                        <div class="col-xs-10" style="padding: 0;">
+                            <div class="progress">
+                                <div class="progress-bar jumpyProgressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="background-color: #FFCC66; text-align: right; padding-right: 7px;">
+                                    <span id="jumpyMeterRatingNumber">##</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+
+                <!--SIMILARLY RATED MOVIES-->
+                <div class="row" style="margin: 0;">
+                    <div class="similarlyRatedMoviesSection">
+                        <div class="similarlyRatedMoviesLabel">Similarly Rated Movies</div>
+
+                        <div class="row" style="margin: 15px;">
+                            <div class="col-xs-4">
+                                <div class="similarlyRatedBox">
+                                    <a href="#">
+                                        <div class="row" style="margin: 0;">
+                                            <img id="similarlyRatedMoviesCoverPhoto1" alt="Cover Photo" />
+                                        </div>
+                                        <div class="row" style="margin: 0;">
+                                            <div class="similarlyRatedTitle">
+                                                A Ghost Story
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="similarlyRatedBox">
+                                    <a href="#">
+                                        <div class="row" style="margin: 0;">
+                                            <img id="similarlyRatedMoviesCoverPhoto2" alt="Cover Photo" />
+                                        </div>
+                                        <div class="row" style="margin: 0;">
+                                            <div class="similarlyRatedTitle">
+                                                The Void
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="similarlyRatedBox">
+                                    <a href="#">
+                                        <div class="row" style="margin: 0;">
+                                            <img id="similarlyRatedMoviesCoverPhoto3" alt="Cover Photo" />
+                                        </div>
+                                        <div class="row" style="margin: 0;">
+                                            <div class="similarlyRatedTitle">
+                                                Green Room
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin: 15px; margin-bottom: 0;">
+                            <div class="col-xs-4">
+                                <div class="similarlyRatedBox">
+                                    <a href="#">
+                                        <div class="row" style="margin: 0;">
+                                            <img id="similarlyRatedMoviesCoverPhoto4" alt="Cover Photo" />
+                                        </div>
+                                        <div class="row" style="margin: 0;">
+                                            <div class="similarlyRatedTitle">
+                                                Wind River
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="similarlyRatedBox">
+                                    <a href="#">
+                                        <div class="row" style="margin: 0;">
+                                            <img id="similarlyRatedMoviesCoverPhoto5" alt="Cover Photo" />
+                                        </div>
+                                        <div class="row" style="margin: 0;">
+                                            <div class="similarlyRatedTitle">
+                                                Raw
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="similarlyRatedBox">
+                                    <a href="#">
+                                        <div class="row" style="margin: 0;">
+                                            <img id="similarlyRatedMoviesCoverPhoto6" alt="Cover Photo" />
+                                        </div>
+                                        <div class="row" style="margin: 0;">
+                                            <div class="similarlyRatedTitle">
+                                                The VVitch
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- pageBottom -->
+        </div>
+        
+
+        <!--FOOTER-->
+        <div class="row">
+            <div class="footer">
+                © Scary Meter 2019 | Created by Christopher Gagel and Nicolas Lelièvre | Contact: <a href="mailto:scarymeter@gmail.com" style="color: #9C9C9C;">scarymeter@gmail.com</a>
             </div>
+        </div>
 
 
-
-        </div> <!-- pageBottom -->
-    </div>
-
-
-</div> <!-- container-fluid -->
-
-    
-
-
+    </div> <!-- container-fluid -->
 </body>
 </html>
 

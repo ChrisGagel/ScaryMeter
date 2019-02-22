@@ -1,16 +1,24 @@
-﻿/*STYLE GUIDE
+﻿/*STYLE GUIDE - FRONT PAGE
 
     WHITESMOKE COLOUR = #F5F5F5
     DARK GREY COLOUR = #555555
     MEDIUM GREY COLOUR = #9D9D9D
     LIGHT GREY COLOUR = #DEDEDE
-    BACKGROUND OF COVER PHOTO = #B2B2B2
+    BACKGROUND OF WEBSITE = #BABABA
+
+    NAVBAR BACKGROUND COLOUR = #2D2D2D
+    NAVBAR TEXT COLOUR = #9C9C9C
+
+    SCARY RED = #CC3333
+    CREEPY BLUE = #3366CC
+    GORY GREEN = #009966
+    JUMPY YELLOW = #FFCC66
 
 */
 
 
 body, html {
-    background-color: #bababa; /*This colour used to be #DEDEDE however the scary meter rating number was hard to see*/
+    background-color: #BABABA; /*This colour used to be #DEDEDE however the scary meter rating number was hard to see*/
     height: 100%;
     margin: 0;
 }
@@ -18,6 +26,45 @@ body, html {
 p {
     margin: -3px;
 }
+
+.footer {
+    width: 100%;
+    background-color: #2D2D2D;
+    text-align: center;
+    color: #9C9C9C;
+    padding: 10px;
+    margin-top: 20px;
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+    min-width: 600px;
+}
+
+/* CUSTOM SCROLLBAR */
+/* Width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+
+
+
+
 
 
 
@@ -87,12 +134,11 @@ p {
 }
 
 
-
 #movieYearLabel {
     background-color: #555555;
     display: inline-block;
     color: #F5F5F5;
-    font-size: 1.5vw;
+    font-size: 1.3em;
     font-family: 'Open Sans Light', sans-serif;
     font-weight: 100;
     padding: 2px;
@@ -100,14 +146,14 @@ p {
 
 #movieTitleLabel {
     color: #555555;
-    font-size: 2.5vw;
+    font-size: 2.3em;
     font-weight: 400;
     font-family: 'Oswald', sans-serif;
 }
 
 #tagline {
     color: #9D9D9D;
-    font-size: 1.4vw;
+    font-size: 1.2em;
     font-family: 'Open Sans Light', sans-serif;
     font-weight: 100;
     font-style: italic;
@@ -115,42 +161,42 @@ p {
 
 #descriptionOfMovieLabelPlot {
     color: #9D9D9D;
-    font-size: 1vw;
+    font-size: 1em;
     font-family: 'Open Sans Light', sans-serif;
     font-weight: 100;
 }
 
 #descriptionOfMovieLabelDirector {
     color: #9D9D9D;
-    font-size: 1vw;
+    font-size: 1em;
     font-family: 'Open Sans Light', sans-serif;
     font-weight: 100;
 }
 
 #descriptionOfMovieLabelActors {
     color: #9D9D9D;
-    font-size: 1vw;
+    font-size: 1em;
     font-family: 'Open Sans Light', sans-serif;
     font-weight: 100;
 }
 
 #mpaaRating {
     color: #9D9D9D;
-    font-size: 1vw;
+    font-size: 1em;
     font-family: 'Open Sans Light', sans-serif;
     font-weight: 100;
 }
 
 #runtime {
     color: #9D9D9D;
-    font-size: 1vw;
+    font-size: 1em;
     font-family: 'Open Sans Light', sans-serif;
     font-weight: 100;
 }
 
 .descriptionOfLabel {
     color: #555555;
-    font-size: 1vw;
+    font-size: 0.9em;
     font-family: 'Open Sans Light', sans-serif;
     font-weight: bold;
 }
@@ -184,6 +230,8 @@ p {
     color: #555555;
     margin-top: 5px;
     font-size: 1em;
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: 400;
 }
 
 
@@ -220,29 +268,41 @@ p {
 
 .similarlyRatedMoviesSection {
     background-color: #DEDEDE;
+    box-shadow: 0px 0px 5px #888, 0px 0px 5px #888; /*Top and bottom only - https://stackoverflow.com/questions/6671375/css-box-shadow-top-and-bottom-only*/
 }
 
 .similarlyRatedMoviesLabel {
     font-style: italic;
     font-size: 2em;
     color: #555555;
-    margin-left: 70px;
-    padding-bottom: 25px;
+    margin-left: 50px;
     padding-top: 25px;
+    padding-bottom: 5px;
+    font-family: 'Open Sans Light', sans-serif;
 }
 
 .similarlyRatedBox {
     background-color: #F5F5F5;
     margin: auto;
-    margin-bottom: 15px;
+    margin-bottom: 13px;
 }
 
 .similarlyRatedTitle {
-    color: #9D9D9D;
+    color: #555555;
     font-size: 1em;
     font-family: 'Open Sans Light', sans-serif;
-    font-weight: 100;
+    font-weight: 300;
+    margin: 3px;
+    margin-left: 5px;
 }
+
+#similarlyRatedMoviesCoverPhoto1, #similarlyRatedMoviesCoverPhoto2, #similarlyRatedMoviesCoverPhoto3, #similarlyRatedMoviesCoverPhoto4, #similarlyRatedMoviesCoverPhoto5, #similarlyRatedMoviesCoverPhoto6 {
+    width: 100%;
+    height: auto;
+}
+
+
+
 
 
 
@@ -277,19 +337,19 @@ p {
 
 
     #movieYearLabel {
-        font-size: 0.75em;
+        font-size: 1em;
     }
 
     #movieTitleLabel {
-        font-size: 1.25em;
+        font-size: 2em;
     }
 
     #tagline {
-        font-size: 0.7em;
+        font-size: 1em;
     }
 
     #descriptionOfMovieLabelPlot {
-        font-size: 0.5em;
+        font-size: 0.8em;
     }
 
     #descriptionOfMovieLabelDirector {
@@ -309,7 +369,7 @@ p {
     }
 
     .descriptionOfLabel {
-        font-size: 0.5em;
+        font-size: 0.7em;
     }
     
 }
@@ -385,33 +445,4 @@ p {
         background: #e54b4b; /* Green background */
         cursor: pointer; /* Cursor on hover */
     }
-
-
-
-
-
-
-
-
-
-
-/* CUSTOM SCROLLBAR */
-/* Width */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1; 
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888; 
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555; 
-}
+    
