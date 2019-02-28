@@ -14,8 +14,6 @@ var movies = new Bloodhound({
             return $.map(response.results, function (movie) {
                 return {
                     value: movie.id + "-" + movie.title
-                    //value1: movie.id,
-                    //value2: movie.title
                 };
             });
         }

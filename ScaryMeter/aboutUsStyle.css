@@ -66,50 +66,91 @@ p {
 
 
 
+#imageCoverPhotoBackground {
+    /* The image used */
+    position: relative;
+    min-width: 950px;
+    width: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Set transparency*/
+    opacity: 1;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+}
 
+h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.6em;
+    text-align: center;
+    color: #2D2D2D;
+    margin: 0;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
 
 h2 {
     font-family: 'Oswald', sans-serif;
-    font-size: 2.2em;
-    margin:0;
-    margin-bottom: 25px;
+    font-size: 1.7em;
+    color: #2D2D2D;
+    margin: 0;
+    margin-top: 45px;
+    margin-bottom: 10px;
 }
 
-.informationTop {
-    margin-top: 50px;
+.informationText {
     font-family: 'Open Sans Light', sans-serif;
     font-size: 1.2em;
-}
-
-.information1 {
-    background-color: #BABABA;
     color: #555555;
-}
-
-.information2 {
-    background-color: #CC3333;
-    color: #F5F5F5;
-}
-
-.information3 {
-    background-color: #3366CC;
-    color: #F5F5F5;
-}
-
-.information4 {
-    background-color: #009966;
-    color: #F5F5F5;
-}
-
-.information5 {
-    background-color: #FFCC66;
-    color: #F5F5F5;
-}
-
-.information1Width, .information2Width, .information3Width, .information4Width, .information5Width {
-    width: 70%;
+    width: 80%;
     margin: auto;
+    margin-top: -5px;
     padding: 50px;
+    background-color: #DEDEDE;
+}
+
+
+
+
+
+
+
+
+
+
+
+.meterBox {
+    margin-top: 30px;
+}
+
+.subScaryMeterRatingBarLabel {
+    float: right;
+    color: #555555;
+    margin-top: 5px;
+    font-size: 1em;
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: 400;
+}
+
+
+.progress {
+    margin: 0;
+    margin-right: 15px;
+    height: 30px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    box-shadow: none;
+    background-color: #DEDEDE;
+}
+
+.progress-bar {
+    box-shadow: none;
+    font-size: 15px;
+    padding-top: 6px;
 }
 
 
@@ -135,6 +176,12 @@ h2 {
     .form-control {
         font-size: 12px;
     }
+
+    .informationText {
+        width: 100%;
+        margin-top: 10px;
+    }
+
 }
 
 
