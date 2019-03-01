@@ -13,7 +13,7 @@ var movies = new Bloodhound({
             // Map the remote source JSON array to a JavaScript object array
             return $.map(response.results, function (movie) {
                 return {
-                    value: movie.id + "-" + movie.title
+                    value: movie.id + " - " + movie.title
                 };
             });
         }
@@ -23,9 +23,12 @@ var movies = new Bloodhound({
 // HTML submit button sends same-value displayed to URL
 
 // Instantiate the Typeahead UI
+//TRY THESE:
+//https://stackoverflow.com/questions/21895025/use-different-value-from-json-data-instead-of-displaykey-using-typeahead
+//https://github.com/running-coder/jquery-typeahead/issues/168
 $('.typeahead').typeahead(null, {
     display: "value",
-    source: movies
+    source: movies,
 })
 
 
