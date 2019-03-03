@@ -26,10 +26,24 @@ var movies = new Bloodhound({
 //TRY THESE:
 //https://stackoverflow.com/questions/21895025/use-different-value-from-json-data-instead-of-displaykey-using-typeahead
 //https://github.com/running-coder/jquery-typeahead/issues/168
+
 $('.typeahead').typeahead(null, {
     display: "value",
     source: movies,
 })
+
+/*
+$('.typeahead').typeahead(null, {
+    name: 'value',
+    displayKey: 'value',
+    source: movies,
+    templates: {
+        suggestion: function (movie) {
+            return '<p>' + movie.id + '</p>';
+        }
+    }
+})
+*/
 
 
 
