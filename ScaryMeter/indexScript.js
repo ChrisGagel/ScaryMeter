@@ -105,6 +105,7 @@ document.getElementById("movieYearLabel").innerHTML = parseInt(obj_tmdb.release_
 
 // Title
 document.getElementById("movieTitleLabel").innerHTML = obj_tmdb.title;
+document.getElementById("movieTitleLabelModal").innerHTML = obj_tmdb.title;
 
 // Directors
 var directors = [];
@@ -172,6 +173,13 @@ else {
 document.getElementById("overallScaryMeterRatingNumber").innerHTML = overallRandomNumber + ".0"; //...otherwise add a .0 at end
 }
 
+    //Same code for modal version
+    if (overallRandomNumberString.includes(".")) {
+    document.getElementById("overallScaryMeterRatingNumbeModal").innerHTML = overallRandomNumber;
+    }
+    else {
+    document.getElementById("overallScaryMeterRatingNumbeModal").innerHTML = overallRandomNumber + ".0";
+    }
 
 var creepyRandomNumber = Math.round(Math.random() * 100) / 10;
 var creepyRandomNumberString = creepyRandomNumber.toString();
@@ -205,6 +213,10 @@ document.getElementById("jumpyMeterRatingNumber").innerHTML = jumpyRandomNumber 
 var fillOverallScaryMeterBar = document.querySelector(".overallProgressBar"); //Create variable to show how full the progress bar is based on progress bar class style
 fillOverallScaryMeterBar.style.width = overallRandomNumber * 10 + "%"; //Set width of variable (how full bar is) to the random number converted to a 0-100% scale
 
+    //Same code for modal version
+    var fillOverallScaryMeterBarModal = document.querySelector(".overallProgressBarModal");
+    fillOverallScaryMeterBarModal.style.width = overallRandomNumber * 10 + "%"; 
+
 var fillCreepyMeterBar = document.querySelector(".creepyProgressBar");
 fillCreepyMeterBar.style.width = creepyRandomNumber * 10 + "%";
 
@@ -217,14 +229,18 @@ fillJumpyMeterBar.style.width = jumpyRandomNumber * 10 + "%";
 
 
 
+
+
+
+
 //SLIDER FOR RATING MOVIES - https://www.w3schools.com/howto/howto_js_rangeslider.asp
 
 //This jQuery script makes it so the user ratings appear upon hover
-$(".scaryMeterRating").hover(function(){
-  $(".slidecontainer").css("opacity", "1");
-  }, function(){
-  $(".slidecontainer").css("opacity", "0");
-});
+//$(".scaryMeterRatingModal").hover(function(){
+//  $(".slidecontainer").css("opacity", "1");
+//  }, function(){
+//  $(".slidecontainer").css("opacity", "0");
+//});
 
 var overallScaryMeterBarSlider = document.getElementById ("overallSliderRange"); //Create variable to display slider handle at same position as progress bar is full
 overallScaryMeterBarSlider.value = overallRandomNumber * 10; //Set slider value to the random number converted to 0-100 scale
@@ -236,5 +252,5 @@ overallScaryMeterBarSlider.oninput = function() {
 }
 
 function overallMouseUp() {
-    overallSliderRangeNumberOutput.innerHTML = "Submitted"; //When user lifts click, rating is submitted
+    overallSliderRangeNumberOutput.innerHTML = "Thanks!"; //When user lifts click, rating is submitted
 }

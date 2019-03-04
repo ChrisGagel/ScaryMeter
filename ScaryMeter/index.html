@@ -74,21 +74,26 @@
                 </div>
             </nav>
         </div> <!-- navigation bar row -->
-
-        
-
         <!-- MOVIE BOX -->
         <div class="row">
-                
             <div class="movieSummarySection">
-
                 <div class="movieDetails">
-                    
+
                     <img id="moviePoster" alt="Movie Poster" />
                     <div class="movieDescription">
 
                         <div class="movieDescTop">
-                            <p id="movieYearLabel">Year</p>
+                            <table style="width: 100%;">
+                                <tr>
+                                    <th>
+                                        <p id="movieYearLabel">Year</p>
+                                    </th>
+                                    <th>
+                                        <!--See modal HTML code down below -- just above footer-->
+                                        <a href="#"><p class="rateThisMovieText" data-toggle="modal" data-target="#rateThisMovieModal">Click Here to Rate</p></a>
+                                    </th>
+                                </tr>
+                            </table>
                             <p id="movieTitleLabel">Title</p>
                             <p id="tagline">Tagline</p>
                             <br />
@@ -117,10 +122,6 @@
             </div> <!-- movieSummarySection -->
 
         </div> <!-- moviebox row -->
-
-
-
-
         <!-- SCARY METER RATING -->
         <div class="row">
             <div class="scaryMeterRating">
@@ -137,21 +138,6 @@
                     <div class="col-xs-1">
                         <div class="overallScaryMeterRatingNumberStyle">
                             <span id="overallScaryMeterRatingNumber">##</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="row" style="margin-top: 10px; margin-left:0; margin-right:0;">
-
-                    <!--SLIDER - https://www.w3schools.com/howto/howto_js_rangeslider.asp-->
-
-                    <div class="slidecontainer">
-                        <div class="col-xs-11" style="padding: 0;">
-                            <input type="range" min="0" max="100" value="50" class="slider" id="overallSliderRange" onmouseup="overallMouseUp()">
-                        </div>
-                        <div class="col-xs-1" style="color: #F5F5F5; font-size: 10px; padding: 0; text-align: center;">
-                            <div id="overallSliderRangeNumber">
-                                Slide to rate
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -313,7 +299,99 @@
                 </div>
             </div> <!-- pageBottom -->
         </div>
-        
+
+
+        <!--RATING MOVIES MODAL - https://getbootstrap.com/docs/4.0/components/modal/-->
+        <div class="modal fade" id="rateThisMovieModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <div class="modal-title" id="exampleModalLabel">How scary is "<span id="movieTitleLabelModal">this movie</span>"?</div>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="scaryMeterRatingModal">
+                            <div class="row" style="margin:0;">
+                                <div class="col-xs-11">
+                                    <div class="row">
+                                        <div class="progress" style="background-color: #545454; opacity: 1;">
+                                            <div class="progress-bar overallProgressBarModal" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="background-color: #CC3333;">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-1">
+                                    <div class="overallScaryMeterRatingNumberStyleModal">
+                                        <span id="overallScaryMeterRatingNumbeModal">##</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 10px; margin-left:0; margin-right:0;">
+                                <!--SLIDER - https://www.w3schools.com/howto/howto_js_rangeslider.asp-->
+                                <div class="slidecontainer">
+                                    <div class="col-xs-11" style="padding: 0;">
+                                        <input type="range" min="0" max="100" value="50" class="slider" id="overallSliderRange" onmouseup="overallMouseUp()">
+                                    </div>
+                                    <div class="col-xs-1" style="font-size: 10px; padding: 0; text-align: center;">
+                                        <div id="overallSliderRangeNumber">
+                                            Slide to rate
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="modal-header">
+                        <div class="subMeterTitleLabelModal">Is this movie...?</div>
+                    </div>
+
+                    <div class="modal-body" style="margin-top: -15px;">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="row">
+                                    <p class="subMeterCateogryLabelModal">Creepy</p>
+                                </div>
+                                <div class="row" style="text-align: center; margin-top: 5px;">
+                                    <span class="glyphicon glyphicon-thumbs-up"></span>
+                                    <span class="glyphicon glyphicon-thumbs-down"></span>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="row">
+                                    <p class="subMeterCateogryLabelModal">Gory</p>
+                                </div>
+                                <div class="row" style="text-align: center; margin-top: 5px;">
+                                    <span class="glyphicon glyphicon-thumbs-up"></span>
+                                    <span class="glyphicon glyphicon-thumbs-down"></span>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="row">
+                                    <p class="subMeterCateogryLabelModal">Jumpy</p>
+                                </div>
+                                <div class="row" style="text-align: center; margin-top: 5px;">
+                                    <span class="glyphicon glyphicon-thumbs-up"></span>
+                                    <span class="glyphicon glyphicon-thumbs-down"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <!--FOOTER-->
         <div class="row">
