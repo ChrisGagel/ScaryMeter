@@ -147,8 +147,7 @@ document.getElementById("tagline").innerHTML = obj_tmdb.tagline;
 
 // Plot
 document.getElementById("descriptionOfMovieLabelPlot").innerHTML = obj_tmdb.overview;
-//var plot_tmdb = obj_tmdb.overview;
-//var plotLength_tmdb = plot_tmdb.length;
+
 
 
 
@@ -252,5 +251,106 @@ overallScaryMeterBarSlider.oninput = function() {
 }
 
 function overallMouseUp() {
+    fillOverallScaryMeterBarModal.style.width = overallSliderRangeNumberOutput.innerHTML * 10 + "%";
+
+    var overallSliderRangeNumberOutputLabel = overallSliderRangeNumberOutput.innerHTML;
+    if (overallSliderRangeNumberOutputLabel.includes(".")) {
+    document.getElementById("overallScaryMeterRatingNumbeModal").innerHTML = overallSliderRangeNumberOutputLabel;
+    }
+    else {
+    document.getElementById("overallScaryMeterRatingNumbeModal").innerHTML = overallSliderRangeNumberOutputLabel + ".0";
+    }
+
     overallSliderRangeNumberOutput.innerHTML = "Thanks!"; //When user lifts click, rating is submitted
+    
+    setTimeout(function(){ //After 300ms, make the subMetersModal appear
+        document.getElementById("subMetersModal").style.display = "block";
+    }, 300);    
+}
+
+
+
+
+
+
+
+
+
+//THUMBS UP/DOWN SYSTEM
+
+//This script makes it so the thumbs images change upon hover
+
+var thumbsUpCreepy = false;
+var thumbsDownCreepy = false;
+
+function changeThumbsUpColorCreepy() {
+    if (thumbsUpCreepy == false && thumbsDownCreepy == false) {
+        document.getElementById("thumbsUpImageCreepy").src = "/Images/thumbsup_creepy.png";
+        thumbsUpCreepy = true;
+    }
+    else {
+        document.getElementById("thumbsUpImageCreepy").src = "/Images/thumbsup.png"
+        thumbsUpCreepy = false;
+    }
+}
+
+function changeThumbsDownColorCreepy() {
+    if (thumbsDownCreepy == false && thumbsUpCreepy == false) {
+        document.getElementById("thumbsDownImageCreepy").src = "/Images/thumbsdown_creepy.png";
+        thumbsDownCreepy = true;
+    }
+    else {
+        document.getElementById("thumbsDownImageCreepy").src = "/Images/thumbsdown.png";
+        thumbsDownCreepy = false;
+    }
+}
+
+var thumbsUpGory = false;
+var thumbsDownGory = false;
+
+function changeThumbsUpColorGory() {
+    if (thumbsUpGory == false && thumbsDownGory == false) {
+        document.getElementById("thumbsUpImageGory").src = "/Images/thumbsup_gory.png";
+        thumbsUpGory = true;
+    }
+    else {
+        document.getElementById("thumbsUpImageGory").src = "/Images/thumbsup.png";
+        thumbsUpGory = false;
+    }
+}
+
+function changeThumbsDownColorGory() {
+    if (thumbsDownGory == false && thumbsUpGory == false) {
+        document.getElementById("thumbsDownImageGory").src = "/Images/thumbsdown_gory.png"
+        thumbsDownGory = true;
+    }
+    else {
+        document.getElementById("thumbsDownImageGory").src = "/Images/thumbsdown.png"
+        thumbsDownGory = false;
+    }
+}
+
+var thumbsUpJumpy = false;
+var thumbsDownJumpy = false;
+
+function changeThumbsUpColorJumpy() {
+    if (thumbsUpJumpy == false && thumbsDownJumpy == false) {
+        document.getElementById("thumbsUpImageJumpy").src = "/Images/thumbsup_jumpy.png"
+        thumbsUpJumpy = true;
+    }
+    else {
+        document.getElementById("thumbsUpImageJumpy").src = "/Images/thumbsup.png"
+        thumbsUpJumpy = false;
+    }
+}
+
+function changeThumbsDownColorJumpy() {
+    if (thumbsDownJumpy == false && thumbsUpJumpy == false) {
+        document.getElementById("thumbsDownImageJumpy").src = "/Images/thumbsdown_jumpy.png"
+        thumbsDownJumpy = true;
+    }
+    else {
+        document.getElementById("thumbsDownImageJumpy").src = "/Images/thumbsdown.png"
+        thumbsDownJumpy = false;
+    }
 }

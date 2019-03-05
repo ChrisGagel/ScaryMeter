@@ -70,6 +70,14 @@
     <Content Include="frontPage.html" />
     <Content Include="frontPageStyle.css" />
     <Content Include="aboutUsStyle.css" />
+    <Content Include="Images\thumbsdown_creepy.png" />
+    <Content Include="Images\thumbsdown_gory.png" />
+    <Content Include="Images\thumbsdown_jumpy.png" />
+    <Content Include="Images\thumbsdown.png" />
+    <Content Include="Images\thumbsup_creepy.png" />
+    <Content Include="Images\thumbsup_gory.png" />
+    <Content Include="Images\thumbsup_jumpy.png" />
+    <Content Include="Images\thumbsup.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">

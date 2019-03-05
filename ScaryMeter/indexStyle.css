@@ -416,6 +416,11 @@ p {
 
 /*Modal Styles*/
 
+.modal-open {
+    overflow: scroll; /*Prevents scrollbar from dissappearing when modal is opened*/
+    padding-right: 0 !important; /*Prevents background image from shifting right to right*/
+}
+
 .modal-header {
     border-bottom: none;
 }
@@ -457,8 +462,24 @@ p {
     color: #555555;
 }
 
+#thumbsUpImageCreepy, #thumbsDownImageCreepy, #thumbsUpImageGory, #thumbsDownImageGory, #thumbsUpImageJumpy, #thumbsDownImageJumpy {
+    margin: 5px;
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+    width: 40px;
+    cursor: pointer;
+}
+
+#subMetersModal {
+    display: none;
+}
+
 .modal-footer {
     border-top: none;
+}
+
+.modal-footer .btn + .btn {
+    background-color: #CC3333;
 }
 
 
