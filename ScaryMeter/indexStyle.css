@@ -468,6 +468,7 @@ p {
     margin-right: 2.5px;
     width: 40px;
     cursor: pointer;
+    transition: transform .3s;
 }
 
 #subMetersModal {

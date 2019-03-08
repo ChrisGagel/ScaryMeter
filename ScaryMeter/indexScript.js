@@ -13,12 +13,16 @@ var movies = new Bloodhound({
             // Map the remote source JSON array to a JavaScript object array
             return $.map(response.results, function (movie) {
                 return {
-                    value: movie.id + " - " + movie.title
+                    //value: movie.id + " - " + movie.title,
+                    value1: movie.id,
+                    value2: movie.title,
+                    value3: parseInt(movie.release_date)
                 };
             });
         }
     }
 });
+
 
 // HTML submit button sends same-value displayed to URL
 
@@ -26,24 +30,42 @@ var movies = new Bloodhound({
 //TRY THESE:
 //https://stackoverflow.com/questions/21895025/use-different-value-from-json-data-instead-of-displaykey-using-typeahead
 //https://github.com/running-coder/jquery-typeahead/issues/168
+//https://stackoverflow.com/questions/14136973/bootstrap-typeahead-return-name-and-id/14166308
+//https://stackoverflow.com/questions/28229348/bootstrap-typeahead-bloodhound-return-name-and-id
+//https://stackoverflow.com/questions/14136973/bootstrap-typeahead-return-name-and-id/14166308
+//https://github.com/twitter/typeahead.js/issues/1453
+//https://github.com/twitter/typeahead.js/issues/193
+//https://twitter.github.io/typeahead.js/examples/#custom-templates GO TO CUSTOM TEMPLATES
+//https://stackoverflow.com/questions/32552948/update-a-hidden-input-field-with-typeahead-js-and-json-key-values
+//https://stackoverflow.com/questions/29223516/typeahead-custom-template-without-handlebars THIS SORTA KINDA WORKED!!!
+//We need to look into a hidden field using typeahead
+//Here might be the best tutorial: https://stackoverflow.com/questions/12389948/twitter-bootstrap-typeahead-id-label
+//http://kylefinley.net/twitter-typeahead-using-id-of-selected-item-label
+//https://stackoverflow.com/questions/35402487/bootstrap-3-typeahead-afterselect-get-id
+//http://embed.plnkr.co/EXP0JTP11aiw8JpcdFFh
+//https://stackoverflow.com/questions/36340499/bootstrap-typeahead-show-different-text-in-box-once-selected
+
+
+
 
 $('.typeahead').typeahead(null, {
-    display: "value",
+    display: "value1",
     source: movies,
+    templates: {
+        suggestion: function (movie) {
+            return '<p>' + movie.value2 + ' - ' + movie.value3 + '</p>';
+        }
+    }
 })
 
 /*
 $('.typeahead').typeahead(null, {
-    name: 'value',
-    displayKey: 'value',
+    display: "value",
     source: movies,
-    templates: {
-        suggestion: function (movie) {
-            return '<p>' + movie.id + '</p>';
-        }
     }
 })
 */
+
 
 
 
@@ -235,11 +257,13 @@ fillJumpyMeterBar.style.width = jumpyRandomNumber * 10 + "%";
 //SLIDER FOR RATING MOVIES - https://www.w3schools.com/howto/howto_js_rangeslider.asp
 
 //This jQuery script makes it so the user ratings appear upon hover
-//$(".scaryMeterRatingModal").hover(function(){
-//  $(".slidecontainer").css("opacity", "1");
-//  }, function(){
-//  $(".slidecontainer").css("opacity", "0");
-//});
+/*
+$(".scaryMeterRatingModal").hover(function(){
+  $(".slidecontainer").css("opacity", "1");
+  }, function(){
+  $(".slidecontainer").css("opacity", "0");
+});
+*/
 
 var overallScaryMeterBarSlider = document.getElementById ("overallSliderRange"); //Create variable to display slider handle at same position as progress bar is full
 overallScaryMeterBarSlider.value = overallRandomNumber * 10; //Set slider value to the random number converted to 0-100 scale
@@ -278,30 +302,86 @@ function overallMouseUp() {
 
 //THUMBS UP/DOWN SYSTEM
 
-//This script makes it so the thumbs images change upon hover
+//Grow on hover
+$("#thumbsUpImageCreepy").hover(function(){
+  $("#thumbsUpImageCreepy").css("transform", "scale(1.2)");
+  }, function(){
+  $("#thumbsUpImageCreepy").css("transform", "scale(1.0)");
+});
 
+$("#thumbsDownImageCreepy").hover(function(){
+  $("#thumbsDownImageCreepy").css("transform", "scale(1.2)");
+  }, function(){
+  $("#thumbsDownImageCreepy").css("transform", "scale(1.0)");
+});
+
+$("#thumbsUpImageGory").hover(function(){
+  $("#thumbsUpImageGory").css("transform", "scale(1.2)");
+  }, function(){
+  $("#thumbsUpImageGory").css("transform", "scale(1.0)");
+});
+
+$("#thumbsDownImageGory").hover(function(){
+  $("#thumbsDownImageGory").css("transform", "scale(1.2)");
+  }, function(){
+  $("#thumbsDownImageGory").css("transform", "scale(1.0)");
+});
+
+$("#thumbsUpImageJumpy").hover(function(){
+  $("#thumbsUpImageJumpy").css("transform", "scale(1.2)");
+  }, function(){
+  $("#thumbsUpImageJumpy").css("transform", "scale(1.0)");
+});
+
+$("#thumbsDownImageJumpy").hover(function(){
+  $("#thumbsDownImageJumpy").css("transform", "scale(1.2)");
+  }, function(){
+  $("#thumbsDownImageJumpy").css("transform", "scale(1.0)");
+});
+
+//Thumbs aren't highlighted by default (false)
 var thumbsUpCreepy = false;
 var thumbsDownCreepy = false;
 
 function changeThumbsUpColorCreepy() {
-    if (thumbsUpCreepy == false && thumbsDownCreepy == false) {
-        document.getElementById("thumbsUpImageCreepy").src = "/Images/thumbsup_creepy.png";
+    if (thumbsUpCreepy == false) {
         thumbsUpCreepy = true;
+        thumbsDownCreepy = false;
+        document.getElementById("thumbsUpImageCreepy").src = "/Images/thumbsup_creepy.png";
+        document.getElementById("thumbsUpImageCreepy").style.transform = "scale(1.4)";
+        setTimeout(function(){
+            document.getElementById("thumbsUpImageCreepy").style.transform = "scale(1)";
+        }, 200);
+        document.getElementById("thumbsDownImageCreepy").src = "/Images/thumbsdown.png";
     }
     else {
-        document.getElementById("thumbsUpImageCreepy").src = "/Images/thumbsup.png"
         thumbsUpCreepy = false;
+        document.getElementById("thumbsUpImageCreepy").src = "/Images/thumbsup.png";
+        document.getElementById("thumbsUpImageCreepy").style.transform = "scale(1.4)";
+        setTimeout(function(){
+            document.getElementById("thumbsUpImageCreepy").style.transform = "scale(1)";
+        }, 200);
     }
 }
 
 function changeThumbsDownColorCreepy() {
-    if (thumbsDownCreepy == false && thumbsUpCreepy == false) {
-        document.getElementById("thumbsDownImageCreepy").src = "/Images/thumbsdown_creepy.png";
+    if (thumbsDownCreepy == false) {
         thumbsDownCreepy = true;
+        thumbsUpCreepy = false;
+        document.getElementById("thumbsDownImageCreepy").src = "/Images/thumbsdown_creepy.png";
+        document.getElementById("thumbsDownImageCreepy").style.transform = "scale(1.4)";
+        setTimeout(function(){
+            document.getElementById("thumbsDownImageCreepy").style.transform = "scale(1)";
+        }, 200);
+        document.getElementById("thumbsUpImageCreepy").src = "/Images/thumbsup.png";
     }
     else {
-        document.getElementById("thumbsDownImageCreepy").src = "/Images/thumbsdown.png";
         thumbsDownCreepy = false;
+        document.getElementById("thumbsDownImageCreepy").src = "/Images/thumbsdown.png";
+        document.getElementById("thumbsDownImageCreepy").style.transform = "scale(1.4)";
+        setTimeout(function(){
+            document.getElementById("thumbsDownImageCreepy").style.transform = "scale(1)";
+        }, 200);
     }
 }
 
@@ -309,24 +389,44 @@ var thumbsUpGory = false;
 var thumbsDownGory = false;
 
 function changeThumbsUpColorGory() {
-    if (thumbsUpGory == false && thumbsDownGory == false) {
-        document.getElementById("thumbsUpImageGory").src = "/Images/thumbsup_gory.png";
+    if (thumbsUpGory == false) {
         thumbsUpGory = true;
+        thumbsDownGory = false;
+        document.getElementById("thumbsUpImageGory").src = "/Images/thumbsup_gory.png";
+        document.getElementById("thumbsUpImageGory").style.transform = "scale(1.4)";
+        setTimeout(function(){
+            document.getElementById("thumbsUpImageGory").style.transform = "scale(1)";
+        }, 200);
+        document.getElementById("thumbsDownImageGory").src = "/Images/thumbsdown.png";
     }
     else {
-        document.getElementById("thumbsUpImageGory").src = "/Images/thumbsup.png";
         thumbsUpGory = false;
+        document.getElementById("thumbsUpImageGory").src = "/Images/thumbsup.png";
+        document.getElementById("thumbsUpImageGory").style.transform = "scale(1.4)";
+        setTimeout(function(){
+            document.getElementById("thumbsUpImageGory").style.transform = "scale(1)";
+        }, 200);
     }
 }
 
 function changeThumbsDownColorGory() {
-    if (thumbsDownGory == false && thumbsUpGory == false) {
-        document.getElementById("thumbsDownImageGory").src = "/Images/thumbsdown_gory.png"
+    if (thumbsDownGory == false) {
         thumbsDownGory = true;
+        thumbsUpGory = false;
+        document.getElementById("thumbsDownImageGory").src = "/Images/thumbsdown_gory.png";
+        document.getElementById("thumbsDownImageGory").style.transform = "scale(1.4)";
+        setTimeout(function(){
+            document.getElementById("thumbsDownImageGory").style.transform = "scale(1)";
+        }, 200);
+        document.getElementById("thumbsUpImageGory").src = "/Images/thumbsup.png";
     }
     else {
-        document.getElementById("thumbsDownImageGory").src = "/Images/thumbsdown.png"
         thumbsDownGory = false;
+        document.getElementById("thumbsDownImageGory").src = "/Images/thumbsdown.png";
+        document.getElementById("thumbsDownImageGory").style.transform = "scale(1.4)";
+        setTimeout(function(){
+            document.getElementById("thumbsDownImageGory").style.transform = "scale(1)";
+        }, 200);
     }
 }
 
@@ -334,23 +434,43 @@ var thumbsUpJumpy = false;
 var thumbsDownJumpy = false;
 
 function changeThumbsUpColorJumpy() {
-    if (thumbsUpJumpy == false && thumbsDownJumpy == false) {
-        document.getElementById("thumbsUpImageJumpy").src = "/Images/thumbsup_jumpy.png"
+    if (thumbsUpJumpy == false) {
         thumbsUpJumpy = true;
+        thumbsDownJumpy = false;
+        document.getElementById("thumbsUpImageJumpy").src = "/Images/thumbsup_jumpy.png";
+        document.getElementById("thumbsUpImageJumpy").style.transform = "scale(1.4)";
+        setTimeout(function(){
+            document.getElementById("thumbsUpImageJumpy").style.transform = "scale(1)";
+        }, 200);
+        document.getElementById("thumbsDownImageJumpy").src = "/Images/thumbsdown.png";
     }
     else {
-        document.getElementById("thumbsUpImageJumpy").src = "/Images/thumbsup.png"
         thumbsUpJumpy = false;
+        document.getElementById("thumbsUpImageJumpy").src = "/Images/thumbsup.png";
+        document.getElementById("thumbsUpImageJumpy").style.transform = "scale(1.4)";
+        setTimeout(function(){
+            document.getElementById("thumbsUpImageJumpy").style.transform = "scale(1)";
+        }, 200);
     }
 }
 
 function changeThumbsDownColorJumpy() {
-    if (thumbsDownJumpy == false && thumbsUpJumpy == false) {
-        document.getElementById("thumbsDownImageJumpy").src = "/Images/thumbsdown_jumpy.png"
+    if (thumbsDownJumpy == false) {
         thumbsDownJumpy = true;
+        thumbsUpJumpy = false;
+        document.getElementById("thumbsDownImageJumpy").src = "/Images/thumbsdown_jumpy.png";
+        document.getElementById("thumbsDownImageJumpy").style.transform = "scale(1.4)";
+        setTimeout(function(){
+            document.getElementById("thumbsDownImageJumpy").style.transform = "scale(1)";
+        }, 200);
+        document.getElementById("thumbsUpImageJumpy").src = "/Images/thumbsup.png";
     }
     else {
-        document.getElementById("thumbsDownImageJumpy").src = "/Images/thumbsdown.png"
         thumbsDownJumpy = false;
+        document.getElementById("thumbsDownImageJumpy").src = "/Images/thumbsdown.png";
+        document.getElementById("thumbsDownImageJumpy").style.transform = "scale(1.4)";
+        setTimeout(function(){
+            document.getElementById("thumbsDownImageJumpy").style.transform = "scale(1)";
+        }, 200);
     }
 }
