@@ -1,4 +1,17 @@
-﻿// SHOW SEARCH RESULTS IN INPUT FIELD
+﻿/*
+//Doesn't work. This is supposed to automatically input first selection upon hitting enter https://stackoverflow.com/questions/26785109/select-first-suggestion-from-typeahead-js-when-hit-enter-key-in-the-field
+//Maybe try thishttp://bwbecker.github.io/blog/2015/08/29/pain-with-twitter-typeahead-widget/
+$("#customDivTypeahead").on('keyup', function(e){
+    if(e.which == 13) {
+        $(".tt-suggestion:first-child", this).trigger('click');
+    }
+});
+*/
+
+
+
+
+// SHOW SEARCH RESULTS IN INPUT FIELD
 // https://stackoverflow.com/questions/21530063/how-do-we-set-remote-in-typeahead-js
 // Instantiate the Bloodhound suggestion engine
 var movies = new Bloodhound({
@@ -48,15 +61,21 @@ var movies = new Bloodhound({
 
 
 
-$('.typeahead').typeahead(null, {
-    display: "value1",
-    source: movies,
-    templates: {
-        suggestion: function (movie) {
-            return '<p>' + movie.value2 + ' - ' + movie.value3 + '</p>';
-        }
+$('#customDivTypeahead .typeahead').typeahead({
+        hint: true,
+        highlight: true,
+        minLength: 1
+    },
+    {
+        display: "value1",
+        source: movies,
+        templates: {
+            suggestion: function (movie) {
+                return '<p>' + movie.value2 + ' - ' + movie.value3 + '</p>';
+            }
     }
-})
+});
+
 
 /*
 $('.typeahead').typeahead(null, {
