@@ -1,17 +1,4 @@
-﻿/*
-//Doesn't work. This is supposed to automatically input first selection upon hitting enter https://stackoverflow.com/questions/26785109/select-first-suggestion-from-typeahead-js-when-hit-enter-key-in-the-field
-//Maybe try thishttp://bwbecker.github.io/blog/2015/08/29/pain-with-twitter-typeahead-widget/
-$("#customDivTypeahead").on('keyup', function(e){
-    if(e.which == 13) {
-        $(".tt-suggestion:first-child", this).trigger('click');
-    }
-});
-*/
-
-
-
-
-// SHOW SEARCH RESULTS IN INPUT FIELD
+﻿// SHOW SEARCH RESULTS IN INPUT FIELD
 // https://stackoverflow.com/questions/21530063/how-do-we-set-remote-in-typeahead-js
 // Instantiate the Bloodhound suggestion engine
 var movies = new Bloodhound({
@@ -19,6 +6,7 @@ var movies = new Bloodhound({
         return Bloodhound.tokenizers.whitespace(datum.value);
     },
     queryTokenizer: Bloodhound.tokenizers.whitespace,
+    prefetch: 'http://api.themoviedb.org/3/search/movie?query=%QUERY&api_key=062a89fc4c3fcc6e928a7ba7ca87074e', //Not sure if this even works but whatevs
     remote: {
         wildcard: '%QUERY',
         url: 'http://api.themoviedb.org/3/search/movie?query=%QUERY&api_key=062a89fc4c3fcc6e928a7ba7ca87074e',
@@ -27,9 +15,10 @@ var movies = new Bloodhound({
             return $.map(response.results, function (movie) {
                 return {
                     //value: movie.id + " - " + movie.title,
-                    value1: movie.id,
-                    value2: movie.title,
-                    value3: parseInt(movie.release_date)
+                    valueID: movie.id,
+                    valueTitle: movie.title,
+                    valueYear: parseInt(movie.release_date),
+                    valueStatus: movie.status
                 };
             });
         }
@@ -39,51 +28,26 @@ var movies = new Bloodhound({
 
 // HTML submit button sends same-value displayed to URL
 
-// Instantiate the Typeahead UI
-//TRY THESE:
-//https://stackoverflow.com/questions/21895025/use-different-value-from-json-data-instead-of-displaykey-using-typeahead
-//https://github.com/running-coder/jquery-typeahead/issues/168
-//https://stackoverflow.com/questions/14136973/bootstrap-typeahead-return-name-and-id/14166308
-//https://stackoverflow.com/questions/28229348/bootstrap-typeahead-bloodhound-return-name-and-id
-//https://stackoverflow.com/questions/14136973/bootstrap-typeahead-return-name-and-id/14166308
-//https://github.com/twitter/typeahead.js/issues/1453
-//https://github.com/twitter/typeahead.js/issues/193
-//https://twitter.github.io/typeahead.js/examples/#custom-templates GO TO CUSTOM TEMPLATES
-//https://stackoverflow.com/questions/32552948/update-a-hidden-input-field-with-typeahead-js-and-json-key-values
-//https://stackoverflow.com/questions/29223516/typeahead-custom-template-without-handlebars THIS SORTA KINDA WORKED!!!
-//We need to look into a hidden field using typeahead
-//Here might be the best tutorial: https://stackoverflow.com/questions/12389948/twitter-bootstrap-typeahead-id-label
-//http://kylefinley.net/twitter-typeahead-using-id-of-selected-item-label
-//https://stackoverflow.com/questions/35402487/bootstrap-3-typeahead-afterselect-get-id
-//http://embed.plnkr.co/EXP0JTP11aiw8JpcdFFh
-//https://stackoverflow.com/questions/36340499/bootstrap-typeahead-show-different-text-in-box-once-selected
-
-
-
-
-$('#customDivTypeahead .typeahead').typeahead({
+// Instantiate the Typeahead UI aka CHRIS' ABSOLUTE GODLIKE MASTERPIECE thanks to this https://stackoverflow.com/questions/31284593/twitter-typeahead-different-value-to-display and StackOverflow contributor "vinhboy"
+$('.typeahead').typeahead({
         hint: true,
         highlight: true,
-        minLength: 1
+        minLength: 1,
+        autoselect: true
     },
     {
-        display: "value1",
+        name: 'movieDataset',
+        display: "valueTitle",
         source: movies,
         templates: {
             suggestion: function (movie) {
-                return '<p>' + movie.value2 + ' - ' + movie.value3 + '</p>';
+                return '<p>' + movie.valueTitle + ' - ' + movie.valueYear + '</p>';
             }
     }
+    }).bind('typeahead:select', function(ev, suggestion) {
+            $('#movieid').val(suggestion.valueID);
 });
 
-
-/*
-$('.typeahead').typeahead(null, {
-    display: "value",
-    source: movies,
-    }
-})
-*/
 
 
 
@@ -147,6 +111,7 @@ document.getElementById("movieYearLabel").innerHTML = parseInt(obj_tmdb.release_
 // Title
 document.getElementById("movieTitleLabel").innerHTML = obj_tmdb.title;
 document.getElementById("movieTitleLabelModal").innerHTML = obj_tmdb.title;
+document.getElementById("notHorrorMovieTitle").innerHTML = obj_tmdb.title;
 
 // Directors
 var directors = [];
@@ -188,6 +153,29 @@ document.getElementById("tagline").innerHTML = obj_tmdb.tagline;
 
 // Plot
 document.getElementById("descriptionOfMovieLabelPlot").innerHTML = obj_tmdb.overview;
+
+//Genres
+//List of genres: https://api.themoviedb.org/3/genre/movie/list?api_key=062a89fc4c3fcc6e928a7ba7ca87074e&language=en-US
+var i, x = "";
+for (i in obj_tmdb.genres){ //Enables loop of all the genres and stores them in x
+    x += obj_tmdb.genres[i].name + "<br>";
+}
+
+var allScaryRatingBarsJS = document.getElementById("allScaryRatingBars");
+var rateThisMovieTextJS = document.getElementById("rateThisMovieText");
+var notScaryMovieSectionJS = document.getElementById("notScaryMovieSection");
+var genresListJS = document.getElementById("genresList");
+if (x.includes("Horror") || x.includes("Thriller")){
+
+}
+else {
+    allScaryRatingBarsJS.style.display = "none";
+    rateThisMovieTextJS.style.display = "none";
+    notScaryMovieSectionJS.style.display = "inline";
+    genresListJS.innerHTML = x;
+}
+
+
 
 
 

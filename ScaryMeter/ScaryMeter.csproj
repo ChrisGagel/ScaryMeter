@@ -78,6 +78,8 @@
     <Content Include="Images\thumbsup_gory.png" />
     <Content Include="Images\thumbsup_jumpy.png" />
     <Content Include="Images\thumbsup.png" />
+    <Content Include="index_mobile.html" />
+    <Content Include="mobileDetectScript.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">

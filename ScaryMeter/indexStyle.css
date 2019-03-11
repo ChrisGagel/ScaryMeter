@@ -144,7 +144,7 @@ p {
     padding: 2px;
 }
 
-.rateThisMovieText {
+#rateThisMovieText {
     font-size: 1em;
     font-family: 'Open Sans Light', sans-serif;
     font-weight: 300;
@@ -307,6 +307,29 @@ p {
 #similarlyRatedMoviesCoverPhoto1, #similarlyRatedMoviesCoverPhoto2, #similarlyRatedMoviesCoverPhoto3, #similarlyRatedMoviesCoverPhoto4, #similarlyRatedMoviesCoverPhoto5, #similarlyRatedMoviesCoverPhoto6 {
     width: 100%;
     height: auto;
+}
+
+.notScaryMovieSubsection {
+    width: 70%;
+    max-width: 1200px;
+    min-width: 600px;
+    margin: auto;
+    margin-top: -30px;
+    box-shadow: 0px 0px 10px #555555;
+    background-color: #DEDEDE;
+    color: #555555;
+    text-align: left;
+    padding: 20px;
+    font-family: 'Open Sans Light', sans-serif;
+    font-size: 1.2em;
+}
+
+.notScaryMovieSubsectionHeading {
+    font-size: 2em;
+    font-family: 'Oswald', sans-serif;
+    color: #DEDEDE;
+    background-color: #CC3333;
+    text-align: center;
 }
 
 
