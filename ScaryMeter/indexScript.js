@@ -42,11 +42,25 @@ $('.typeahead').typeahead({
         templates: {
             suggestion: function (movie) {
                 return '<p>' + movie.valueTitle + ' - ' + movie.valueYear + '</p>';
+            },
+            empty: function (movie) {
+                $(".tt-dataset").text('No Results Found');
             }
     }
     }).bind('typeahead:select', function(ev, suggestion) {
             $('#movieid').val(suggestion.valueID);
-});
+}).on('typeahead:selected', enableSubmit);
+
+
+var submitButton = document.getElementById("searchBtn"); //Disable submit button until there is an input in the search field
+submitButton.disabled = true;
+
+function enableSubmit(){
+
+    submitButton.disabled = false;
+
+}
+
 
 
 
