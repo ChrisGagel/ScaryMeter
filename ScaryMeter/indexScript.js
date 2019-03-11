@@ -54,11 +54,9 @@ $('.typeahead').typeahead({
 
 var submitButton = document.getElementById("searchBtn"); //Disable submit button until there is an input in the search field
 submitButton.disabled = true;
-
 function enableSubmit(){
-
     submitButton.disabled = false;
-
+    submitButton.click(); //When input is in search field, automatically clicks search button
 }
 
 
