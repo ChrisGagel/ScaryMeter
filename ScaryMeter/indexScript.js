@@ -60,6 +60,8 @@ function enableSubmit(){
 }
 
 
+//To filter out non-released movies, look up https://github.com/twitter/typeahead.js/blob/master/doc/jquery_typeahead.md#datasets and https://www.w3schools.com/jsref/jsref_filter.asp
+
 
 
 
