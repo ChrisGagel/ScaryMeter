@@ -1,0 +1,445 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Open+Sans');/* Necessry as first line because the non-import method doesn't work on iOS https://stackoverflow.com/questions/14676613/how-to-import-google-web-font-in-css-file */
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+/*STYLE GUIDE - FRONT PAGE
+
+    WHITESMOKE COLOUR = #F5F5F5
+    DARK GREY COLOUR = #555555
+    MEDIUM GREY COLOUR = #9D9D9D
+    LIGHT GREY COLOUR = #DEDEDE
+    BACKGROUND OF WEBSITE = #BABABA
+
+    NAVBAR BACKGROUND COLOUR = #2D2D2D
+    NAVBAR TEXT COLOUR = #9C9C9C
+
+    SCARY RED = #CC3333
+    CREEPY BLUE = #3366CC
+    GORY GREEN = #009966
+    JUMPY YELLOW = #FFCC66
+
+*/
+
+
+body, html {
+    background-color: #BABABA; /*This colour used to be #DEDEDE however the scary meter rating number was hard to see*/
+    height: 100%;
+    margin: 0;
+}
+
+.footer {
+    width: 100%;
+    background-color: #2D2D2D;
+    text-align: center;
+    color: #9C9C9C;
+    padding: 10px;
+    margin-top: 20px;
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+}
+
+.navbar-form {
+    margin: 0;
+    border: 0;
+    box-shadow: none;
+}
+
+.form-control {
+    font-size: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.movieContent {
+    margin: auto;
+    margin-top: 90px;
+    width: 95%;
+}
+
+.movieTitleAndYear {
+    color: #555555;
+    font-size: 2.3em;
+    font-weight: 400;
+    font-family: 'Oswald', sans-serif;
+}
+
+.movieSummarySection {
+    height: 500px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.movieDetails {
+    height: 75%;
+    max-height: 600px;
+    width: 70%;
+    max-width: 1200px;
+    min-width: 600px;
+    margin: auto;
+    position: relative;
+    transform: perspective(1px) translateY(-50%);
+    top: 50%;
+    background-color: #F5F5F5;
+    box-shadow: 0px 0px 10px #555555;
+    display: flex;
+}
+
+#moviePoster {
+    height: auto;
+    width: 100%;
+}
+
+.movieDescription {
+    float: left;
+    padding: 3%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.movieDescBottom {
+    /*background-color: yellow;*/
+}
+
+.movieDescTop {
+    /*background-color: red;*/
+}
+
+#rateThisMovieText {
+    font-size: 1em;
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: 300;
+    text-align: right;
+    padding-right: 10px;
+    color: #555555;
+}
+
+#tagline {
+    color: #9D9D9D;
+    font-size: 1.2em;
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: 100;
+    font-style: italic;
+}
+
+#descriptionOfMovieLabelPlot {
+    color: #9D9D9D;
+    font-size: 1em;
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: 100;
+}
+
+#descriptionOfMovieLabelDirector {
+    color: #9D9D9D;
+    font-size: 1em;
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: 100;
+}
+
+#descriptionOfMovieLabelActors {
+    color: #9D9D9D;
+    font-size: 1em;
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: 100;
+}
+
+#mpaaRating {
+    color: #9D9D9D;
+    font-size: 1em;
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: 100;
+}
+
+#runtime {
+    color: #9D9D9D;
+    font-size: 1em;
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: 100;
+}
+
+.descriptionOfLabel {
+    color: #555555;
+    font-size: 0.9em;
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: bold;
+}
+
+
+.scaryMeterRating {
+    height: auto;
+    width: 70%;
+    margin: auto;
+    max-width: 1200px;
+    min-width: 600px;
+    position: static;
+    margin-top: -50px;
+    margin-bottom: 15px;
+}
+
+.overallScaryMeterRatingNumberStyle {
+    color: white;
+    margin-top: 4px;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+.overallMeterCoverPhoto {
+    top: 15vh;
+    position: absolute;
+}
+
+.subScaryMeterRatingBarLabel {
+    float: right;
+    color: #555555;
+    margin-top: 5px;
+    font-size: 1em;
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: 400;
+}
+
+
+.progress {
+    margin: 0;
+    height: 30px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    box-shadow: none;
+}
+
+.progress-bar {
+    box-shadow: none;
+    font-size: 15px;
+    padding-top: 6px;
+}
+
+.pageBottom {
+    width: 70%;
+    max-width: 1200px;
+    min-width: 600px;
+    margin: auto;
+    box-shadow: 0px 0px 10px #555555;
+    background-color: #F5F5F5;
+}
+
+.subMeterSection {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.similarlyRatedMoviesSection {
+    background-color: #DEDEDE;
+    box-shadow: 0px 0px 5px #888, 0px 0px 5px #888; /*Top and bottom only - https://stackoverflow.com/questions/6671375/css-box-shadow-top-and-bottom-only*/
+}
+
+.similarlyRatedMoviesLabel {
+    font-style: italic;
+    font-size: 2em;
+    color: #555555;
+    margin-left: 50px;
+    padding-top: 25px;
+    padding-bottom: 5px;
+    font-family: 'Open Sans Light', sans-serif;
+}
+
+.similarlyRatedBox {
+    background-color: #F5F5F5;
+    margin: auto;
+    margin-bottom: 13px;
+}
+
+.similarlyRatedTitle {
+    color: #555555;
+    font-size: 1em;
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: 300;
+    margin: 3px;
+    margin-left: 5px;
+}
+
+#similarlyRatedMoviesCoverPhoto1, #similarlyRatedMoviesCoverPhoto2, #similarlyRatedMoviesCoverPhoto3, #similarlyRatedMoviesCoverPhoto4, #similarlyRatedMoviesCoverPhoto5, #similarlyRatedMoviesCoverPhoto6 {
+    width: 100%;
+    height: auto;
+}
+
+.notScaryMovieSubsection {
+    width: 70%;
+    max-width: 1200px;
+    min-width: 600px;
+    margin: auto;
+    margin-top: -30px;
+    box-shadow: 0px 0px 10px #555555;
+    background-color: #DEDEDE;
+    color: #555555;
+    text-align: left;
+    padding: 20px;
+    font-family: 'Open Sans Light', sans-serif;
+    font-size: 1.2em;
+}
+
+.notScaryMovieSubsectionHeading {
+    font-size: 2em;
+    font-family: 'Oswald', sans-serif;
+    color: #DEDEDE;
+    background-color: #CC3333;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Modal Styles*/
+
+.modal-open {
+    overflow: scroll; /*Prevents scrollbar from dissappearing when modal is opened*/
+    padding-right: 0 !important; /*Prevents background image from shifting right to right*/
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-title {
+    color: #555555;
+    font-size: 2em;
+    font-weight: 400;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+}
+
+.modal-body {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.overallScaryMeterRatingNumberStyleModal {
+    color: #545454;
+    margin-top: 4px;
+    font-size: 1.3em;
+    text-align: center;
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: 100;
+}
+
+.subMeterTitleLabelModal {
+    font-size: 1.6em;
+    font-weight: 300;
+    font-family: 'Open Sans Light', sans-serif;
+    text-align: center;
+    color: #555555;
+}
+
+.subMeterCateogryLabelModal {
+    font-size: 1.3em;
+    font-weight: 300;
+    font-family: 'Open Sans Light', sans-serif;
+    text-align: center;
+    color: #555555;
+}
+
+#thumbsUpImageCreepy, #thumbsDownImageCreepy, #thumbsUpImageGory, #thumbsDownImageGory, #thumbsUpImageJumpy, #thumbsDownImageJumpy {
+    margin: 5px;
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+    width: 40px;
+    cursor: pointer;
+    transition: transform .3s;
+}
+
+#subMetersModal {
+    display: none;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+    .modal-footer .btn + .btn {
+        background-color: #CC3333;
+    }
+
+
+
+
+/*TEST SLIDER FOR RATING MOVIES - https://www.w3schools.com/howto/howto_js_rangeslider.asp*/
+
+#overallSliderRange {
+    background-color: #DEDEDE;
+}
+
+#overallSliderRangeNumber {
+    color: #9D9D9D;
+    margin-top: -4px;
+    padding-left: 5px;
+}
+
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+    /*opacity: 0;
+    transition: .15s ease;*/
+}
+
+/* The slider itself */
+.slider {
+    -webkit-appearance: none; /* Override default CSS styles */
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    background: #F5F5F5;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+    /* Mouse-over effects */
+    .slider:hover {
+        opacity: 1; /* Fully shown on mouse-over */
+    }
+
+    /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none; /* Override default look */
+        appearance: none;
+        width: 10px;
+        height: 25px;
+        background: #e54b4b; /* Green background */
+        cursor: pointer; /* Cursor on hover */
+    }
+
+    .slider::-moz-range-thumb {
+        width: 10px; /* Set a specific slider handle width */
+        height: 25px; /* Slider handle height */
+        background: #e54b4b; /* Green background */
+        cursor: pointer; /* Cursor on hover */
+    }

@@ -49,9 +49,13 @@
                                 <span class="input-group-addon" id="basic-addon1">
                                     <!-- <span class="glyphicon glyphicon-film" aria-hidden="true"></span> - this adds the film icon to the left of the search bar-->
                                 </span>
-                                <input type="text" class="form-control typeahead" autocomplete="off" spellcheck="false" placeholder="Search movies..." name="movieid">
+                                <div id="customDivTypeahead">
+                                    <!--In here are two input fields, one hidden. The movietypeahead is for user inputted text and the movieid is for the program to redirect to a specific movie-->
+                                    <input type="text" class="form-control typeahead" autocomplete="off" spellcheck="false" placeholder="Search movies..." name="movietypeahead">
+                                    <input type="hidden" id="movieid" name="movieid">
+                                </div>
                                 <div class="input-group-btn">
-                                    <button class="btn btn-default" type="submit" id="searchBtn"><i class="glyphicon glyphicon-search"></i></button>
+                                    <button class="btn btn-default" type="submit" id="searchBtn" style="opacity: 1;"><i class="glyphicon glyphicon-search"></i></button>
                                 </div>
                             </div>
                         </form>
@@ -73,7 +77,6 @@
                 </div>
             </nav>
         </div> <!-- navigation bar row -->
-
 
 
         <!--INTRODUCTION MESSAGE-->
@@ -279,5 +282,4 @@
 
 
 <!--Script, named indexScript.js-->
-<script src="mobileDetectScript.js"></script>
 <script src="indexScript.js"></script>

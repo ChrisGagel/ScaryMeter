@@ -25,11 +25,11 @@ function detectmob() {
 }
 
 if (detectmob() == true){
-    document.location = "index_mobile.html";
-}
-else if(detectmob() == false){
 
 }
+else if(detectmob() == false){
+    document.location = "index.html";
+}
 else {
-    document.location = "index_mobile.html";
+
 }
