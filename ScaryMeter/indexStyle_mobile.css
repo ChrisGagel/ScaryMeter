@@ -57,116 +57,81 @@ body, html {
 
 
 
+#imageCoverPhotoBackground {
+    /* The image used */
+    /*background-image: url("https://image.tmdb.org/t/p/original//3CCfgSvtvN3HwVs5hbcC1NhOAzw.jpg");*/
+    position: relative;
+    height: 700px;
+    width: 100%;
 
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    /* Set transparency*/
+    opacity: 0.4;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+}
 
 .movieContent {
     margin: auto;
-    margin-top: 90px;
-    width: 95%;
+    margin-top: 80px;
 }
 
 .movieTitleAndYear {
-    color: #555555;
+    color: #2D2D2D;
     font-size: 2.3em;
     font-weight: 400;
     font-family: 'Oswald', sans-serif;
-}
-
-.movieSummarySection {
-    height: 500px;
-    width: 100%;
-    margin-top: 10px;
-}
-
-.movieDetails {
-    height: 75%;
-    max-height: 600px;
-    width: 70%;
-    max-width: 1200px;
-    min-width: 600px;
-    margin: auto;
-    position: relative;
-    transform: perspective(1px) translateY(-50%);
-    top: 50%;
-    background-color: #F5F5F5;
-    box-shadow: 0px 0px 10px #555555;
-    display: flex;
-}
-
-#moviePoster {
-    height: auto;
-    width: 100%;
-}
-
-.movieDescription {
-    float: left;
-    padding: 3%;
-    overflow-x: hidden;
-    overflow-y: auto;
-}
-
-.movieDescBottom {
-    /*background-color: yellow;*/
-}
-
-.movieDescTop {
-    /*background-color: red;*/
-}
-
-#rateThisMovieText {
-    font-size: 1em;
-    font-family: 'Open Sans Light', sans-serif;
-    font-weight: 300;
-    text-align: right;
-    padding-right: 10px;
-    color: #555555;
+    /*background-color: rgb(222, 222, 222, 0.75);
+    display: inline-block;
+    padding: 2px;*/
 }
 
 #tagline {
-    color: #9D9D9D;
+    color: #2D2D2D;
     font-size: 1.2em;
     font-family: 'Open Sans Light', sans-serif;
     font-weight: 100;
     font-style: italic;
 }
 
-#descriptionOfMovieLabelPlot {
-    color: #9D9D9D;
-    font-size: 1em;
-    font-family: 'Open Sans Light', sans-serif;
-    font-weight: 100;
+#moviePoster {
+    height: auto;
+    width: 33%;
+    float: left;
+    padding: 3px;
 }
 
-#descriptionOfMovieLabelDirector {
-    color: #9D9D9D;
-    font-size: 1em;
-    font-family: 'Open Sans Light', sans-serif;
-    font-weight: 100;
+.movieDescription {
+    float: left;
+    padding: 3px;
+    /*overflow-x: hidden;
+    overflow-y: auto;*/
+    width: 66%;
 }
 
-#descriptionOfMovieLabelActors {
-    color: #9D9D9D;
-    font-size: 1em;
+#rateThisMovieText {
+    font-size: 3vw;
     font-family: 'Open Sans Light', sans-serif;
-    font-weight: 100;
+    font-weight: 300;
+    color: #555555;
+    text-align: center;
+    width: 100%;
+    margin-top: 5%;
 }
 
-#mpaaRating {
-    color: #9D9D9D;
+#descriptionOfMovieLabelPlot, #descriptionOfMovieLabelDirector, #descriptionOfMovieLabelActors, #mpaaRating, #runtime {
+    color: #555555;
     font-size: 1em;
     font-family: 'Open Sans Light', sans-serif;
-    font-weight: 100;
-}
-
-#runtime {
-    color: #9D9D9D;
-    font-size: 1em;
-    font-family: 'Open Sans Light', sans-serif;
-    font-weight: 100;
+    font-weight: 300;
 }
 
 .descriptionOfLabel {
-    color: #555555;
+    color: #2D2D2D;
     font-size: 0.9em;
     font-family: 'Open Sans Light', sans-serif;
     font-weight: bold;
@@ -199,8 +164,9 @@ body, html {
 .subScaryMeterRatingBarLabel {
     float: right;
     color: #555555;
-    margin-top: 5px;
-    font-size: 1em;
+    padding-top: 10%;
+    margin-right: 0;
+    font-size: 3vw;
     font-family: 'Open Sans Light', sans-serif;
     font-weight: 400;
 }
@@ -208,18 +174,21 @@ body, html {
 
 .progress {
     margin: 0;
-    height: 30px;
+    height: 7vw /*Previously 30px*/;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
     box-shadow: none;
+    background: transparent;
 }
 
 .progress-bar {
     box-shadow: none;
-    font-size: 15px;
-    padding-top: 6px;
+    font-size: 4vw;
+    padding-top: 1%;
+    text-align: right;
+    padding-right: 7px;
 }
 
 .pageBottom {
@@ -232,8 +201,7 @@ body, html {
 }
 
 .subMeterSection {
-    padding-top: 25px;
-    padding-bottom: 25px;
+    margin-top: 5%;
 }
 
 .similarlyRatedMoviesSection {

@@ -104,10 +104,10 @@ var backdropPathImgSize_tmdb = "original"; //Use CONFIG command to find appropri
 var backdropPath_tmdb = obj_tmdb.backdrop_path;
 var backdrop_tmdb = backdropBaseURL_tmdb + backdropPathImgSize_tmdb + "/" + backdropPath_tmdb; //Add &append_to_response=credits
 
-/*
 // Write backdrop path
 document.getElementById("imageCoverPhotoBackground").style.backgroundImage = "url("+backdrop_tmdb+")";
 
+/*
 // Path for similarly rated movies cover photos
 document.getElementById("similarlyRatedMoviesCoverPhoto1").src = backdrop_tmdb;
 document.getElementById("similarlyRatedMoviesCoverPhoto2").src = backdrop_tmdb;
