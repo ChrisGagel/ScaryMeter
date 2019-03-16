@@ -63,6 +63,21 @@ function enableSubmit(){
 //To filter out non-released movies, look up https://github.com/twitter/typeahead.js/blob/master/doc/jquery_typeahead.md#datasets and https://www.w3schools.com/jsref/jsref_filter.asp
 
 
+//Function to open the search bar dropdown
+var searchBarDropdown = document.getElementById("searchNavbar");
+searchBarDropdown.style.display = "none";
+function openSearchBar() {
+    if (searchBarDropdown.style.display == "none") {
+        searchBarDropdown.style.display = "block";
+    }
+    else
+    {
+        searchBarDropdown.style.display = "none";
+    }
+}
+
+
+
 
 
 

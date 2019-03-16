@@ -48,6 +48,15 @@ body, html {
     font-size: 12px;
 }
 
+#menuSearchIcon {
+    color: white;
+    float: right;
+    font-size: 17px;
+    margin-top: 16px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
 
 
 
@@ -63,12 +72,11 @@ body, html {
     position: relative;
     height: 700px;
     width: 100%;
-
+    min-width: 380px;
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-
     /* Set transparency*/
     opacity: 0.4;
     -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
@@ -78,6 +86,7 @@ body, html {
 .movieContent {
     margin: auto;
     margin-top: 80px;
+    max-width: 768px;
 }
 
 .movieTitleAndYear {
@@ -113,14 +122,14 @@ body, html {
     width: 66%;
 }
 
-#rateThisMovieText {
-    font-size: 3vw;
+#rateThisMovieButtonSmall, #rateThisMovieButtonLarge {
+    font-size: 1em;
     font-family: 'Open Sans Light', sans-serif;
     font-weight: 300;
     color: #555555;
     text-align: center;
     width: 100%;
-    margin-top: 5%;
+    display: none;
 }
 
 #descriptionOfMovieLabelPlot, #descriptionOfMovieLabelDirector, #descriptionOfMovieLabelActors, #mpaaRating, #runtime {
@@ -161,20 +170,26 @@ body, html {
     position: absolute;
 }
 
+.scaryMeterRatingBarLabel {
+    color: #555555;
+    font-size: 1.2em;
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: 400;
+}
+
 .subScaryMeterRatingBarLabel {
     float: right;
     color: #555555;
     padding-top: 10%;
     margin-right: 0;
-    font-size: 3vw;
+    font-size: 1em;
     font-family: 'Open Sans Light', sans-serif;
     font-weight: 400;
 }
 
-
 .progress {
     margin: 0;
-    height: 7vw /*Previously 30px*/;
+    height: 30px;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
     border-top-left-radius: 0px;
@@ -185,8 +200,8 @@ body, html {
 
 .progress-bar {
     box-shadow: none;
-    font-size: 4vw;
-    padding-top: 1%;
+    font-size: 15px;
+    padding-top: 6px;
     text-align: right;
     padding-right: 7px;
 }
@@ -201,7 +216,7 @@ body, html {
 }
 
 .subMeterSection {
-    margin-top: 5%;
+    margin-top: 10px;
 }
 
 .similarlyRatedMoviesSection {
@@ -273,6 +288,76 @@ body, html {
 
 
 
+
+
+
+/*Responsive CSS*/
+
+@media screen and (max-width: 475px) {
+
+    #rateThisMovieButtonLarge {
+        display: inline-block;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    .scaryMeterRatingBarLabel {
+        font-size: 1em;
+    }
+
+    .subScaryMeterRatingBarLabel {
+        font-size: 0.8em;
+    }
+
+    .progress {
+        height: 23px;
+    }
+
+    .progress-bar {
+        font-size: 12px;
+        padding-top: 2px;
+    }
+
+}
+
+@media screen and (min-width: 476px) {
+
+    #rateThisMovieButtonSmall {
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+}
+
+@media screen and (min-width: 600px) {
+
+    #moviePoster {
+        width: 28%;
+    }
+
+    .movieDescription {
+        width: 72%;
+    }
+
+}
+
+@media screen and (min-width: 768px) /*This is the exact size of when the navbar collapses*/ {
+
+    .navbar-form .input-group .form-control, .navbar-form .input-group .input-group-addon, .navbar-form .input-group .input-group-btn {
+        width: 1%; /*For some reason setting it to 1% makes it fullscreen on my Chrome and Safari*/
+    }
+
+    #moviePoster {
+        width: 23%;
+    }
+
+    .movieDescription {
+        width: 77%;
+    }
+
+}
+
+/*End of responsive CSS*/
 
 
 

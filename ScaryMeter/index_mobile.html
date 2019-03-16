@@ -30,7 +30,7 @@
     <!-- SET COVER PHOTO IMAGE AS PAGE BACKGROUND-->
     <div id="imageCoverPhotoBackground"></div>
 
-    <div class="container-fluid" style="position:absolute; top:0; width:100%;">
+    <div class="container-fluid" style="position:absolute; top:0; width:100%; min-width: 380px;">
 
         <!--NAVIGATION BAR-->
         <div class="row">
@@ -45,21 +45,7 @@
                         <a class="navbar-brand" href="frontPage.html">Scary Meter</a>
                     </div>
                     <div class="nav navbar-nav navbar-right">
-                        <form class="navbar-form" role="search" action="index_mobile.html">
-                            <div class="input-group">
-                                <span class="input-group-addon" id="basic-addon1">
-                                    <!-- <span class="glyphicon glyphicon-film" aria-hidden="true"></span> - this adds the film icon to the left of the search bar-->
-                                </span>
-                                <div id="customDivTypeahead">
-                                    <!--In here are two input fields, one hidden. The movietypeahead is for user inputted text and the movieid is for the program to redirect to a specific movie-->
-                                    <input type="text" class="form-control typeahead" autocomplete="off" spellcheck="false" placeholder="Search movies..." name="movietypeahead">
-                                    <input type="hidden" id="movieid" name="movieid">
-                                </div>
-                                <div class="input-group-btn">
-                                    <button class="btn btn-default" type="submit" id="searchBtn" style="opacity: 1;"><i class="glyphicon glyphicon-search"></i></button>
-                                </div>
-                            </div>
-                        </form>
+                        <i class="glyphicon glyphicon-search" id="menuSearchIcon" onclick="openSearchBar()"></i>
                     </div>
                     <div class="collapse navbar-collapse" id="scaryMeterNavbar">
                         <ul class="nav navbar-nav">
@@ -79,6 +65,31 @@
             </nav>
         </div> <!-- navigation bar row -->
 
+        <!--DROPDOWN SEARCH BAR-->
+        <div class="row">
+            <div id="searchNavbar">
+                <nav class="navbar fixed-top navbar-expand-md navbar-inverse" style="margin: 0; margin-top: 50px; width: 100%; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; background-color: #2D2D2D; border: 0; position: fixed; z-index: 1;">
+                    <div class="container">
+                        <form class="navbar-form" role="search" action="index_mobile.html" style="padding: 0;">
+                            <div class="input-group">
+                                <span class="input-group-addon" id="basic-addon1">
+                                    <!-- <span class="glyphicon glyphicon-film" aria-hidden="true"></span> - this adds the film icon to the left of the search bar-->
+                                </span>
+                                <div id="customDivTypeahead">
+                                    <!--In here are two input fields, one hidden. The movietypeahead is for user inputted text and the movieid is for the program to redirect to a specific movie-->
+                                    <input type="text" class="form-control typeahead" autocomplete="off" spellcheck="false" placeholder="Search movies..." name="movietypeahead" style="width: 100%;">
+                                    <input type="hidden" id="movieid" name="movieid">
+                                </div>
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit" id="searchBtn" style="opacity: 1;"><i class="glyphicon glyphicon-search"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
 
 
 
@@ -91,6 +102,7 @@
                 <div class="row" style="margin: 0;">
                     <img id="moviePoster" alt="Movie Poster" />
                     <div class="movieDescription">
+                        <div class="scaryMeterRatingBarLabel">SCARY METER:</div>
                         <div class="progress" style="background-color: #545454;">
                             <div class="progress-bar overallProgressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="background-color: #CC3333;">
                                 <span id="overallScaryMeterRatingNumber">##</span>
@@ -145,11 +157,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--See modal HTML code down below -- just above footer-->
-                            <a href="#"><button type="button" class="btn btn-default" id="rateThisMovieText" data-toggle="modal" data-target="#rateThisMovieModal">Rate This Movie</button></a>
                         </div>
+                        <!--See modal HTML code down below -- just above footer-->
+                        <a href="#"><button type="button" class="btn btn-default" id="rateThisMovieButtonSmall" data-toggle="modal" data-target="#rateThisMovieModal">Rate This Movie</button></a>
                     </div>
                 </div>
+                <!--See modal HTML code down below -- just above footer-->
+                <a href="#"><button type="button" class="btn btn-default" id="rateThisMovieButtonLarge" data-toggle="modal" data-target="#rateThisMovieModal">Rate This Movie</button></a>
                 <br />
                 <p class="descriptionOfLabel"> Directed by <span id="descriptionOfMovieLabelDirector">Directors</span></p>
                 <p class="descriptionOfLabel"> Cast <span id="descriptionOfMovieLabelActors">Actors</span></p>

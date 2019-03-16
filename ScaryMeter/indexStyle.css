@@ -1,4 +1,7 @@
-﻿/*STYLE GUIDE - FRONT PAGE
+﻿@import url('https://fonts.googleapis.com/css?family=Open+Sans'); /* Necessry as first line because the non-import method doesn't work on iOS https://stackoverflow.com/questions/14676613/how-to-import-google-web-font-in-css-file */
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+/*STYLE GUIDE - FRONT PAGE
 
     WHITESMOKE COLOUR = #F5F5F5
     DARK GREY COLOUR = #555555
