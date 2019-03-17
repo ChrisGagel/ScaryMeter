@@ -69,6 +69,7 @@ searchBarDropdown.style.display = "none";
 function openSearchBar() {
     if (searchBarDropdown.style.display == "none") {
         searchBarDropdown.style.display = "block";
+        document.getElementById("automaticInputText").focus();
     }
     else
     {
@@ -122,7 +123,7 @@ var backdrop_tmdb = backdropBaseURL_tmdb + backdropPathImgSize_tmdb + "/" + back
 // Write backdrop path
 document.getElementById("imageCoverPhotoBackground").style.backgroundImage = "url("+backdrop_tmdb+")";
 
-/*
+
 // Path for similarly rated movies cover photos
 document.getElementById("similarlyRatedMoviesCoverPhoto1").src = backdrop_tmdb;
 document.getElementById("similarlyRatedMoviesCoverPhoto2").src = backdrop_tmdb;
@@ -130,7 +131,7 @@ document.getElementById("similarlyRatedMoviesCoverPhoto3").src = backdrop_tmdb;
 document.getElementById("similarlyRatedMoviesCoverPhoto4").src = backdrop_tmdb;
 document.getElementById("similarlyRatedMoviesCoverPhoto5").src = backdrop_tmdb;
 document.getElementById("similarlyRatedMoviesCoverPhoto6").src = backdrop_tmdb;
-*/
+
 
 // Build and write poster path
 var poster_tmdb = backdropBaseURL_tmdb + backdropPathImgSize_tmdb + "/" + obj_tmdb.poster_path;
@@ -141,7 +142,7 @@ document.getElementById("movieYearLabel").innerHTML = parseInt(obj_tmdb.release_
 
 // Title
 document.getElementById("movieTitleLabel").innerHTML = obj_tmdb.title;
-//document.getElementById("movieTitleLabelModal").innerHTML = obj_tmdb.title;
+document.getElementById("movieTitleLabelModal").innerHTML = obj_tmdb.title;
 //document.getElementById("notHorrorMovieTitle").innerHTML = obj_tmdb.title;
 
 // Directors
@@ -185,7 +186,7 @@ document.getElementById("tagline").innerHTML = obj_tmdb.tagline;
 // Plot
 document.getElementById("descriptionOfMovieLabelPlot").innerHTML = obj_tmdb.overview;
 
-/*
+
 //Genres
 //List of genres: https://api.themoviedb.org/3/genre/movie/list?api_key=062a89fc4c3fcc6e928a7ba7ca87074e&language=en-US
 var i, x = "";
@@ -193,20 +194,20 @@ for (i in obj_tmdb.genres){ //Enables loop of all the genres and stores them in 
     x += obj_tmdb.genres[i].name + "<br>";
 }
 
-var allScaryRatingBarsJS = document.getElementById("allScaryRatingBars");
-var rateThisMovieTextJS = document.getElementById("rateThisMovieText");
+var movieDescriptionJS = document.getElementById("movieDescription");
+var rateThisMovieButtonLargeJS = document.getElementById("rateThisMovieButtonLarge");
 var notScaryMovieSectionJS = document.getElementById("notScaryMovieSection");
 var genresListJS = document.getElementById("genresList");
 if (x.includes("Horror") || x.includes("Thriller")){
 
 }
 else {
-    allScaryRatingBarsJS.style.display = "none";
-    rateThisMovieTextJS.style.display = "none";
+    movieDescriptionJS.style.display = "none";
+    rateThisMovieButtonLargeJS.style.display = "none";
     notScaryMovieSectionJS.style.display = "inline";
     genresListJS.innerHTML = x;
 }
-*/
+
 
 
 
@@ -234,7 +235,7 @@ else {
 document.getElementById("overallScaryMeterRatingNumber").innerHTML = overallRandomNumber + ".0"; //...otherwise add a .0 at end
 }
 
-/*
+
     //Same code for modal version
     if (overallRandomNumberString.includes(".")) {
     document.getElementById("overallScaryMeterRatingNumbeModal").innerHTML = overallRandomNumber;
@@ -242,7 +243,7 @@ document.getElementById("overallScaryMeterRatingNumber").innerHTML = overallRand
     else {
     document.getElementById("overallScaryMeterRatingNumbeModal").innerHTML = overallRandomNumber + ".0";
     }
-*/
+
 
 var creepyRandomNumber = Math.round(Math.random() * 100) / 10;
 var creepyRandomNumberString = creepyRandomNumber.toString();
@@ -276,11 +277,11 @@ document.getElementById("jumpyMeterRatingNumber").innerHTML = jumpyRandomNumber 
 var fillOverallScaryMeterBar = document.querySelector(".overallProgressBar"); //Create variable to show how full the progress bar is based on progress bar class style
 fillOverallScaryMeterBar.style.width = overallRandomNumber * 10 + "%"; //Set width of variable (how full bar is) to the random number converted to a 0-100% scale
 
-/*
+
     //Same code for modal version
     var fillOverallScaryMeterBarModal = document.querySelector(".overallProgressBarModal");
     fillOverallScaryMeterBarModal.style.width = overallRandomNumber * 10 + "%"; 
-*/
+
 
 var fillCreepyMeterBar = document.querySelector(".creepyProgressBar");
 fillCreepyMeterBar.style.width = creepyRandomNumber * 10 + "%";
@@ -298,36 +299,19 @@ fillJumpyMeterBar.style.width = jumpyRandomNumber * 10 + "%";
 
 
 
-//SLIDER FOR RATING MOVIES - https://www.w3schools.com/howto/howto_js_rangeslider.asp
+//THIS FUNCTION KEEPS BUTTON GROUP BUTTONS SELECTED ON CLICKAWAY - https://stackoverflow.com/questions/24795681/bootstrap-btn-group-button-deactivates-when-clicking-away
+$(".staySelectedOnClickaway").click(function(){
+   $(".staySelectedOnClickaway").removeClass("active");
+   $(this).addClass("active");
+});
 
-/*
-var overallScaryMeterBarSlider = document.getElementById ("overallSliderRange"); //Create variable to display slider handle at same position as progress bar is full
-overallScaryMeterBarSlider.value = overallRandomNumber * 10; //Set slider value to the random number converted to 0-100 scale
 
-var overallSliderRangeNumberOutput = document.getElementById ("overallSliderRangeNumber"); //Create variable to display number (from 0-100) that slider handle is at
-
-overallScaryMeterBarSlider.oninput = function() {
-    overallSliderRangeNumberOutput.innerHTML = this.value / 10; //Change slider handle number to display numerically wherever the handle is at and have it change
-}
-
-function overallMouseUp() {
-    fillOverallScaryMeterBarModal.style.width = overallSliderRangeNumberOutput.innerHTML * 10 + "%";
-
-    var overallSliderRangeNumberOutputLabel = overallSliderRangeNumberOutput.innerHTML;
-    if (overallSliderRangeNumberOutputLabel.includes(".")) {
-    document.getElementById("overallScaryMeterRatingNumbeModal").innerHTML = overallSliderRangeNumberOutputLabel;
-    }
-    else {
-    document.getElementById("overallScaryMeterRatingNumbeModal").innerHTML = overallSliderRangeNumberOutputLabel + ".0";
-    }
-
-    overallSliderRangeNumberOutput.innerHTML = "Thanks!"; //When user lifts click, rating is submitted
-    
+//THIS FUNCTION OPENS THE THUMBS UP/DOWN SUB METERS MODAL RATING SYSTEM
+function openSubMetersModal() {
     setTimeout(function(){ //After 300ms, make the subMetersModal appear
         document.getElementById("subMetersModal").style.display = "block";
-    }, 300);    
+    }, 300); 
 }
-
 
 
 
@@ -510,5 +494,3 @@ function changeThumbsDownColorJumpy() {
         }, 200);
     }
 }
-
-*/
