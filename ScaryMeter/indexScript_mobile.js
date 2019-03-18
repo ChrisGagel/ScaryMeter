@@ -190,13 +190,19 @@ document.getElementById("descriptionOfMovieLabelPlot").innerHTML = obj_tmdb.over
 //Genres
 //List of genres: https://api.themoviedb.org/3/genre/movie/list?api_key=062a89fc4c3fcc6e928a7ba7ca87074e&language=en-US
 var i, x = "";
+var lastGenre = obj_tmdb.genres[obj_tmdb.genres.length - 1];
+console.log(lastGenre);
 for (i in obj_tmdb.genres){ //Enables loop of all the genres and stores them in x
-    x += obj_tmdb.genres[i].name + "<br>";
+    x += obj_tmdb.genres[i].name + ", ";
 }
+
+
 
 var movieDescriptionJS = document.getElementById("movieDescription");
 var rateThisMovieButtonLargeJS = document.getElementById("rateThisMovieButtonLarge");
 var notScaryMovieSectionJS = document.getElementById("notScaryMovieSection");
+var posterPlusDescriptionBackgroundJS = document.getElementById("posterPlusDescriptionBackground");
+var similarlyRatedMoviesBackgroundJS = document.getElementById("similarlyRatedMoviesBackground");
 var genresListJS = document.getElementById("genresList");
 if (x.includes("Horror") || x.includes("Thriller")){
 
@@ -205,6 +211,9 @@ else {
     movieDescriptionJS.style.display = "none";
     rateThisMovieButtonLargeJS.style.display = "none";
     notScaryMovieSectionJS.style.display = "inline";
+    posterPlusDescriptionBackgroundJS.style.boxShadow = "0px 0px 10px #555555";
+    posterPlusDescriptionBackgroundJS.style.backgroundColor = "#DEDEDE";
+    similarlyRatedMoviesBackgroundJS.style.display = "none";
     genresListJS.innerHTML = x;
 }
 
