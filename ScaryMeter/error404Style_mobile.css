@@ -1,0 +1,154 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Open+Sans'); /* Necessry as first line because the non-import method doesn't work on iOS https://stackoverflow.com/questions/14676613/how-to-import-google-web-font-in-css-file */
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+/*STYLE GUIDE - FRONT PAGE
+
+    WHITESMOKE COLOUR = #F5F5F5
+    DARK GREY COLOUR = #555555
+    MEDIUM GREY COLOUR = #9D9D9D
+    LIGHT GREY COLOUR = #DEDEDE
+    BACKGROUND OF WEBSITE = #BABABA
+
+    NAVBAR BACKGROUND COLOUR = #2D2D2D
+    NAVBAR TEXT COLOUR = #9C9C9C
+
+    SCARY RED = #CC3333
+    CREEPY BLUE = #3366CC
+    GORY GREEN = #009966
+    JUMPY YELLOW = #FFCC66
+
+*/
+
+
+body, html {
+    background-color: #BABABA; /*This colour used to be #DEDEDE however the scary meter rating number was hard to see*/
+    height: 100%;
+    margin: 0;
+}
+
+#searchIcon {
+    height: auto;
+    width: 17px;
+    margin-top: -3px;
+}
+
+.footer {
+    width: 100%;
+    background-color: #2D2D2D;
+    text-align: center;
+    color: #9C9C9C;
+    padding: 10px;
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+}
+
+.navbar-form {
+    margin: 0;
+    border: 0;
+    box-shadow: none;
+}
+
+.form-control {
+    font-size: 12px;
+}
+
+#menuSearchIcon {
+    float: right;
+    height: auto;
+    width: 24px;
+    margin-top: 14px;
+    margin-right: 15px;
+    cursor: pointer;
+    /* Previous CSS with glyphicon search icon
+    color: white;
+    float: right;
+    font-size: 17px;
+    margin-top: 16px;
+    margin-right: 15px;
+    cursor: pointer;
+    */
+}
+
+
+
+
+
+
+
+
+
+
+#imageCoverPhotoBackground {
+    /* The image used */
+    /*background-image: url("https://image.tmdb.org/t/p/original//3CCfgSvtvN3HwVs5hbcC1NhOAzw.jpg");*/
+    position: relative;
+    height: 700px;
+    width: 100%;
+    min-width: 320px;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Set transparency*/
+    opacity: 0.75;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+
+
+
+.oopsStyle {
+    color: #F5F5F5;
+    font-size: 6em;
+    font-weight: 600;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    margin-top: 150px;
+    margin-bottom: -6px;
+}
+
+.errorStyle {
+    color: #555555;
+    font-size: 2.5em;
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    text-align: center;
+    background-color: #F5F5F5;
+}
+
+.messageStyle {
+    color: #F5F5F5;
+    font-size: 1.5em;
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Responsive CSS*/
+
+@media screen and (min-width: 768px) /*This is the exact size of when the navbar collapses*/ {
+
+    .navbar-form .input-group .form-control, .navbar-form .input-group .input-group-addon, .navbar-form .input-group .input-group-btn {
+        width: 1%; /*For some reason setting it to 1% makes it fullscreen on my Chrome and Safari*/
+    }
+    
+}
+
+/*End of responsive CSS*/

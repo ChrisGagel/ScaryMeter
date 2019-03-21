@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Scary Meter - Error 404</title>
+
+    <!--Bootstrap shit-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.2.1/typeahead.bundle.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js-bootstrap-css/1.2.1/typeaheadjs.min.css" />
+
+    <!--Google fonts shit-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
+    <!--Style sheet, named indexStyle.css-->
+    <link rel="stylesheet" href="error404Style.css">
+
+    <!--Favicon-->
+    <link href="images\SMfavicon.png" rel="icon" type="image/x-icon">
+</head>
+
+
+<body>
+
+    <!-- SET COVER PHOTO IMAGE AS PAGE BACKGROUND-->
+    <img id="imageCoverPhotoBackground" src="https://digitaldesigns1.net/wp-content/uploads/2017/01/web-background.jpg" />
+
+    <div class="container-fluid" style="position:absolute; top:0; width:100%;">
+
+        <!--NAVIGATION BAR-->
+        <div class="row">
+            <nav class="navbar fixed-top navbar-expand-md navbar-inverse" style="margin: 0; width: 100%; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; background-color: #2D2D2D; border: 0; position: fixed; z-index: 1;">
+                <div class="container">
+                    <div class="navbar-nav" style="font-family: 'Oswald', sans-serif;">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#scaryMeterNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="frontPage.html">Scary Meter</a>
+                    </div>
+                    <div class="nav navbar-nav navbar-right">
+                        <form class="navbar-form" role="search" action="index.html">
+                            <div class="input-group">
+                                <span class="input-group-addon" id="basic-addon1">
+                                    <!-- <span class="glyphicon glyphicon-film" aria-hidden="true"></span> - this adds the film icon to the left of the search bar-->
+                                </span>
+                                <div id="customDivTypeahead">
+                                    <!--In here are two input fields, one hidden. The movietypeahead is for user inputted text and the movieid is for the program to redirect to a specific movie-->
+                                    <input type="text" class="form-control typeahead" autocomplete="off" spellcheck="false" placeholder="Search movies..." name="movietypeahead">
+                                    <input type="hidden" id="movieid" name="movieid">
+                                </div>
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit" id="searchBtn" style="opacity: 1;"><img id="searchIcon" src="images\searchicon.png" /><!--ORIGINAL GLYPHICON <i class="glyphicon glyphicon-search"></i>--></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="collapse navbar-collapse" id="scaryMeterNavbar">
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Top Lists<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Top 10 Scariest</a></li>
+                                    <li><a href="#">Top 10 Least Scary</a></li>
+                                    <li><a href="#">Most Rated</a></li>
+                                    <li><a href="#">Least Rated</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="aboutUs.html">About Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div> <!-- navigation bar row -->
+
+
+
+        <!-- ERROR SECTION -->
+        <div class="row">
+            <p class="oopsStyle">Oops!</p>
+            <p class="errorStyle">Error 404.</p>
+            <p class="messageStyle">Unfortunately the URL you've requested is unavailable.
+            <br />
+            We apologize for the inconvenience.</p>
+        </div>
+
+    </div>
+</body>
+</html>
+
+
+<!--Script, named indexScript.js-->
+<script src="indexScript.js"></script>

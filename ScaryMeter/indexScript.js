@@ -83,6 +83,7 @@ function getParameterByName(name, url) {
         return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
+
 //Build query URL
 var baseURL_tmdb = "https://api.themoviedb.org/3/movie/";
 var movieID_tmdb = getParameterByName('movieid'); //Change ID to change movie details;
@@ -90,22 +91,27 @@ var apiKey_tmdb = "062a89fc4c3fcc6e928a7ba7ca87074e";
 var append_tmdb = "&append_to_response=releases,credits";
 var movieQueryURL_tmdb = baseURL_tmdb + movieID_tmdb + "?api_key=" + apiKey_tmdb + append_tmdb;
 
+
 // Get response from TMDB
 var xhr_tmdb = new XMLHttpRequest();
 xhr_tmdb.open("GET", movieQueryURL_tmdb, false);
 xhr_tmdb.send();
 
+
 // Parse TMDB response
 var obj_tmdb = JSON.parse(xhr_tmdb.responseText);
 
+
 // Build TMDB backdrop path string
 var backdropBaseURL_tmdb = "https://image.tmdb.org/t/p/";
-var backdropPathImgSize_tmdb = "original"; //Use CONFIG command to find appropriate size
+var backdropPathImgSize_tmdb = "original"; //Use CONFIG command to find appropriate size (or visit https://www.themoviedb.org/talk/53c11d4ec3a3684cf4006400?language=en-US)
 var backdropPath_tmdb = obj_tmdb.backdrop_path;
 var backdrop_tmdb = backdropBaseURL_tmdb + backdropPathImgSize_tmdb + "/" + backdropPath_tmdb; //Add &append_to_response=credits
 
+
 // Write backdrop path
 document.getElementById("imageCoverPhotoBackground").style.backgroundImage = "url("+backdrop_tmdb+")";
+
 
 // Path for similarly rated movies cover photos
 document.getElementById("similarlyRatedMoviesCoverPhoto1").src = backdrop_tmdb;
@@ -115,37 +121,53 @@ document.getElementById("similarlyRatedMoviesCoverPhoto4").src = backdrop_tmdb;
 document.getElementById("similarlyRatedMoviesCoverPhoto5").src = backdrop_tmdb;
 document.getElementById("similarlyRatedMoviesCoverPhoto6").src = backdrop_tmdb;
 
+
 // Build and write poster path
 var poster_tmdb = backdropBaseURL_tmdb + backdropPathImgSize_tmdb + "/" + obj_tmdb.poster_path;
 document.getElementById("moviePoster").src = poster_tmdb;
 
+
 // Date
-document.getElementById("movieYearLabel").innerHTML = parseInt(obj_tmdb.release_date);
+if (obj_tmdb.release_date !== '') {
+    document.getElementById("movieYearLabel").innerHTML = parseInt(obj_tmdb.release_date);
+}
+else {
+    document.getElementById("movieYearLabel").innerHTML = "Unknown release date";
+}
+
 
 // Title
 document.getElementById("movieTitleLabel").innerHTML = obj_tmdb.title;
 document.getElementById("movieTitleLabelModal").innerHTML = obj_tmdb.title;
 document.getElementById("notHorrorMovieTitle").innerHTML = obj_tmdb.title;
 
+
 // Directors
 var directors = [];
-for (i in obj_tmdb.credits.crew) {
-    if (obj_tmdb.credits.crew[i].department === "Directing" &&
-        obj_tmdb.credits.crew[i].job === "Director") {
-        directors.push(obj_tmdb.credits.crew[i].name)
+if (obj_tmdb.credits.crew == "" || obj_tmdb.credits.crew.department == "" || obj_tmdb.credits.crew.job == "") {
+    document.getElementById("descriptionOfMovieLabelDirector").innerHTML = "Unknown director(s)";
+}
+else {
+    for (i in obj_tmdb.credits.crew) {
+        if (obj_tmdb.credits.crew[i].department === "Directing" && obj_tmdb.credits.crew[i].job === "Director") {
+            directors.push(obj_tmdb.credits.crew[i].name)
+        }
+    document.getElementById("descriptionOfMovieLabelDirector").innerHTML = directors.join(', ');
     }
 }
-document.getElementById("descriptionOfMovieLabelDirector").innerHTML = directors.join(', ');
 
 
 // Actors
 var actors = [];
-//for(i in obj_tmdb.credits.cast)
-for (i = 0; i < 3; i++) 
-{
-    actors.push(obj_tmdb.credits.cast[i].name);
+if (obj_tmdb.credits.cast == "") {
+    document.getElementById("descriptionOfMovieLabelActors").innerHTML = "Unknown actor(s)";
 }
-document.getElementById("descriptionOfMovieLabelActors").innerHTML = actors.join(', ');
+else {
+    for (i = 0; i < 3; i++) {
+        actors.push(obj_tmdb.credits.cast[i].name);
+    }
+    document.getElementById("descriptionOfMovieLabelActors").innerHTML = actors.join(', ');
+}
 
 
 // MPAA Rating
@@ -159,34 +181,60 @@ for(i in obj_tmdb.releases.countries)
     }
 }
 
+
 // Runtime
-document.getElementById("runtime").innerHTML = obj_tmdb.runtime + " min";
+if (obj_tmdb.runtime !== '' && obj_tmdb.runtime !== null) {
+    document.getElementById("runtime").innerHTML = obj_tmdb.runtime + " min";
+}
+else {
+    document.getElementById("runtime").innerHTML = "Unknown";
+}
+
 
 // Tagline
-document.getElementById("tagline").innerHTML = obj_tmdb.tagline;
+if (obj_tmdb.tagline !== '') {
+    document.getElementById("tagline").innerHTML = obj_tmdb.tagline;
+}
+else {
+    document.getElementById("tagline").innerHTML = " ";
+}
+
 
 // Plot
-document.getElementById("descriptionOfMovieLabelPlot").innerHTML = obj_tmdb.overview;
+if (obj_tmdb.overview !== '') {
+    document.getElementById("descriptionOfMovieLabelPlot").innerHTML = obj_tmdb.overview;
+}
+else {
+    document.getElementById("descriptionOfMovieLabelPlot").innerHTML = "Unknown plot";
+}
+
+
+//Status ("Released" vs "Planned")
+if (obj_tmdb.status !== "Released") {
+    document.getElementById("rateThisMovieText").innerHTML = ""; //This removes the ability to vote on an unreleased movie
+}
+
 
 //Genres
 //List of genres: https://api.themoviedb.org/3/genre/movie/list?api_key=062a89fc4c3fcc6e928a7ba7ca87074e&language=en-US
-var i, x = "";
-for (i in obj_tmdb.genres){ //Enables loop of all the genres and stores them in x
-    x += obj_tmdb.genres[i].name + "<br>";
+var i = "";
+var genres = [];
+for (i in obj_tmdb.genres){ //Enables loop of all the genres and stores them in 'genres'
+    genres.push(obj_tmdb.genres[i].name);
 }
 
 var allScaryRatingBarsJS = document.getElementById("allScaryRatingBars");
 var rateThisMovieTextJS = document.getElementById("rateThisMovieText");
 var notScaryMovieSectionJS = document.getElementById("notScaryMovieSection");
 var genresListJS = document.getElementById("genresList");
-if (x.includes("Horror") || x.includes("Thriller")){
+if (genres.includes("Horror") || genres.includes("Thriller")){
 
 }
 else {
     allScaryRatingBarsJS.style.display = "none";
     rateThisMovieTextJS.style.display = "none";
     notScaryMovieSectionJS.style.display = "inline";
-    genresListJS.innerHTML = x;
+    genresListJS.innerHTML = genres.join('<br>');
 }
 
 

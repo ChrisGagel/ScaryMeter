@@ -26,8 +26,16 @@ body, html {
     margin: 0;
 }
 
+/*
 p {
     margin: -3px;
+}
+*/
+
+#searchIcon {
+    height: auto;
+    width: 17px;
+    margin-top: -3px;
 }
 
 .footer {

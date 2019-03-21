@@ -55,7 +55,7 @@
                                     <input type="hidden" id="movieid" name="movieid">
                                 </div>
                                 <div class="input-group-btn">
-                                    <button class="btn btn-default" type="submit" id="searchBtn" style="opacity: 1;"><i class="glyphicon glyphicon-search"></i></button>
+                                    <button class="btn btn-default" type="submit" id="searchBtn" style="opacity: 1;"><img id="searchIcon" src="images\searchicon.png" /><!--ORIGINAL GLYPHICON <i class="glyphicon glyphicon-search"></i>--></button>
                                 </div>
                             </div>
                         </form>
@@ -89,7 +89,7 @@
                     <div class="movieDescription">
 
                         <div class="movieDescTop">
-                            <table style="width: 100%;">
+                            <table style="width: 100%; margin-bottom: -15px;">
                                 <tr>
                                     <th>
                                         <p id="movieYearLabel">Year</p>
@@ -100,18 +100,14 @@
                                     </th>
                                 </tr>
                             </table>
-                            <p id="movieTitleLabel">Title</p>
+                            <p id="movieTitleLabel" style="margin-bottom: -3px;">Title</p>
                             <p id="tagline">Tagline</p>
-                            <br />
                             <p id="descriptionOfMovieLabelPlot">Plot</p>
-                            <br />
                         </div> <!-- movieDescTop -->
 
                         <div class="movieDescBottom">
                             <p class="descriptionOfLabel"> Directed by <span id="descriptionOfMovieLabelDirector">Directors</span></p>
-                            <br />
                             <p class="descriptionOfLabel"> Cast <span id="descriptionOfMovieLabelActors">Actors</span></p>
-                            <br />
                             <div class="row">
                                 <div class="col-xs-6">
                                     <p class="descriptionOfLabel"> Rating <span id="mpaaRating">Rating</span></p>
@@ -378,7 +374,7 @@
                             <div class="row">
                                 <div class="col-xs-4">
                                     <div class="row">
-                                        <p class="subMeterCateogryLabelModal">Creepy</p>
+                                        <p class="subMeterCateogryLabelModal" style="margin-bottom: -3px;">Creepy</p>
                                     </div>
                                     <div class="row" style="text-align: center; margin-top: 5px;">
                                         <img id="thumbsUpImageCreepy" src="images\thumbsup.png" onclick="changeThumbsUpColorCreepy()"></img>
@@ -387,7 +383,7 @@
                                 </div>
                                 <div class="col-xs-4">
                                     <div class="row">
-                                        <p class="subMeterCateogryLabelModal">Gory</p>
+                                        <p class="subMeterCateogryLabelModal" style="margin-bottom: -3px;">Gory</p>
                                     </div>
                                     <div class="row" style="text-align: center; margin-top: 5px;">
                                         <img id="thumbsUpImageGory" src="images\thumbsup.png" onclick="changeThumbsUpColorGory()"></img>
@@ -396,7 +392,7 @@
                                 </div>
                                 <div class="col-xs-4">
                                     <div class="row">
-                                        <p class="subMeterCateogryLabelModal">Jumpy</p>
+                                        <p class="subMeterCateogryLabelModal" style="margin-bottom: -3px;">Jumpy</p>
                                     </div>
                                     <div class="row" style="text-align: center; margin-top: 5px;">
                                         <img id="thumbsUpImageJumpy" src="images\thumbsup.png" onclick="changeThumbsUpColorJumpy()"></img>
