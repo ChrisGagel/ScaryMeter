@@ -89,6 +89,8 @@
     <Content Include="error404Style.css" />
     <Content Include="error404_mobile.html" />
     <Content Include="error404Style_mobile.css" />
+    <Content Include="Images\desktop_ratebox.png" />
+    <Content Include="Images\mobile_ratebox.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">

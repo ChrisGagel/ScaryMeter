@@ -116,6 +116,14 @@ h2 {
     background-color: #DEDEDE;
 }
 
+.desktopRateboxImage {
+    width: 50%;
+    height: auto;
+    margin: auto;
+    margin-top: 25px;
+    display: block;
+}
+
 
 
 
