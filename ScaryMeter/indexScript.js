@@ -347,18 +347,24 @@ function overallMouseUp() {
     fillOverallScaryMeterBarModal.style.width = overallSliderRangeNumberOutput.innerHTML * 10 + "%";
 
     var overallSliderRangeNumberOutputLabel = overallSliderRangeNumberOutput.innerHTML;
-    if (overallSliderRangeNumberOutputLabel.includes(".")) {
-    document.getElementById("overallScaryMeterRatingNumbeModal").innerHTML = overallSliderRangeNumberOutputLabel;
+    if (isNaN(overallSliderRangeNumberOutputLabel)){
+
     }
     else {
-    document.getElementById("overallScaryMeterRatingNumbeModal").innerHTML = overallSliderRangeNumberOutputLabel + ".0";
-    }
+        if (overallSliderRangeNumberOutputLabel.includes(".")) {
+            document.getElementById("overallScaryMeterRatingNumbeModal").innerHTML = overallSliderRangeNumberOutputLabel;
+        }
+        else {
+            document.getElementById("overallScaryMeterRatingNumbeModal").innerHTML = overallSliderRangeNumberOutputLabel + ".0";
+        }
 
-    overallSliderRangeNumberOutput.innerHTML = "Thanks!"; //When user lifts click, rating is submitted
-    
-    setTimeout(function(){ //After 300ms, make the subMetersModal appear
-        document.getElementById("subMetersModal").style.display = "block";
-    }, 300);    
+        overallSliderRangeNumberOutput.innerHTML = "Thanks!"; //When user lifts click, rating is submitted
+        
+        setTimeout(function(){ //After 300ms, make the subMetersModal appear
+            document.getElementById("subMetersModal").style.display = "block";
+        }, 300);   
+        
+    }
 }
 
 
