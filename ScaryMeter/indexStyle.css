@@ -26,12 +26,6 @@ body, html {
     margin: 0;
 }
 
-/*
-p {
-    margin: -3px;
-}
-*/
-
 #searchIcon {
     height: auto;
     width: 17px;
@@ -335,7 +329,7 @@ p {
     font-size: 1.2em;
 }
 
-.notScaryMovieSubsectionHeading {
+#notScaryMovieSubsectionHeading {
     font-size: 2em;
     font-family: 'Oswald', sans-serif;
     color: #DEDEDE;

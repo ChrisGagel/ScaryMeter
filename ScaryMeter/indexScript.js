@@ -209,12 +209,6 @@ else {
 }
 
 
-//Status ("Released" vs "Planned")
-if (obj_tmdb.status !== "Released") {
-    document.getElementById("rateThisMovieText").innerHTML = ""; //This removes the ability to vote on an unreleased movie
-}
-
-
 //Genres
 //List of genres: https://api.themoviedb.org/3/genre/movie/list?api_key=062a89fc4c3fcc6e928a7ba7ca87074e&language=en-US
 var i = "";
@@ -223,12 +217,23 @@ for (i in obj_tmdb.genres){ //Enables loop of all the genres and stores them in 
     genres.push(obj_tmdb.genres[i].name);
 }
 
+
 var allScaryRatingBarsJS = document.getElementById("allScaryRatingBars");
 var rateThisMovieTextJS = document.getElementById("rateThisMovieText");
 var notScaryMovieSectionJS = document.getElementById("notScaryMovieSection");
 var genresListJS = document.getElementById("genresList");
-if (genres.includes("Horror") || genres.includes("Thriller")){
+var notScaryMovieSubsectionHeadingJS = document.getElementById("notScaryMovieSubsectionHeading");
+var notScaryMovieSubsectionBodyJS = document.getElementById("notScaryMovieSubsectionBody");
+if (obj_tmdb.status == "Released" && (genres.includes("Horror") || genres.includes("Thriller"))){
 
+}
+else if (obj_tmdb.status !== "Released" && (genres.includes("Horror") || genres.includes("Thriller"))){
+    allScaryRatingBarsJS.style.display = "none";
+    rateThisMovieTextJS.style.display = "none";
+    notScaryMovieSectionJS.style.display = "inline";
+    genresListJS.style.display = "none";
+    notScaryMovieSubsectionHeadingJS.innerHTML = "THIS MOVIE IS UNRELEASED";
+    notScaryMovieSubsectionBodyJS.innerHTML = "This movie hasn't yet been released, therefore user votes have not been recorded for it. Please visit this page again once it's been released."
 }
 else {
     allScaryRatingBarsJS.style.display = "none";

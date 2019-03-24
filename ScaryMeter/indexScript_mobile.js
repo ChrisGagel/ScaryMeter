@@ -225,13 +225,6 @@ else {
 }
 
 
-//Status ("Released" vs "Planned")
-if (obj_tmdb.status !== "Released") {//This removes the ability to vote on an unreleased movie
-    document.getElementById("rateThisMovieButtonSmall").style.display = "none";
-    document.getElementById("rateThisMovieButtonLarge").style.display = "none";
-}
-
-
 //Genres
 //List of genres: https://api.themoviedb.org/3/genre/movie/list?api_key=062a89fc4c3fcc6e928a7ba7ca87074e&language=en-US
 var i = "";
@@ -241,15 +234,26 @@ for (i in obj_tmdb.genres){ //Enables loop of all the genres and stores them in 
 }
 
 
-
 var movieDescriptionJS = document.getElementById("movieDescription");
 var rateThisMovieButtonLargeJS = document.getElementById("rateThisMovieButtonLarge");
 var notScaryMovieSectionJS = document.getElementById("notScaryMovieSection");
 var posterPlusDescriptionBackgroundJS = document.getElementById("posterPlusDescriptionBackground");
 var similarlyRatedMoviesBackgroundJS = document.getElementById("similarlyRatedMoviesBackground");
 var genresListJS = document.getElementById("genresList");
-if (genres.includes("Horror") || genres.includes("Thriller")){
+var notScaryMovieSubsectionHeadingJS = document.getElementById("notScaryMovieSubsectionHeading");
+var notScaryMovieSubsectionBodyJS = document.getElementById("notScaryMovieSubsectionBody");
+if (obj_tmdb.status == "Released" && (genres.includes("Horror") || genres.includes("Thriller"))){
 
+}
+else if (obj_tmdb.status !== "Released" && (genres.includes("Horror") || genres.includes("Thriller"))){
+    movieDescriptionJS.style.display = "none";
+    rateThisMovieButtonLargeJS.style.display = "none";
+    notScaryMovieSectionJS.style.display = "inline";
+    posterPlusDescriptionBackgroundJS.style.boxShadow = "0px 0px 10px #555555";
+    posterPlusDescriptionBackgroundJS.style.backgroundColor = "#DEDEDE";
+    similarlyRatedMoviesBackgroundJS.style.display = "none";
+    notScaryMovieSubsectionHeadingJS.innerHTML = "THIS MOVIE IS UNRELEASED";
+    notScaryMovieSubsectionBodyJS.innerHTML = "This movie hasn't yet been released, therefore user votes have not been recorded for it. Please visit this page again once it's been released."
 }
 else {
     movieDescriptionJS.style.display = "none";

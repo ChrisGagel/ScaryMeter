@@ -22,7 +22,7 @@
 
 body, html {
     background-color: #BABABA;
-    height: 100%;
+    height: 100%; /*This is for flexbox footer*/
     margin: 0;
 }
 
@@ -76,18 +76,13 @@ body, html {
 
 
 #imageCoverPhotoBackground {
-    /* The image used */
     position: relative;
     min-width: 950px;
     width: 100%;
-    /* Center and scale the image nicely */
+    height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    /* Set transparency*/
-    opacity: 1;
-    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
-    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
 }
 
 .bodyBackground {
@@ -99,22 +94,35 @@ body, html {
 }
 
 .introductionMessage {
-    background-color: #CC3333;
+    background-color: #DEDEDE; /*Previously #CC3333*/
     /*box-shadow: 0px 0px 5px #555555;*/
     text-align: center;
-    color: #F5F5F5;
-    padding: 20px;
+    color: #555555;
+    padding: 70px;
+    padding-bottom: 20px;
     padding-top: 30px;
-    font-family: 'Open Sans Light', sans-serif;
-    font-weight: 300;
-    font-size: 1em;
 }
 
 h1 {
-    font-size: 2.5em;
+    font-size: 5em;
     margin: 0;
     font-weight: 600;
     font-family: 'Oswald', sans-serif;
+}
+
+h2 {
+    font-size: 2em;
+    margin: 0;
+    font-weight: 600;
+    font-family: 'Oswald', sans-serif;
+}
+
+h3 {
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+    line-height: 1.5;
+    margin-top: -5px;
 }
 
 
