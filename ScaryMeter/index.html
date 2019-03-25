@@ -16,7 +16,7 @@
     <!--Google fonts shit-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-    S
+    
     <!--Style sheet, named indexStyle.css-->
     <link rel="stylesheet" href="indexStyle.css">
 
@@ -28,7 +28,7 @@
 <body>
 
     <!-- SET COVER PHOTO IMAGE AS PAGE BACKGROUND-->
-    <div id="imageCoverPhotoBackground"></div>
+    <div id="imageCoverPhotoBackground"><!--<img src="images\scarymeter_backgroundgradient.png" />--></div>
 
     <div class="container-fluid" style="position:absolute; top:0; width:100%;">
 
@@ -50,7 +50,8 @@
                                 <span class="input-group-addon" id="basic-addon1">
                                     <!-- <span class="glyphicon glyphicon-film" aria-hidden="true"></span> - this adds the film icon to the left of the search bar-->
                                 </span>
-                                <div id="customDivTypeahead"> <!--In here are two input fields, one hidden. The movietypeahead is for user inputted text and the movieid is for the program to redirect to a specific movie-->
+                                <div id="customDivTypeahead">
+                                    <!--In here are two input fields, one hidden. The movietypeahead is for user inputted text and the movieid is for the program to redirect to a specific movie-->
                                     <input type="text" class="form-control typeahead" autocomplete="off" spellcheck="false" placeholder="Search movies..." name="movietypeahead">
                                     <input type="hidden" id="movieid" name="movieid">
                                 </div>
@@ -77,9 +78,6 @@
                 </div>
             </nav>
         </div> <!-- navigation bar row -->
-
-
-
         <!-- MOVIE BOX -->
         <div class="row">
             <div class="movieSummarySection">
@@ -121,7 +119,7 @@
                 </div> <!-- movieDetails -->
             </div> <!-- movieSummarySection -->
         </div> <!-- moviebox row -->
-        
+
 
         <div id="allScaryRatingBars">
 
@@ -411,7 +409,6 @@
             </div>
         </div>
 
-
         <!--FOOTER-->
         <div class="row">
             <div class="footer">
@@ -419,8 +416,8 @@
             </div>
         </div>
 
-
     </div> <!-- container-fluid -->
+
 </body>
 </html>
 
