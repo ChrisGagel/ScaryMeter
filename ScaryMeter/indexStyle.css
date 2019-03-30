@@ -75,23 +75,19 @@ body, html {
 
 
 #imageCoverPhotoBackground {
-  /* The image used */
-  /*background-image: url("https://image.tmdb.org/t/p/original//3CCfgSvtvN3HwVs5hbcC1NhOAzw.jpg");*/
-  position: relative;
-
-  height: 100%;
-  min-width: 600px;
-
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  /* Set transparency*/
-  opacity: 0.75;
-  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+    /* The image used */
+    /*background-image: url("https://image.tmdb.org/t/p/original//3CCfgSvtvN3HwVs5hbcC1NhOAzw.jpg");*/
+    position: relative;
+    height: 100%;
+    min-width: 600px;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Set transparency*/
+    opacity: 0.75;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
 }
 
 
@@ -112,7 +108,7 @@ body, html {
     position: relative;
     transform: perspective(1px) translateY(-50%);
     top: 50%;
-    background-color: #F5F5F5; 
+    background-color: #F5F5F5;
     box-shadow: 0px 0px 10px #555555;
     display: flex;
 }
@@ -149,7 +145,7 @@ body, html {
     padding: 2px;
 }
 
-#rateThisMovieText {
+#rateThisMovieText, #alreadyRatedForMovieText {
     font-size: 1em;
     font-family: 'Open Sans Light', sans-serif;
     font-weight: 300;
@@ -407,7 +403,6 @@ body, html {
     .descriptionOfLabel {
         font-size: 0.7em;
     }
-    
 }
 
 
@@ -490,6 +485,29 @@ body, html {
     color: #555555;
 }
 
+/* The following was added in during the PHP session starting Mar 29 /19 */
+[type=radio] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+    [type=radio] + img {
+        cursor: pointer;
+    }
+
+    [type=radio]:checked + img {
+        /*outline: 2px solid #f00; - Turn this on to show what is actually being checked with the radio input*/
+    }
+
+#creepyGroup, #goryGroup, #jumpyGroup label {
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* End of PHP session additions */
+
 #thumbsUpImageCreepy, #thumbsDownImageCreepy, #thumbsUpImageGory, #thumbsDownImageGory, #thumbsUpImageJumpy, #thumbsDownImageJumpy {
     margin: 5px;
     margin-left: 2.5px;
@@ -499,6 +517,7 @@ body, html {
     transition: transform .3s;
 }
 
+
 #subMetersModal {
     display: none;
 }
@@ -507,9 +526,9 @@ body, html {
     border-top: none;
 }
 
-.modal-footer .btn + .btn {
-    background-color: #CC3333;
-}
+    .modal-footer .btn + .btn {
+        background-color: #CC3333;
+    }
 
 
 
@@ -566,4 +585,3 @@ body, html {
         background: #e54b4b; /* Green background */
         cursor: pointer; /* Cursor on hover */
     }
-    
