@@ -1,8 +1,4 @@
-﻿<?php
-    session_start();
-?>
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -343,7 +339,7 @@
         <div class="row">
             <div class="commentSection">
                 <div class="comment-form-container">
-                    <form id="frm-comment" method="POST">
+                    <form id="formComment" name="formComment" method="POST">
                         <div class="row" style="margin: 0">
                             <input class="input-field" type="text" name="name" id="name" placeholder="Name" maxlength="40" onkeypress="postCommentWithEnter(event)" style="width: 50%;" /> <input type="button" class="btn-submit" id="submitCommentButton" value="Post" /> <input type="checkbox" id="isSpoilerCheckbox"> Comment contains spoilers <button type="button" id="showSpoilersButton" onclick="showHideSpoilers()">Show Spoilers</button>
                         </div>
@@ -352,7 +348,7 @@
                         </div>
                     </form>
                 </div>
-                <div id="responsecontainer"></div>
+                <div id="responsecontainer"><div class='comment-row'><div class='comment-text'>No comments to display yet</div></div></div>
             </div>
         </div>
 
@@ -425,8 +421,6 @@
                                                 <input type="radio" id="thumbsDownCreepy" name="creepyGroup" value="0" />
                                                 <img src="images\thumbsdown.png" id="thumbsDownImageCreepy" onclick="changeThumbsDownColorCreepy()" onmouseup="overallMouseUp()" alt="Thumbs Down" />
                                             </label>
-                                            <!--<img id="thumbsUpImageCreepy" src="images\thumbsup.png" onclick="changeThumbsUpColorCreepy()"></img>
-                                            <img id="thumbsDownImageCreepy" src="images\thumbsdown.png" onclick="changeThumbsDownColorCreepy()"></img>-->
                                         </fieldset>
                                     </div>
                                 </div>
@@ -444,8 +438,6 @@
                                                 <input type="radio" id="thumbsDownGory" name="goryGroup" value="0" />
                                                 <img src="images\thumbsdown.png" id="thumbsDownImageGory" onclick="changeThumbsDownColorGory()" onmouseup="overallMouseUp()" alt="Thumbs Down" />
                                             </label>
-                                            <!--<img id="thumbsUpImageGory" src="images\thumbsup.png" onclick="changeThumbsUpColorGory()"></img>
-                                            <img id="thumbsDownImageGory" src="images\thumbsdown.png" onclick="changeThumbsDownColorGory()"></img>-->
                                         </fieldset>
                                     </div>
                                 </div>
@@ -463,8 +455,6 @@
                                                 <input type="radio" id="thumbsDownJumpy" name="jumpyGroup" value="0" />
                                                 <img src="images\thumbsdown.png" id="thumbsDownImageJumpy" onclick="changeThumbsDownColorJumpy()" onmouseup="overallMouseUp()" alt="Thumbs Down" />
                                             </label>
-                                            <!--<img id="thumbsUpImageJumpy" src="images\thumbsup.png" onclick="changeThumbsUpColorJumpy()"></img>
-                                            <img id="thumbsDownImageJumpy" src="images\thumbsdown.png" onclick="changeThumbsDownColorJumpy()"></img>-->
                                         </fieldset>
                                     </div>
                                 </div>
@@ -481,7 +471,7 @@
         </form>
 
 
-        <form class="modal fade" method="POST" id="reportCommentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <form class="modal fade" method="POST" id="reportCommentModal" name="reportCommentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -494,25 +484,25 @@
                         <fieldset id="reportcommentradio" style="text-align: center;">
                             <label for="reportcommentspoiler">
                                 <input type="radio" id="reportcommentspoiler" name="reportcommentradio" value="spoiler" />
-                                <img src="images\report_spoilers_empty.png" id="reportCommentImageSpoiler" onclick="reportCommentImageSpoilerFunction()" onmouseup="checkReportCommentValue()" alt="Spoiler" />
+                                <img src="images\report_spoilers_empty.png" id="reportCommentImageSpoiler" onclick="reportCommentImageSpoilerFunction()" alt="Spoiler" />
                             </label>
                             <label for="reportcommentspam">
                                 <input type="radio" id="reportcommentspam" name="reportcommentradio" value="spam" />
-                                <img src="images\report_spam_empty.png" id="reportCommentImageSpam" onclick="reportCommentImageSpamFunction()" onmouseup="checkReportCommentValue()" alt="Spam" />
+                                <img src="images\report_spam_empty.png" id="reportCommentImageSpam" onclick="reportCommentImageSpamFunction()" alt="Spam" />
                             </label>
                             <label for="reportcommentharassment">
                                 <input type="radio" id="reportcommentharassment" name="reportcommentradio" value="harassment" />
-                                <img src="images\report_harassment_empty.png" id="reportCommentImageHarassment" onclick="reportCommentImageHarassmentFunction()" onmouseup="checkReportCommentValue()" alt="Harassment" />
+                                <img src="images\report_harassment_empty.png" id="reportCommentImageHarassment" onclick="reportCommentImageHarassmentFunction()" alt="Harassment" />
                             </label>
                             <label for="reportcommenthatespeech">
                                 <input type="radio" id="reportcommenthatespeech" name="reportcommentradio" value="hatespeech" />
-                                <img src="images\report_hatespeech_empty.png" id="reportCommentImageHatespeech" onclick="reportCommentImageHatespeechFunction()" onmouseup="checkReportCommentValue()" alt="Hate Speech" />
+                                <img src="images\report_hatespeech_empty.png" id="reportCommentImageHatespeech" onclick="reportCommentImageHatespeechFunction()" alt="Hate Speech" />
                             </label>
                         </fieldset>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" name="submitreportedcomment" id="submitreportedcomment" onclick="checkReportCommentValue()">Report</button>
+                        <button type="button" class="btn btn-primary" name="submitreportedcomment" id="submitreportedcomment">Report</button>
                     </div>
                 </div>
             </div>
@@ -1413,6 +1403,17 @@ overallScaryMeterBarSlider.oninput = function() {
 
 
 
+
+
+//Prevent a PHP form submitting when "Submit" button is clicked
+document.getElementById("submitratings").addEventListener("click", function(event){
+  event.preventDefault();
+});
+
+
+document.getElementById("submitratings").disabled = true; //Disable submit ratings button
+
+
 function overallMouseUp() {
     fillOverallScaryMeterBarModal.style.width = overallSliderRangeNumberOutput.innerHTML * 10 + "%";
 
@@ -1432,6 +1433,7 @@ function overallMouseUp() {
         
         setTimeout(function(){ //After 300ms, make the subMetersModal appear
             document.getElementById("subMetersModal").style.display = "block";
+            document.getElementById("submitratings").disabled = false; //Enable submit ratings button once the modal appears
         }, 300);   
         
     }
@@ -1774,7 +1776,7 @@ function postCommentWithEnter(e){
 
 // THis code prevents hitting enter from submitting the PHP form
 
-$('#frm-comment').on('keyup keypress', function(e) {
+$('#formComment').on('keyup keypress', function(e) {
   var keyCode = e.keyCode || e.which;
   if (keyCode === 13) { 
     e.preventDefault();
@@ -1802,19 +1804,35 @@ $(document).ready(function(){
             isSpoiler = 0;
         }
 
-        var commentformdata = $('#frm-comment').serialize() + "&movieidcommenttable=" + movieIdCommentTableJS + "&ipaddressAJAX=" + ipAddressJS + "&isspoilerAJAX=" + isSpoiler;
-        $.ajax({
-            type: "POST",
-            url: "addcomment.php",
-            data: commentformdata,
-            success: function(){
-                $("#comment").val("");
-                $("#comment").focus();
-                listComments();
-            }
-        });
+        var commentformdata = $('#formComment').serialize() + "&movieidcommenttable=" + movieIdCommentTableJS + "&ipaddressAJAX=" + ipAddressJS + "&isspoilerAJAX=" + isSpoiler;
 
-        return false; //This is necessary for the page not to refresh after the button is pressed. It's the whole reason I'm going through this AJAX mess
+        //Check to see if a name and comment are entered
+        var emptyCommentName = document.forms["formComment"]["name"].value;
+        var emptyComment = document.forms["formComment"]["comment"].value;
+        if (emptyCommentName == "" && emptyComment !== "") {
+            alert("Please enter a name");
+        }
+        else if (emptyComment == "" && emptyCommentName !== "") {
+            alert("Please enter a comment");
+        }
+        else if (emptyCommentName == "" && emptyComment == "") {
+            alert("Please enter a name and comment")
+        }
+        else if (emptyCommentName !=="" && emptyComment !== "") { //If both a name and comment are entered, send commentformdata to addcomment.php document
+
+            $.ajax({
+                type: "POST",
+                url: "addcomment.php",
+                data: commentformdata,
+                success: function(){
+                    $("#comment").val("");
+                    $("#comment").focus();
+                    listComments();
+                }
+            });
+
+            return false; //This is necessary for the page not to refresh after the button is pressed. It's the whole reason I'm going through this AJAX mess
+        }
     });
 });
 
@@ -1882,7 +1900,7 @@ function listComments() { //Create function that can list all the comments
                                     "<span id='commentIdDisplay' style='visibility: hidden;'>" + commentObj.commentid[i] + "</span>" + 
                                     "<span id='isSpoilerDisplay' style='visibility: hidden;'>" + commentObj.isspoiler[i] + "</span>" + 
                                 "</div>" + 
-                                '<div id="comment-text">This comment contains spoilers! Click the "Show Spoilers" button to reveal it</div>' + 
+                                '<div id="comment-text" style="background-color: #BABABA; color: #F5F5F5; display: inline;">This comment contains spoilers! Click the "Show Spoilers" button to reveal it</div>' + 
                             "</div>";
                     }
                     else if (commentObj.isspoiler[i] == 1 && showSpoilers == true) {
@@ -1933,33 +1951,16 @@ window.setInterval(function(){ //Every quarter second, refresh the comment list 
 
 
 
-function checkReportCommentValue() {
+
+document.getElementById("submitreportedcomment").disabled = true; //Disable submit reported comment button
 
 
-    // Check to see for what reason comment is being reported
+$(document).ready(function(){
 
-    var reportCommentValue;
+    $('#reportCommentModal input').on('change', function() { //Check to see which radio button in report comment modal is selected
+        var reportCommentValue = $('input[name=reportcommentradio]:checked', '#reportCommentModal').val();
+        document.getElementById("submitreportedcomment").disabled = false; //Enable submit reported comment button when option is selected
 
-    if (document.getElementById('reportcommentspoiler').checked) {
-        reportCommentValue = document.getElementById('reportcommentspoiler').value;
-    }
-    else if (document.getElementById('reportcommentspam').checked) {
-        reportCommentValue = document.getElementById('reportcommentspam').value;
-    }
-    else if (document.getElementById('reportcommentharassment').checked) {
-        reportCommentValue = document.getElementById('reportcommentharassment').value;
-    }
-    else if (document.getElementById('reportcommenthatespeech').checked) {
-        reportCommentValue = document.getElementById('reportcommenthatespeech').value;
-    }
-
-
-
-
-
-    //This is to send email if comment is reported
-
-    $(document).ready(function(){
 
         $("#submitreportedcomment").click(function(){
             var reportedcommentdata = {
@@ -1971,7 +1972,7 @@ function checkReportCommentValue() {
                 movieidcommenttableAJAX: movieIdCommentTableJS
             };
 
-            $.ajax({
+            $.ajax({ //This is to send email when comment is reported
                 type: "POST",
                 url: "sendemailreportcomment.php",
                 data: reportedcommentdata,
@@ -1981,10 +1982,10 @@ function checkReportCommentValue() {
             });
 
             return false;
+
         });
     });
-
-};
+});
 
 
 

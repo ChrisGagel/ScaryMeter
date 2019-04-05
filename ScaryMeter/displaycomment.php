@@ -1,18 +1,6 @@
 <?php
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "ScaryMeter123";
-    $dbname = "scarymeter";
-    $port = 8889;
-
-    // Create connection
-    $conn = new mysqli("$servername:$port", $username, $password, $dbname);
-
-    // Check connectionrtrim($string, '.');
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+    require 'db_connection.php';
 
 
     $movieIdCommentTablePHP = $_GET['movieidcommenttable'];
@@ -22,7 +10,7 @@
     $commentresult = $conn->query($commentselectsql);
         
     if ($commentresult->num_rows > 0) {
-        $lines = array();
+
         while($commentrow = $commentresult->fetch_assoc()) { //Compiles all the rows
 
             $commentid[] = '"' . $commentrow["comment_id"] . '"';
@@ -50,7 +38,7 @@
         echo "]}";
 
     } else {
-    	echo "<div class='comment-row'><div class='comment-text'>No comments to display yet</div></div>";;
+    	
     }
 
 
