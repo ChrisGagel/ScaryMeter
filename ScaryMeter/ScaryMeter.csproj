@@ -92,6 +92,15 @@
     <Content Include="Images\desktop_ratebox.png" />
     <Content Include="Images\mobile_ratebox.png" />
     <Content Include="Images\scarymeter_backgroundgradient.png" />
+    <Content Include="Images\notenoughratings.png" />
+    <Content Include="Images\report_harassment_empty.png" />
+    <Content Include="Images\report_harassment_full.png" />
+    <Content Include="Images\report_hatespeech_empty.png" />
+    <Content Include="Images\report_hatespeech_full.png" />
+    <Content Include="Images\report_spam_empty.png" />
+    <Content Include="Images\report_spam_full.png" />
+    <Content Include="Images\report_spoilers_empty.png" />
+    <Content Include="Images\report_spoilers_full.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">

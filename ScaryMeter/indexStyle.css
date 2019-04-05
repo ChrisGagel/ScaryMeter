@@ -43,6 +43,7 @@ body, html {
     font-weight: 300;
     font-size: 1em;
     min-width: 600px;
+    /*height: 60px;*/
 }
 
 /* CUSTOM SCROLLBAR */
@@ -75,19 +76,26 @@ body, html {
 
 
 #imageCoverPhotoBackground {
-    /* The image used */
-    /*background-image: url("https://image.tmdb.org/t/p/original//3CCfgSvtvN3HwVs5hbcC1NhOAzw.jpg");*/
+  position: relative;
+  height: 700px; /*Used to be 100%*/
+  min-width: 600px;
+  /*background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;*/
+  width: 100%; /*Remove this if I'm using treating the cover photo as a background-image*/
+  opacity: 0.75;
+  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+
+#genericCoverPhotoBackground {
     position: relative;
-    height: 100%;
     min-width: 600px;
-    /* Center and scale the image nicely */
+    width: 100%;
+    height: 700px;/*Used to be 100%*/
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    /* Set transparency*/
-    opacity: 0.75;
-    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
-    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
 }
 
 
@@ -108,7 +116,7 @@ body, html {
     position: relative;
     transform: perspective(1px) translateY(-50%);
     top: 50%;
-    background-color: #F5F5F5;
+    background-color: #F5F5F5; 
     box-shadow: 0px 0px 10px #555555;
     display: flex;
 }
@@ -124,6 +132,7 @@ body, html {
     padding: 3%;
     overflow-x: hidden;
     overflow-y: auto;
+    width: 100%; /*This needs to be here because, for whatever reason, the description for the movie Hush (and only Hush) doesn't fill out to 100% unless specified*/
 }
 
 .movieDescBottom {
@@ -211,6 +220,19 @@ body, html {
     font-weight: bold;
 }
 
+#ifMovieNoHorror {
+    color: #9D9D9D;
+    font-size: 0.8em;
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: 100;
+    margin-top: 20px;
+}
+
+#emailSent {
+    color: #555555;
+    font-weight: bold;
+}
+
 
 .scaryMeterRating {
     height: auto;
@@ -230,9 +252,11 @@ body, html {
     text-align: center;
 }
 
-.overallMeterCoverPhoto {
-    top: 15vh;
-    position: absolute;
+#movieHasNotBeenRatedOverall {
+    text-align: center;
+    font-size: 1.6em;
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: 400;
 }
 
 .subScaryMeterRatingBarLabel {
@@ -296,7 +320,7 @@ body, html {
     margin-bottom: 13px;
 }
 
-.similarlyRatedTitle {
+.similarlyRatedTitles {
     color: #555555;
     font-size: 1em;
     font-family: 'Open Sans Light', sans-serif;
@@ -306,6 +330,11 @@ body, html {
 }
 
 #similarlyRatedMoviesCoverPhoto1, #similarlyRatedMoviesCoverPhoto2, #similarlyRatedMoviesCoverPhoto3, #similarlyRatedMoviesCoverPhoto4, #similarlyRatedMoviesCoverPhoto5, #similarlyRatedMoviesCoverPhoto6 {
+    width: 100%;
+    height: auto;
+}
+
+#notEnoughRatingsImage1, #notEnoughRatingsImage2, #notEnoughRatingsImage3, #notEnoughRatingsImage4, #notEnoughRatingsImage5, #notEnoughRatingsImage6 {
     width: 100%;
     height: auto;
 }
@@ -332,6 +361,105 @@ body, html {
     background-color: #CC3333;
     text-align: center;
 }
+
+
+
+
+
+
+
+
+/*Comment Section*/
+
+.commentSection {
+    box-shadow: 0px 0px 10px #555555;
+    font-family: 'Open Sans Light', sans-serif;
+    font-weight: 500;
+    width: 70%;
+    margin: auto;
+    max-width: 1200px;
+    min-width: 600px;
+    margin-top: 30px;
+}
+
+.comment-form-container {
+    background-color: #DEDEDE;
+    padding: 20px;
+}
+
+.input-row {
+    margin-bottom: 20px;
+}
+
+.input-field {
+    border-radius: 2px;
+    padding: 10px;
+    border: #e0dfdf 1px solid;
+}
+
+.btn-submit {
+    padding: 10px 20px;
+    background: #333;
+    border: #1d1d1d 1px solid;
+    color: #DEDEDE;
+    font-size: 1em;
+    width: 100px;
+    border-radius: 2px;
+    cursor:pointer;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.comment-row {
+    border-bottom: #e0dfdf 1px solid;
+    margin-bottom: 15px;
+    padding: 15px;
+    padding-left: 30px;
+}
+
+.outer-comment {
+    background: #F0F0F0;
+    padding: 20px;
+    border: #dedddd 1px solid;
+}
+
+span.commet-row-label {
+    font-style: italic;
+}
+
+span.posted-by {
+    color: #09F;
+}
+
+.comment-info {
+    font-size: 0.8em;
+}
+#comment-text {
+    margin: 5px 0px;
+    overflow-wrap: break-word; /*These 3 properties prevent a long word from passing its container*/
+    word-wrap: break-word;
+    hyphens: auto;
+}
+#comment-message {
+    margin-left: 20px;
+    color: #189a18;
+    display: none;
+}
+
+#responsecontainer {
+    background-color: #F5F5F5;
+}
+
+#reportCommentText {
+    cursor: pointer;
+    color: #888787;
+    text-decoration: underline;
+    font-size: 0.8em;
+}
+
+/* End of comment section*/
 
 
 
@@ -403,6 +531,7 @@ body, html {
     .descriptionOfLabel {
         font-size: 0.7em;
     }
+    
 }
 
 
@@ -485,7 +614,6 @@ body, html {
     color: #555555;
 }
 
-/* The following was added in during the PHP session starting Mar 29 /19 */
 [type=radio] {
     position: absolute;
     opacity: 0;
@@ -493,20 +621,18 @@ body, html {
     height: 0;
 }
 
-    [type=radio] + img {
-        cursor: pointer;
-    }
+[type=radio] + img {
+    cursor: pointer;
+}
 
-    [type=radio]:checked + img {
-        /*outline: 2px solid #f00; - Turn this on to show what is actually being checked with the radio input*/
-    }
+[type=radio]:checked + img {
+    /*outline: 2px solid #f00; - Turn this on to show what is actually being checked with the radio input*/
+}
 
 #creepyGroup, #goryGroup, #jumpyGroup label {
     display: inline-block;
     cursor: pointer;
 }
-
-/* End of PHP session additions */
 
 #thumbsUpImageCreepy, #thumbsDownImageCreepy, #thumbsUpImageGory, #thumbsDownImageGory, #thumbsUpImageJumpy, #thumbsDownImageJumpy {
     margin: 5px;
@@ -526,9 +652,15 @@ body, html {
     border-top: none;
 }
 
-    .modal-footer .btn + .btn {
-        background-color: #CC3333;
-    }
+.modal-footer .btn + .btn {
+    background-color: #CC3333;
+}
+
+#reportCommentImageSpoiler, #reportCommentImageSpam, #reportCommentImageHarassment, #reportCommentImageHatespeech {
+    margin: 5px;
+    cursor: pointer;
+    width: 110px;
+}
 
 
 
@@ -585,3 +717,4 @@ body, html {
         background: #e54b4b; /* Green background */
         cursor: pointer; /* Cursor on hover */
     }
+    
